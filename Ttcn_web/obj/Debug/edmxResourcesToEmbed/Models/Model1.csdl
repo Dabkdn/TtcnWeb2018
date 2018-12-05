@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ttcnwebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="TTCNWEBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="ADUserGroup">
     <Key>
       <PropertyRef Name="ADUserGroupID" />
@@ -83,10 +83,10 @@
     <Property Name="ARCustomerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ARCustomerName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
     <Property Name="ARCustomerBirthDay" Type="DateTime" Precision="3" />
+    <Property Name="ARCustomerSex" Type="DateTime" Precision="3" />
     <Property Name="ARCustomerAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="ARCustomerContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ARCustomerContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ARCustomerSex" Type="Boolean" />
     <NavigationProperty Name="ADUser" Relationship="Self.FK_ARCustomers_ADUsers" FromRole="ARCustomers" ToRole="ADUsers" />
     <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_ARCustomers" FromRole="ARCustomers" ToRole="ARCustomerDeliveryAddresss" />
   </EntityType>
@@ -103,9 +103,7 @@
     <Property Name="ARFurnitureTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="ARFurnitureTypeNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="ARFurnitureTypeDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="ARAddField" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ICProducts" Relationship="Self.FK_ICProducts_ARFurnitureTypes" FromRole="ARFurnitureTypes" ToRole="ICProducts" />
-    <Property Name="ARAddField2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="GEDistrict">
     <Key>
@@ -401,20 +399,5 @@
       <End Role="GEWards" EntitySet="GEWards" />
       <End Role="GEStreets" EntitySet="GEStreets" />
     </AssociationSet>
-    <EntitySet Name="ARFurnitureType2s" EntityType="ttcnwebModel.ARFurnitureType2s" />
   </EntityContainer>
-  <EntityType Name="ARFurnitureType2s">
-    <Key>
-      <PropertyRef Name="ARFurnitureTypeID" />
-    </Key>
-    <Property Name="ARFurnitureTypeID" Type="Int32" Nullable="false" />
-    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
-    <Property Name="ARFurnitureTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="ARFurnitureTypeNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="ARFurnitureTypeDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-  </EntityType>
 </Schema>

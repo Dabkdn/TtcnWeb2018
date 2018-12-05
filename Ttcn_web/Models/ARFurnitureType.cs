@@ -29,8 +29,6 @@ namespace Ttcn_web.Models
         public string ARFurnitureTypeName { get; set; }
         public string ARFurnitureTypeNo { get; set; }
         public string ARFurnitureTypeDesc { get; set; }
-        public string ARAddField { get; set; }
-        public string ARAddField2 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ICProduct> ICProducts { get; set; }

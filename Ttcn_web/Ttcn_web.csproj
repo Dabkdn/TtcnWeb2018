@@ -203,9 +203,6 @@
     <Compile Include="Models\ARFurnitureType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ARFurnitureType2s.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\Function.cs" />
     <Compile Include="Models\GEDistrict.cs">

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ttcnwebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="TTCNWEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ADUserGroups">
           <Key>
             <PropertyRef Name="ADUserGroupID" />
@@ -77,24 +77,10 @@
           <Property Name="ARCustomerNo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ARCustomerName" Type="nvarchar" MaxLength="4000" />
           <Property Name="ARCustomerBirthDay" Type="datetime" />
+          <Property Name="ARCustomerSex" Type="datetime" />
           <Property Name="ARCustomerAddress" Type="nvarchar" MaxLength="200" />
           <Property Name="ARCustomerContactEmail" Type="nvarchar" MaxLength="100" />
           <Property Name="ARCustomerContactPhone" Type="nvarchar" MaxLength="50" />
-          <Property Name="ARCustomerSex" Type="bit" />
-        </EntityType>
-        <EntityType Name="ARFurnitureType2s">
-          <Key>
-            <PropertyRef Name="ARFurnitureTypeID" />
-          </Key>
-          <Property Name="ARFurnitureTypeID" Type="int" Nullable="false" />
-          <Property Name="AAStatus" Type="varchar" MaxLength="10" />
-          <Property Name="AACreatedUser" Type="nvarchar" MaxLength="50" />
-          <Property Name="AAUpdatedUser" Type="nvarchar" MaxLength="50" />
-          <Property Name="AACreatedDate" Type="datetime" />
-          <Property Name="AAUpdatedDate" Type="datetime" />
-          <Property Name="ARFurnitureTypeName" Type="nvarchar" MaxLength="200" />
-          <Property Name="ARFurnitureTypeNo" Type="varchar" MaxLength="20" />
-          <Property Name="ARFurnitureTypeDesc" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="ARFurnitureTypes">
           <Key>
@@ -109,8 +95,6 @@
           <Property Name="ARFurnitureTypeName" Type="nvarchar" MaxLength="200" />
           <Property Name="ARFurnitureTypeNo" Type="varchar" MaxLength="20" />
           <Property Name="ARFurnitureTypeDesc" Type="nvarchar" MaxLength="500" />
-          <Property Name="ARAddField" Type="nvarchar" MaxLength="100" />
-          <Property Name="ARAddField2" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="GEDistricts">
           <Key>
@@ -330,13 +314,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ttcnwebModelStoreContainer">
+        <EntityContainer Name="TTCNWEBModelStoreContainer">
           <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADUsers" EntityType="Self.ADUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="APSuppliers" EntityType="Self.APSuppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ARCustomerDeliveryAddresss" EntityType="Self.ARCustomerDeliveryAddresss" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ARCustomers" EntityType="Self.ARCustomers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ARFurnitureType2s" EntityType="Self.ARFurnitureType2s" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ARFurnitureTypes" EntityType="Self.ARFurnitureTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GEDistricts" EntityType="Self.GEDistricts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GEStateProvinces" EntityType="Self.GEStateProvinces" Schema="dbo" store:Type="Tables" />
@@ -396,10 +379,11 @@
             <End Role="ICProducts" EntitySet="ICProducts" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ttcnwebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TTCNWEBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ADUserGroup">
           <Key>
             <PropertyRef Name="ADUserGroupID" />
@@ -483,10 +467,10 @@
           <Property Name="ARCustomerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ARCustomerName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
           <Property Name="ARCustomerBirthDay" Type="DateTime" Precision="3" />
+          <Property Name="ARCustomerSex" Type="DateTime" Precision="3" />
           <Property Name="ARCustomerAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="ARCustomerContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ARCustomerContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ARCustomerSex" Type="Boolean" />
           <NavigationProperty Name="ADUser" Relationship="Self.FK_ARCustomers_ADUsers" FromRole="ARCustomers" ToRole="ADUsers" />
           <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_ARCustomers" FromRole="ARCustomers" ToRole="ARCustomerDeliveryAddresss" />
         </EntityType>
@@ -503,9 +487,7 @@
           <Property Name="ARFurnitureTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="ARFurnitureTypeNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="ARFurnitureTypeDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="ARAddField" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ICProducts" Relationship="Self.FK_ICProducts_ARFurnitureTypes" FromRole="ARFurnitureTypes" ToRole="ICProducts" />
-          <Property Name="ARAddField2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GEDistrict">
           <Key>
@@ -801,30 +783,15 @@
             <End Role="GEWards" EntitySet="GEWards" />
             <End Role="GEStreets" EntitySet="GEStreets" />
           </AssociationSet>
-          <EntitySet Name="ARFurnitureType2s" EntityType="ttcnwebModel.ARFurnitureType2s" />
         </EntityContainer>
-        <EntityType Name="ARFurnitureType2s">
-          <Key>
-            <PropertyRef Name="ARFurnitureTypeID" />
-          </Key>
-          <Property Name="ARFurnitureTypeID" Type="Int32" Nullable="false" />
-          <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
-          <Property Name="ARFurnitureTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="ARFurnitureTypeNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ARFurnitureTypeDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ttcnwebModelStoreContainer" CdmEntityContainer="TtcnWebEntities">
+        <EntityContainerMapping StorageEntityContainer="TTCNWEBModelStoreContainer" CdmEntityContainer="TtcnWebEntities">
           <EntitySetMapping Name="ADUserGroups">
-            <EntityTypeMapping TypeName="ttcnwebModel.ADUserGroup">
+            <EntityTypeMapping TypeName="TTCNWEBModel.ADUserGroup">
               <MappingFragment StoreEntitySet="ADUserGroups">
                 <ScalarProperty Name="ADUserGroupID" ColumnName="ADUserGroupID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -834,7 +801,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ADUsers">
-            <EntityTypeMapping TypeName="ttcnwebModel.ADUser">
+            <EntityTypeMapping TypeName="TTCNWEBModel.ADUser">
               <MappingFragment StoreEntitySet="ADUsers">
                 <ScalarProperty Name="ADUserID" ColumnName="ADUserID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -848,7 +815,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="APSuppliers">
-            <EntityTypeMapping TypeName="ttcnwebModel.APSupplier">
+            <EntityTypeMapping TypeName="TTCNWEBModel.APSupplier">
               <MappingFragment StoreEntitySet="APSuppliers">
                 <ScalarProperty Name="APSupplierID" ColumnName="APSupplierID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -867,7 +834,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ARCustomerDeliveryAddressses">
-            <EntityTypeMapping TypeName="ttcnwebModel.ARCustomerDeliveryAddresss">
+            <EntityTypeMapping TypeName="TTCNWEBModel.ARCustomerDeliveryAddresss">
               <MappingFragment StoreEntitySet="ARCustomerDeliveryAddresss">
                 <ScalarProperty Name="ARCustomerDeliveryAddressID" ColumnName="ARCustomerDeliveryAddressID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -886,7 +853,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ARCustomers">
-            <EntityTypeMapping TypeName="ttcnwebModel.ARCustomer">
+            <EntityTypeMapping TypeName="TTCNWEBModel.ARCustomer">
               <MappingFragment StoreEntitySet="ARCustomers">
                 <ScalarProperty Name="ARCustomerID" ColumnName="ARCustomerID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -898,17 +865,16 @@
                 <ScalarProperty Name="ARCustomerNo" ColumnName="ARCustomerNo" />
                 <ScalarProperty Name="ARCustomerName" ColumnName="ARCustomerName" />
                 <ScalarProperty Name="ARCustomerBirthDay" ColumnName="ARCustomerBirthDay" />
+                <ScalarProperty Name="ARCustomerSex" ColumnName="ARCustomerSex" />
                 <ScalarProperty Name="ARCustomerAddress" ColumnName="ARCustomerAddress" />
                 <ScalarProperty Name="ARCustomerContactEmail" ColumnName="ARCustomerContactEmail" />
                 <ScalarProperty Name="ARCustomerContactPhone" ColumnName="ARCustomerContactPhone" />
-                <ScalarProperty Name="ARCustomerSex" ColumnName="ARCustomerSex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ARFurnitureTypes">
-            <EntityTypeMapping TypeName="ttcnwebModel.ARFurnitureType">
+            <EntityTypeMapping TypeName="TTCNWEBModel.ARFurnitureType">
               <MappingFragment StoreEntitySet="ARFurnitureTypes">
-                <ScalarProperty Name="ARAddField2" ColumnName="ARAddField2" />
                 <ScalarProperty Name="ARFurnitureTypeID" ColumnName="ARFurnitureTypeID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
                 <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
@@ -918,12 +884,11 @@
                 <ScalarProperty Name="ARFurnitureTypeName" ColumnName="ARFurnitureTypeName" />
                 <ScalarProperty Name="ARFurnitureTypeNo" ColumnName="ARFurnitureTypeNo" />
                 <ScalarProperty Name="ARFurnitureTypeDesc" ColumnName="ARFurnitureTypeDesc" />
-                <ScalarProperty Name="ARAddField" ColumnName="ARAddField" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GEDistricts">
-            <EntityTypeMapping TypeName="ttcnwebModel.GEDistrict">
+            <EntityTypeMapping TypeName="TTCNWEBModel.GEDistrict">
               <MappingFragment StoreEntitySet="GEDistricts">
                 <ScalarProperty Name="GEDistrictID" ColumnName="GEDistrictID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -933,7 +898,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GEStateProvinces">
-            <EntityTypeMapping TypeName="ttcnwebModel.GEStateProvince">
+            <EntityTypeMapping TypeName="TTCNWEBModel.GEStateProvince">
               <MappingFragment StoreEntitySet="GEStateProvinces">
                 <ScalarProperty Name="GEStateProvinceID" ColumnName="GEStateProvinceID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -942,7 +907,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GEStreets">
-            <EntityTypeMapping TypeName="ttcnwebModel.GEStreet">
+            <EntityTypeMapping TypeName="TTCNWEBModel.GEStreet">
               <MappingFragment StoreEntitySet="GEStreets">
                 <ScalarProperty Name="GEStreetID" ColumnName="GEStreetID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -952,7 +917,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GEWards">
-            <EntityTypeMapping TypeName="ttcnwebModel.GEWard">
+            <EntityTypeMapping TypeName="TTCNWEBModel.GEWard">
               <MappingFragment StoreEntitySet="GEWards">
                 <ScalarProperty Name="GEWardID" ColumnName="GEWardID" />
                 <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -962,7 +927,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ICProducts">
-            <EntityTypeMapping TypeName="ttcnwebModel.ICProduct">
+            <EntityTypeMapping TypeName="TTCNWEBModel.ICProduct">
               <MappingFragment StoreEntitySet="ICProducts">
                 <ScalarProperty Name="ICProductID" ColumnName="ICProductID" />
                 <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
@@ -986,21 +951,6 @@
                 <ScalarProperty Name="ICProductComment" ColumnName="ICProductComment" />
                 <ScalarProperty Name="ICProductMaterial" ColumnName="ICProductMaterial" />
                 <ScalarProperty Name="ICProductColor" ColumnName="ICProductColor" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ARFurnitureType2s">
-            <EntityTypeMapping TypeName="ttcnwebModel.ARFurnitureType2s">
-              <MappingFragment StoreEntitySet="ARFurnitureType2s">
-                <ScalarProperty Name="ARFurnitureTypeDesc" ColumnName="ARFurnitureTypeDesc" />
-                <ScalarProperty Name="ARFurnitureTypeNo" ColumnName="ARFurnitureTypeNo" />
-                <ScalarProperty Name="ARFurnitureTypeName" ColumnName="ARFurnitureTypeName" />
-                <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
-                <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
-                <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
-                <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
-                <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
-                <ScalarProperty Name="ARFurnitureTypeID" ColumnName="ARFurnitureTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

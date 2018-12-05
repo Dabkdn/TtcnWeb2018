@@ -4,32 +4,31 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="55a1ed642ce14726a14a597e686a6087" Name="Diagram1" ZoomLevel="55">
-        <EntityTypeShape EntityType="ttcnwebModel.ADUserGroup" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.ADUser" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.APSupplier" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.ARCustomerDeliveryAddresss" Width="1.5" PointX="9.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.ARCustomer" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.ARFurnitureType" Width="1.5" PointX="7.5" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.GEDistrict" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.GEStateProvince" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.GEStreet" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.GEWard" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ttcnwebModel.ICProduct" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="ttcnwebModel.FK_ADUsers_ADUserGroups" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_APSuppliers_ADUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_ARCustomers_ADUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_ICProducts_APSuppliers" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_ARCustomerDeliveryAddresss_ARCustomers" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_ARCustomerDeliveryAddresss_GEDistricts" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_ARCustomerDeliveryAddresss_GEStateProvinces" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_ARCustomerDeliveryAddresss_GEStreets" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_ARCustomerDeliveryAddresss_GEWards" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_ICProducts_ARFurnitureTypes" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_GEDistricts_GEStateProvinces" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_GEWards_GEDistricts" ManuallyRouted="false" />
-        <AssociationConnector Association="ttcnwebModel.FK_GEStreets_GEWards" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ttcnwebModel.ARFurnitureType2s" Width="1.5" PointX="0.75" PointY="0.75" />
+      <Diagram DiagramId="c9bef581abf74b88b74220dd1d04dd28" Name="Diagram1">
+        <EntityTypeShape EntityType="TTCNWEBModel.ADUserGroup" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.ADUser" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.APSupplier" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.ARCustomerDeliveryAddresss" Width="1.5" PointX="9.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.ARCustomer" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.ARFurnitureType" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.GEDistrict" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.GEStateProvince" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.GEStreet" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.GEWard" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTCNWEBModel.ICProduct" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ADUsers_ADUserGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_APSuppliers_ADUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ARCustomers_ADUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ICProducts_APSuppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ARCustomerDeliveryAddresss_ARCustomers" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ARCustomerDeliveryAddresss_GEDistricts" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ARCustomerDeliveryAddresss_GEStateProvinces" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ARCustomerDeliveryAddresss_GEStreets" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ARCustomerDeliveryAddresss_GEWards" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ICProducts_ARFurnitureTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_GEDistricts_GEStateProvinces" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_GEWards_GEDistricts" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_GEStreets_GEWards" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

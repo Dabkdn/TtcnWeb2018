@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ttcnwebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="TTCNWEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ADUserGroups">
     <Key>
       <PropertyRef Name="ADUserGroupID" />
@@ -72,24 +72,10 @@
     <Property Name="ARCustomerNo" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ARCustomerName" Type="nvarchar" MaxLength="4000" />
     <Property Name="ARCustomerBirthDay" Type="datetime" />
+    <Property Name="ARCustomerSex" Type="datetime" />
     <Property Name="ARCustomerAddress" Type="nvarchar" MaxLength="200" />
     <Property Name="ARCustomerContactEmail" Type="nvarchar" MaxLength="100" />
     <Property Name="ARCustomerContactPhone" Type="nvarchar" MaxLength="50" />
-    <Property Name="ARCustomerSex" Type="bit" />
-  </EntityType>
-  <EntityType Name="ARFurnitureType2s">
-    <Key>
-      <PropertyRef Name="ARFurnitureTypeID" />
-    </Key>
-    <Property Name="ARFurnitureTypeID" Type="int" Nullable="false" />
-    <Property Name="AAStatus" Type="varchar" MaxLength="10" />
-    <Property Name="AACreatedUser" Type="nvarchar" MaxLength="50" />
-    <Property Name="AAUpdatedUser" Type="nvarchar" MaxLength="50" />
-    <Property Name="AACreatedDate" Type="datetime" />
-    <Property Name="AAUpdatedDate" Type="datetime" />
-    <Property Name="ARFurnitureTypeName" Type="nvarchar" MaxLength="200" />
-    <Property Name="ARFurnitureTypeNo" Type="varchar" MaxLength="20" />
-    <Property Name="ARFurnitureTypeDesc" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="ARFurnitureTypes">
     <Key>
@@ -104,8 +90,6 @@
     <Property Name="ARFurnitureTypeName" Type="nvarchar" MaxLength="200" />
     <Property Name="ARFurnitureTypeNo" Type="varchar" MaxLength="20" />
     <Property Name="ARFurnitureTypeDesc" Type="nvarchar" MaxLength="500" />
-    <Property Name="ARAddField" Type="nvarchar" MaxLength="100" />
-    <Property Name="ARAddField2" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="GEDistricts">
     <Key>
@@ -325,13 +309,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ttcnwebModelStoreContainer">
+  <EntityContainer Name="TTCNWEBModelStoreContainer">
     <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroups" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADUsers" EntityType="Self.ADUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="APSuppliers" EntityType="Self.APSuppliers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARCustomerDeliveryAddresss" EntityType="Self.ARCustomerDeliveryAddresss" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARCustomers" EntityType="Self.ARCustomers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ARFurnitureType2s" EntityType="Self.ARFurnitureType2s" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARFurnitureTypes" EntityType="Self.ARFurnitureTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GEDistricts" EntityType="Self.GEDistricts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GEStateProvinces" EntityType="Self.GEStateProvinces" Schema="dbo" store:Type="Tables" />

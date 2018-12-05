@@ -36,6 +36,5 @@ namespace Ttcn_web.Models
         public virtual DbSet<GEStreet> GEStreets { get; set; }
         public virtual DbSet<GEWard> GEWards { get; set; }
         public virtual DbSet<ICProduct> ICProducts { get; set; }
-        public virtual DbSet<ARFurnitureType2s> ARFurnitureType2s { get; set; }
     }
 }

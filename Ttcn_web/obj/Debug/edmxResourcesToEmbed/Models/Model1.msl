@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ttcnwebModelStoreContainer" CdmEntityContainer="TtcnWebEntities">
+  <EntityContainerMapping StorageEntityContainer="TTCNWEBModelStoreContainer" CdmEntityContainer="TtcnWebEntities">
     <EntitySetMapping Name="ADUserGroups">
-      <EntityTypeMapping TypeName="ttcnwebModel.ADUserGroup">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ADUserGroup">
         <MappingFragment StoreEntitySet="ADUserGroups">
           <ScalarProperty Name="ADUserGroupID" ColumnName="ADUserGroupID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ADUsers">
-      <EntityTypeMapping TypeName="ttcnwebModel.ADUser">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ADUser">
         <MappingFragment StoreEntitySet="ADUsers">
           <ScalarProperty Name="ADUserID" ColumnName="ADUserID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -26,7 +26,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="APSuppliers">
-      <EntityTypeMapping TypeName="ttcnwebModel.APSupplier">
+      <EntityTypeMapping TypeName="TTCNWEBModel.APSupplier">
         <MappingFragment StoreEntitySet="APSuppliers">
           <ScalarProperty Name="APSupplierID" ColumnName="APSupplierID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -45,7 +45,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ARCustomerDeliveryAddressses">
-      <EntityTypeMapping TypeName="ttcnwebModel.ARCustomerDeliveryAddresss">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ARCustomerDeliveryAddresss">
         <MappingFragment StoreEntitySet="ARCustomerDeliveryAddresss">
           <ScalarProperty Name="ARCustomerDeliveryAddressID" ColumnName="ARCustomerDeliveryAddressID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -64,7 +64,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ARCustomers">
-      <EntityTypeMapping TypeName="ttcnwebModel.ARCustomer">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ARCustomer">
         <MappingFragment StoreEntitySet="ARCustomers">
           <ScalarProperty Name="ARCustomerID" ColumnName="ARCustomerID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -76,17 +76,16 @@
           <ScalarProperty Name="ARCustomerNo" ColumnName="ARCustomerNo" />
           <ScalarProperty Name="ARCustomerName" ColumnName="ARCustomerName" />
           <ScalarProperty Name="ARCustomerBirthDay" ColumnName="ARCustomerBirthDay" />
+          <ScalarProperty Name="ARCustomerSex" ColumnName="ARCustomerSex" />
           <ScalarProperty Name="ARCustomerAddress" ColumnName="ARCustomerAddress" />
           <ScalarProperty Name="ARCustomerContactEmail" ColumnName="ARCustomerContactEmail" />
           <ScalarProperty Name="ARCustomerContactPhone" ColumnName="ARCustomerContactPhone" />
-          <ScalarProperty Name="ARCustomerSex" ColumnName="ARCustomerSex" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ARFurnitureTypes">
-      <EntityTypeMapping TypeName="ttcnwebModel.ARFurnitureType">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ARFurnitureType">
         <MappingFragment StoreEntitySet="ARFurnitureTypes">
-          <ScalarProperty Name="ARAddField2" ColumnName="ARAddField2" />
           <ScalarProperty Name="ARFurnitureTypeID" ColumnName="ARFurnitureTypeID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
           <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
@@ -96,12 +95,11 @@
           <ScalarProperty Name="ARFurnitureTypeName" ColumnName="ARFurnitureTypeName" />
           <ScalarProperty Name="ARFurnitureTypeNo" ColumnName="ARFurnitureTypeNo" />
           <ScalarProperty Name="ARFurnitureTypeDesc" ColumnName="ARFurnitureTypeDesc" />
-          <ScalarProperty Name="ARAddField" ColumnName="ARAddField" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GEDistricts">
-      <EntityTypeMapping TypeName="ttcnwebModel.GEDistrict">
+      <EntityTypeMapping TypeName="TTCNWEBModel.GEDistrict">
         <MappingFragment StoreEntitySet="GEDistricts">
           <ScalarProperty Name="GEDistrictID" ColumnName="GEDistrictID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -111,7 +109,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GEStateProvinces">
-      <EntityTypeMapping TypeName="ttcnwebModel.GEStateProvince">
+      <EntityTypeMapping TypeName="TTCNWEBModel.GEStateProvince">
         <MappingFragment StoreEntitySet="GEStateProvinces">
           <ScalarProperty Name="GEStateProvinceID" ColumnName="GEStateProvinceID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -120,7 +118,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GEStreets">
-      <EntityTypeMapping TypeName="ttcnwebModel.GEStreet">
+      <EntityTypeMapping TypeName="TTCNWEBModel.GEStreet">
         <MappingFragment StoreEntitySet="GEStreets">
           <ScalarProperty Name="GEStreetID" ColumnName="GEStreetID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -130,7 +128,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GEWards">
-      <EntityTypeMapping TypeName="ttcnwebModel.GEWard">
+      <EntityTypeMapping TypeName="TTCNWEBModel.GEWard">
         <MappingFragment StoreEntitySet="GEWards">
           <ScalarProperty Name="GEWardID" ColumnName="GEWardID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
@@ -140,7 +138,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ICProducts">
-      <EntityTypeMapping TypeName="ttcnwebModel.ICProduct">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ICProduct">
         <MappingFragment StoreEntitySet="ICProducts">
           <ScalarProperty Name="ICProductID" ColumnName="ICProductID" />
           <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
@@ -164,21 +162,6 @@
           <ScalarProperty Name="ICProductComment" ColumnName="ICProductComment" />
           <ScalarProperty Name="ICProductMaterial" ColumnName="ICProductMaterial" />
           <ScalarProperty Name="ICProductColor" ColumnName="ICProductColor" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ARFurnitureType2s">
-      <EntityTypeMapping TypeName="ttcnwebModel.ARFurnitureType2s">
-        <MappingFragment StoreEntitySet="ARFurnitureType2s">
-          <ScalarProperty Name="ARFurnitureTypeDesc" ColumnName="ARFurnitureTypeDesc" />
-          <ScalarProperty Name="ARFurnitureTypeNo" ColumnName="ARFurnitureTypeNo" />
-          <ScalarProperty Name="ARFurnitureTypeName" ColumnName="ARFurnitureTypeName" />
-          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
-          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
-          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
-          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
-          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
-          <ScalarProperty Name="ARFurnitureTypeID" ColumnName="ARFurnitureTypeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
