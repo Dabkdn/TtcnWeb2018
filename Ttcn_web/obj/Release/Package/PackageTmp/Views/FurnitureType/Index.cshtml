@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Ttcn_web.Models.ARFurnitureType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeDesc)
+        </th>
+        <th></th>
+    </tr>
+@{
+    int count = 0;
+
+    foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>
+                @count
+            </td>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ARFurnitureTypeNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ARFurnitureTypeDesc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ARFurnitureTypeID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ARFurnitureTypeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ARFurnitureTypeID })
+            </td>
+        </tr>
+    }
+}
+
+</table>

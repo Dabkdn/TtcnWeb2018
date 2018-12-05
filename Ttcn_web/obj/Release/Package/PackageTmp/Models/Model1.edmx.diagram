@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b090e6f1fdee45e5b344e1aa1a0e908b" Name="Diagram1">
+        <EntityTypeShape EntityType="TtcnWebModel.ADUserGroup" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.ADUser" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.APSupplier" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.ARCustomerDeliveryAddresss" Width="1.5" PointX="9.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.ARCustomer" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.ARFurnitureType" Width="1.5" PointX="9.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.GEDistrict" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.GEStateProvince" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.GEStreet" Width="1.5" PointX="7.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="TtcnWebModel.GEWard" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <AssociationConnector Association="TtcnWebModel.FK_ADUsers_ADUserGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_APSuppliers_ADUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_ARCustomers_ADUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_ARCustomerDeliveryAddresss_ARCustomers" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_ARCustomerDeliveryAddresss_GEDistricts" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_ARCustomerDeliveryAddresss_GEStateProvinces" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_ARCustomerDeliveryAddresss_GEStreets" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_ARCustomerDeliveryAddresss_GEWards" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_GEDistricts_GEStateProvinces" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_GEWards_GEDistricts" ManuallyRouted="false" />
+        <AssociationConnector Association="TtcnWebModel.FK_GEStreets_GEWards" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

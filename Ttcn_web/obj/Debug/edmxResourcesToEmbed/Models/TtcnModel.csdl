@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TtcnWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADUserGroup">
+    <Key>
+      <PropertyRef Name="ADUserGroupID" />
+    </Key>
+    <Property Name="ADUserGroupID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ADUserGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ADUserGroupDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ADUsers" Relationship="Self.FK_ADUsers_ADUserGroups" FromRole="ADUserGroups" ToRole="ADUsers" />
+  </EntityType>
+  <EntityType Name="ADUser">
+    <Key>
+      <PropertyRef Name="ADUserID" />
+    </Key>
+    <Property Name="ADUserID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FK_ADUserGroupID" Type="Int32" Nullable="false" />
+    <Property Name="ADUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ADPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="7" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="7" />
+    <Property Name="ADUserResetToken" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ADUserGroup" Relationship="Self.FK_ADUsers_ADUserGroups" FromRole="ADUsers" ToRole="ADUserGroups" />
+    <NavigationProperty Name="APSuppliers" Relationship="Self.FK_APSuppliers_ADUsers" FromRole="ADUsers" ToRole="APSuppliers" />
+    <NavigationProperty Name="ARCustomers" Relationship="Self.FK_ARCustomers_ADUsers" FromRole="ADUsers" ToRole="ARCustomers" />
+  </EntityType>
+  <EntityType Name="APSupplier">
+    <Key>
+      <PropertyRef Name="APSupplierID" />
+    </Key>
+    <Property Name="APSupplierID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="FK_ADUserID" Type="Int32" Nullable="false" />
+    <Property Name="APSupplierNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="APSupplierName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="APSupplierAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="APSupplierStockAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="APSupplierContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="APSupplierContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ADUser" Relationship="Self.FK_APSuppliers_ADUsers" FromRole="APSuppliers" ToRole="ADUsers" />
+  </EntityType>
+  <EntityType Name="ARCustomerDeliveryAddresss">
+    <Key>
+      <PropertyRef Name="ARCustomerDeliveryAddressID" />
+    </Key>
+    <Property Name="ARCustomerDeliveryAddressID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ARCustomerDeliveryAddressReceive" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ARCustomerDeliveryAddressContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FK_ARCustomerID" Type="Int32" />
+    <Property Name="FK_GEStateProvinceID" Type="Int32" />
+    <Property Name="FK_GEDistrictID" Type="Int32" />
+    <Property Name="FK_GEWardID" Type="Int32" />
+    <Property Name="FK_GEStreetID" Type="Int32" />
+    <NavigationProperty Name="ARCustomer" Relationship="Self.FK_ARCustomerDeliveryAddresss_ARCustomers" FromRole="ARCustomerDeliveryAddresss" ToRole="ARCustomers" />
+    <NavigationProperty Name="GEDistrict" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEDistricts" FromRole="ARCustomerDeliveryAddresss" ToRole="GEDistricts" />
+    <NavigationProperty Name="GEStateProvince" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEStateProvinces" FromRole="ARCustomerDeliveryAddresss" ToRole="GEStateProvinces" />
+    <NavigationProperty Name="GEStreet" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEStreets" FromRole="ARCustomerDeliveryAddresss" ToRole="GEStreets" />
+    <NavigationProperty Name="GEWard" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEWards" FromRole="ARCustomerDeliveryAddresss" ToRole="GEWards" />
+  </EntityType>
+  <EntityType Name="ARCustomer">
+    <Key>
+      <PropertyRef Name="ARCustomerID" />
+    </Key>
+    <Property Name="ARCustomerID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="FK_ADUserID" Type="Int32" Nullable="false" />
+    <Property Name="ARCustomerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ARCustomerName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ARCustomerBirthDay" Type="DateTime" Precision="3" />
+    <Property Name="ARCustomerSex" Type="DateTime" Precision="3" />
+    <Property Name="ARCustomerAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ARCustomerContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ARCustomerContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ADUser" Relationship="Self.FK_ARCustomers_ADUsers" FromRole="ARCustomers" ToRole="ADUsers" />
+    <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_ARCustomers" FromRole="ARCustomers" ToRole="ARCustomerDeliveryAddresss" />
+  </EntityType>
+  <EntityType Name="GEDistrict">
+    <Key>
+      <PropertyRef Name="GEDistrictID" />
+    </Key>
+    <Property Name="GEDistrictID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FK_GEStateProvinceID" Type="Int32" />
+    <Property Name="GEDistrictName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEDistricts" FromRole="GEDistricts" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="GEStateProvince" Relationship="Self.FK_GEDistricts_GEStateProvinces" FromRole="GEDistricts" ToRole="GEStateProvinces" />
+    <NavigationProperty Name="GEWards" Relationship="Self.FK_GEWards_GEDistricts" FromRole="GEDistricts" ToRole="GEWards" />
+  </EntityType>
+  <EntityType Name="GEStateProvince">
+    <Key>
+      <PropertyRef Name="GEStateProvinceID" />
+    </Key>
+    <Property Name="GEStateProvinceID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GEStateProvinceName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEStateProvinces" FromRole="GEStateProvinces" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="GEDistricts" Relationship="Self.FK_GEDistricts_GEStateProvinces" FromRole="GEStateProvinces" ToRole="GEDistricts" />
+  </EntityType>
+  <EntityType Name="GEStreet">
+    <Key>
+      <PropertyRef Name="GEStreetID" />
+    </Key>
+    <Property Name="GEStreetID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FK_GEWardID" Type="Int32" />
+    <Property Name="GEStreetName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEStreets" FromRole="GEStreets" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="GEWard" Relationship="Self.FK_GEStreets_GEWards" FromRole="GEStreets" ToRole="GEWards" />
+  </EntityType>
+  <EntityType Name="GEWard">
+    <Key>
+      <PropertyRef Name="GEWardID" />
+    </Key>
+    <Property Name="GEWardID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FK_GEDistrictID" Type="Int32" />
+    <Property Name="GEWardName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEWards" FromRole="GEWards" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="GEDistrict" Relationship="Self.FK_GEWards_GEDistricts" FromRole="GEWards" ToRole="GEDistricts" />
+    <NavigationProperty Name="GEStreets" Relationship="Self.FK_GEStreets_GEWards" FromRole="GEWards" ToRole="GEStreets" />
+  </EntityType>
+  <Association Name="FK_ADUsers_ADUserGroups">
+    <End Role="ADUserGroups" Type="Self.ADUserGroup" Multiplicity="1" />
+    <End Role="ADUsers" Type="Self.ADUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADUserGroups">
+        <PropertyRef Name="ADUserGroupID" />
+      </Principal>
+      <Dependent Role="ADUsers">
+        <PropertyRef Name="FK_ADUserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_APSuppliers_ADUsers">
+    <End Role="ADUsers" Type="Self.ADUser" Multiplicity="1" />
+    <End Role="APSuppliers" Type="Self.APSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADUsers">
+        <PropertyRef Name="ADUserID" />
+      </Principal>
+      <Dependent Role="APSuppliers">
+        <PropertyRef Name="FK_ADUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARCustomers_ADUsers">
+    <End Role="ADUsers" Type="Self.ADUser" Multiplicity="1" />
+    <End Role="ARCustomers" Type="Self.ARCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADUsers">
+        <PropertyRef Name="ADUserID" />
+      </Principal>
+      <Dependent Role="ARCustomers">
+        <PropertyRef Name="FK_ADUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARCustomerDeliveryAddresss_ARCustomers">
+    <End Role="ARCustomers" Type="Self.ARCustomer" Multiplicity="0..1" />
+    <End Role="ARCustomerDeliveryAddresss" Type="Self.ARCustomerDeliveryAddresss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARCustomers">
+        <PropertyRef Name="ARCustomerID" />
+      </Principal>
+      <Dependent Role="ARCustomerDeliveryAddresss">
+        <PropertyRef Name="FK_ARCustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARCustomerDeliveryAddresss_GEDistricts">
+    <End Role="GEDistricts" Type="Self.GEDistrict" Multiplicity="0..1" />
+    <End Role="ARCustomerDeliveryAddresss" Type="Self.ARCustomerDeliveryAddresss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEDistricts">
+        <PropertyRef Name="GEDistrictID" />
+      </Principal>
+      <Dependent Role="ARCustomerDeliveryAddresss">
+        <PropertyRef Name="FK_GEDistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARCustomerDeliveryAddresss_GEStateProvinces">
+    <End Role="GEStateProvinces" Type="Self.GEStateProvince" Multiplicity="0..1" />
+    <End Role="ARCustomerDeliveryAddresss" Type="Self.ARCustomerDeliveryAddresss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEStateProvinces">
+        <PropertyRef Name="GEStateProvinceID" />
+      </Principal>
+      <Dependent Role="ARCustomerDeliveryAddresss">
+        <PropertyRef Name="FK_GEStateProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARCustomerDeliveryAddresss_GEStreets">
+    <End Role="GEStreets" Type="Self.GEStreet" Multiplicity="0..1" />
+    <End Role="ARCustomerDeliveryAddresss" Type="Self.ARCustomerDeliveryAddresss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEStreets">
+        <PropertyRef Name="GEStreetID" />
+      </Principal>
+      <Dependent Role="ARCustomerDeliveryAddresss">
+        <PropertyRef Name="FK_GEStreetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARCustomerDeliveryAddresss_GEWards">
+    <End Role="GEWards" Type="Self.GEWard" Multiplicity="0..1" />
+    <End Role="ARCustomerDeliveryAddresss" Type="Self.ARCustomerDeliveryAddresss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEWards">
+        <PropertyRef Name="GEWardID" />
+      </Principal>
+      <Dependent Role="ARCustomerDeliveryAddresss">
+        <PropertyRef Name="FK_GEWardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GEDistricts_GEStateProvinces">
+    <End Role="GEStateProvinces" Type="Self.GEStateProvince" Multiplicity="0..1" />
+    <End Role="GEDistricts" Type="Self.GEDistrict" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEStateProvinces">
+        <PropertyRef Name="GEStateProvinceID" />
+      </Principal>
+      <Dependent Role="GEDistricts">
+        <PropertyRef Name="FK_GEStateProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GEWards_GEDistricts">
+    <End Role="GEDistricts" Type="Self.GEDistrict" Multiplicity="0..1" />
+    <End Role="GEWards" Type="Self.GEWard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEDistricts">
+        <PropertyRef Name="GEDistrictID" />
+      </Principal>
+      <Dependent Role="GEWards">
+        <PropertyRef Name="FK_GEDistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GEStreets_GEWards">
+    <End Role="GEWards" Type="Self.GEWard" Multiplicity="0..1" />
+    <End Role="GEStreets" Type="Self.GEStreet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEWards">
+        <PropertyRef Name="GEWardID" />
+      </Principal>
+      <Dependent Role="GEStreets">
+        <PropertyRef Name="FK_GEWardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TtcnEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroup" />
+    <EntitySet Name="ADUsers" EntityType="Self.ADUser" />
+    <EntitySet Name="APSuppliers" EntityType="Self.APSupplier" />
+    <EntitySet Name="ARCustomerDeliveryAddressses" EntityType="Self.ARCustomerDeliveryAddresss" />
+    <EntitySet Name="ARCustomers" EntityType="Self.ARCustomer" />
+    <EntitySet Name="GEDistricts" EntityType="Self.GEDistrict" />
+    <EntitySet Name="GEStateProvinces" EntityType="Self.GEStateProvince" />
+    <EntitySet Name="GEStreets" EntityType="Self.GEStreet" />
+    <EntitySet Name="GEWards" EntityType="Self.GEWard" />
+    <AssociationSet Name="FK_ADUsers_ADUserGroups" Association="Self.FK_ADUsers_ADUserGroups">
+      <End Role="ADUserGroups" EntitySet="ADUserGroups" />
+      <End Role="ADUsers" EntitySet="ADUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_APSuppliers_ADUsers" Association="Self.FK_APSuppliers_ADUsers">
+      <End Role="ADUsers" EntitySet="ADUsers" />
+      <End Role="APSuppliers" EntitySet="APSuppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARCustomers_ADUsers" Association="Self.FK_ARCustomers_ADUsers">
+      <End Role="ADUsers" EntitySet="ADUsers" />
+      <End Role="ARCustomers" EntitySet="ARCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARCustomerDeliveryAddresss_ARCustomers" Association="Self.FK_ARCustomerDeliveryAddresss_ARCustomers">
+      <End Role="ARCustomers" EntitySet="ARCustomers" />
+      <End Role="ARCustomerDeliveryAddresss" EntitySet="ARCustomerDeliveryAddressses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARCustomerDeliveryAddresss_GEDistricts" Association="Self.FK_ARCustomerDeliveryAddresss_GEDistricts">
+      <End Role="GEDistricts" EntitySet="GEDistricts" />
+      <End Role="ARCustomerDeliveryAddresss" EntitySet="ARCustomerDeliveryAddressses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARCustomerDeliveryAddresss_GEStateProvinces" Association="Self.FK_ARCustomerDeliveryAddresss_GEStateProvinces">
+      <End Role="GEStateProvinces" EntitySet="GEStateProvinces" />
+      <End Role="ARCustomerDeliveryAddresss" EntitySet="ARCustomerDeliveryAddressses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARCustomerDeliveryAddresss_GEStreets" Association="Self.FK_ARCustomerDeliveryAddresss_GEStreets">
+      <End Role="GEStreets" EntitySet="GEStreets" />
+      <End Role="ARCustomerDeliveryAddresss" EntitySet="ARCustomerDeliveryAddressses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARCustomerDeliveryAddresss_GEWards" Association="Self.FK_ARCustomerDeliveryAddresss_GEWards">
+      <End Role="GEWards" EntitySet="GEWards" />
+      <End Role="ARCustomerDeliveryAddresss" EntitySet="ARCustomerDeliveryAddressses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GEDistricts_GEStateProvinces" Association="Self.FK_GEDistricts_GEStateProvinces">
+      <End Role="GEStateProvinces" EntitySet="GEStateProvinces" />
+      <End Role="GEDistricts" EntitySet="GEDistricts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GEWards_GEDistricts" Association="Self.FK_GEWards_GEDistricts">
+      <End Role="GEDistricts" EntitySet="GEDistricts" />
+      <End Role="GEWards" EntitySet="GEWards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GEStreets_GEWards" Association="Self.FK_GEStreets_GEWards">
+      <End Role="GEWards" EntitySet="GEWards" />
+      <End Role="GEStreets" EntitySet="GEStreets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

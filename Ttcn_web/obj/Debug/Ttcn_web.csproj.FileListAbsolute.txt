@@ -1,0 +1,189 @@
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\ApplicationInsights.config
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Ttcn_web.dll.config
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Ttcn_web.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Ttcn_web.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Antlr3.Runtime.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\EntityFramework.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\EntityFramework.SqlServer.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.Agent.Intercept.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.DependencyCollector.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.Web.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.WindowsServer.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.ApplicationInsights.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.Web.Infrastructure.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Newtonsoft.Json.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.Helpers.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.Mvc.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.Optimization.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.Razor.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.WebPages.Deployment.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.WebPages.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.WebPages.Razor.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\WebGrease.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\EntityFramework.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\EntityFramework.SqlServer.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.Helpers.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.Mvc.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.Optimization.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.Razor.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.WebPages.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.WebPages.Deployment.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\System.Web.WebPages.Razor.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Antlr3.Runtime.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Newtonsoft.Json.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.ApplicationInsights.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.DependencyCollector.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.WindowsServer.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Microsoft.AI.Web.xml
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\obj\Debug\Ttcn_web.csprojResolveAssemblyReference.cache
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\obj\Debug\Ttcn_web.csproj.CoreCompileInputs.cache
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\obj\Debug\Ttcn_web.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\obj\Debug\Ttcn_web.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\CommonServiceLocator.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Abstractions.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Configuration.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Container.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Interception.Configuration.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Interception.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Mvc5.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.RegistrationByConvention.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.ServiceLocation.dll
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\CommonServiceLocator.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Abstractions.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Configuration.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Container.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Interception.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.Interception.Configuration.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.RegistrationByConvention.pdb
+E:\download\RAR\Thực tập công nhân\mvc\Ttcn_web\Ttcn_web\bin\Unity.ServiceLocation.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\ApplicationInsights.config
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Ttcn_web.dll.config
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Ttcn_web.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Ttcn_web.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Antlr3.Runtime.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\CommonServiceLocator.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\EntityFramework.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.Web.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Newtonsoft.Json.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.Helpers.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.Mvc.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.Optimization.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.Razor.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.WebPages.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Abstractions.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Configuration.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Container.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Interception.Configuration.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Interception.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Mvc5.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.RegistrationByConvention.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.ServiceLocation.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\WebGrease.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\CommonServiceLocator.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\EntityFramework.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.Helpers.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.Mvc.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.Optimization.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.Razor.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.WebPages.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Abstractions.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Configuration.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Container.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Interception.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.Interception.Configuration.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.RegistrationByConvention.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Unity.ServiceLocation.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Antlr3.Runtime.pdb
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Newtonsoft.Json.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.ApplicationInsights.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\bin\Microsoft.AI.Web.xml
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\obj\Debug\Ttcn_web.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\obj\Debug\Ttcn_web.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\obj\Debug\Ttcn_web.dll
+C:\Users\PC\Desktop\testGit\TtcnWeb\Ttcn_web\obj\Debug\Ttcn_web.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\ApplicationInsights.config
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Ttcn_web.dll.config
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Ttcn_web.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Ttcn_web.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Antlr3.Runtime.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\CommonServiceLocator.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\EntityFramework.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\EntityFramework.SqlServer.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.DependencyCollector.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.Web.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.WindowsServer.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.ApplicationInsights.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.Web.Infrastructure.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Newtonsoft.Json.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.Helpers.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.Mvc.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.Optimization.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.Razor.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.WebPages.Deployment.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.WebPages.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.WebPages.Razor.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Abstractions.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Configuration.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Container.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Interception.Configuration.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Interception.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Mvc5.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.RegistrationByConvention.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.ServiceLocation.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\WebGrease.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\CommonServiceLocator.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\EntityFramework.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\EntityFramework.SqlServer.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.Helpers.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.Mvc.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.Optimization.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.Razor.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.WebPages.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.WebPages.Deployment.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\System.Web.WebPages.Razor.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Abstractions.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Configuration.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Container.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Interception.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.Interception.Configuration.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.RegistrationByConvention.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Unity.ServiceLocation.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Antlr3.Runtime.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Newtonsoft.Json.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.ApplicationInsights.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.DependencyCollector.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.WindowsServer.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\bin\Microsoft.AI.Web.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\obj\Debug\Ttcn_web.csprojResolveAssemblyReference.cache
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\obj\Debug\Ttcn_web.csproj.CoreCompileInputs.cache
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\obj\Debug\Ttcn_web.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\ProjectTTCN\Ttcn_web\obj\Debug\Ttcn_web.pdb

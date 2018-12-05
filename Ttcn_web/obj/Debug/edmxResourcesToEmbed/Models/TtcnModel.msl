@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TtcnWebModelStoreContainer" CdmEntityContainer="TtcnEntities">
+    <EntitySetMapping Name="ADUserGroups">
+      <EntityTypeMapping TypeName="TtcnWebModel.ADUserGroup">
+        <MappingFragment StoreEntitySet="ADUserGroups">
+          <ScalarProperty Name="ADUserGroupID" ColumnName="ADUserGroupID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="ADUserGroupName" ColumnName="ADUserGroupName" />
+          <ScalarProperty Name="ADUserGroupDesc" ColumnName="ADUserGroupDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADUsers">
+      <EntityTypeMapping TypeName="TtcnWebModel.ADUser">
+        <MappingFragment StoreEntitySet="ADUsers">
+          <ScalarProperty Name="ADUserID" ColumnName="ADUserID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="FK_ADUserGroupID" ColumnName="FK_ADUserGroupID" />
+          <ScalarProperty Name="ADUserName" ColumnName="ADUserName" />
+          <ScalarProperty Name="ADPassword" ColumnName="ADPassword" />
+          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
+          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
+          <ScalarProperty Name="ADUserResetToken" ColumnName="ADUserResetToken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APSuppliers">
+      <EntityTypeMapping TypeName="TtcnWebModel.APSupplier">
+        <MappingFragment StoreEntitySet="APSuppliers">
+          <ScalarProperty Name="APSupplierID" ColumnName="APSupplierID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
+          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
+          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
+          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
+          <ScalarProperty Name="FK_ADUserID" ColumnName="FK_ADUserID" />
+          <ScalarProperty Name="APSupplierNo" ColumnName="APSupplierNo" />
+          <ScalarProperty Name="APSupplierName" ColumnName="APSupplierName" />
+          <ScalarProperty Name="APSupplierAddress" ColumnName="APSupplierAddress" />
+          <ScalarProperty Name="APSupplierStockAddress" ColumnName="APSupplierStockAddress" />
+          <ScalarProperty Name="APSupplierContactEmail" ColumnName="APSupplierContactEmail" />
+          <ScalarProperty Name="APSupplierContactPhone" ColumnName="APSupplierContactPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARCustomerDeliveryAddressses">
+      <EntityTypeMapping TypeName="TtcnWebModel.ARCustomerDeliveryAddresss">
+        <MappingFragment StoreEntitySet="ARCustomerDeliveryAddresss">
+          <ScalarProperty Name="ARCustomerDeliveryAddressID" ColumnName="ARCustomerDeliveryAddressID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
+          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
+          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
+          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
+          <ScalarProperty Name="ARCustomerDeliveryAddressReceive" ColumnName="ARCustomerDeliveryAddressReceive" />
+          <ScalarProperty Name="ARCustomerDeliveryAddressContactPhone" ColumnName="ARCustomerDeliveryAddressContactPhone" />
+          <ScalarProperty Name="FK_ARCustomerID" ColumnName="FK_ARCustomerID" />
+          <ScalarProperty Name="FK_GEStateProvinceID" ColumnName="FK_GEStateProvinceID" />
+          <ScalarProperty Name="FK_GEDistrictID" ColumnName="FK_GEDistrictID" />
+          <ScalarProperty Name="FK_GEWardID" ColumnName="FK_GEWardID" />
+          <ScalarProperty Name="FK_GEStreetID" ColumnName="FK_GEStreetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARCustomers">
+      <EntityTypeMapping TypeName="TtcnWebModel.ARCustomer">
+        <MappingFragment StoreEntitySet="ARCustomers">
+          <ScalarProperty Name="ARCustomerID" ColumnName="ARCustomerID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
+          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
+          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
+          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
+          <ScalarProperty Name="FK_ADUserID" ColumnName="FK_ADUserID" />
+          <ScalarProperty Name="ARCustomerNo" ColumnName="ARCustomerNo" />
+          <ScalarProperty Name="ARCustomerName" ColumnName="ARCustomerName" />
+          <ScalarProperty Name="ARCustomerBirthDay" ColumnName="ARCustomerBirthDay" />
+          <ScalarProperty Name="ARCustomerSex" ColumnName="ARCustomerSex" />
+          <ScalarProperty Name="ARCustomerAddress" ColumnName="ARCustomerAddress" />
+          <ScalarProperty Name="ARCustomerContactEmail" ColumnName="ARCustomerContactEmail" />
+          <ScalarProperty Name="ARCustomerContactPhone" ColumnName="ARCustomerContactPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEDistricts">
+      <EntityTypeMapping TypeName="TtcnWebModel.GEDistrict">
+        <MappingFragment StoreEntitySet="GEDistricts">
+          <ScalarProperty Name="GEDistrictID" ColumnName="GEDistrictID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="FK_GEStateProvinceID" ColumnName="FK_GEStateProvinceID" />
+          <ScalarProperty Name="GEDistrictName" ColumnName="GEDistrictName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEStateProvinces">
+      <EntityTypeMapping TypeName="TtcnWebModel.GEStateProvince">
+        <MappingFragment StoreEntitySet="GEStateProvinces">
+          <ScalarProperty Name="GEStateProvinceID" ColumnName="GEStateProvinceID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="GEStateProvinceName" ColumnName="GEStateProvinceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEStreets">
+      <EntityTypeMapping TypeName="TtcnWebModel.GEStreet">
+        <MappingFragment StoreEntitySet="GEStreets">
+          <ScalarProperty Name="GEStreetID" ColumnName="GEStreetID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="FK_GEWardID" ColumnName="FK_GEWardID" />
+          <ScalarProperty Name="GEStreetName" ColumnName="GEStreetName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEWards">
+      <EntityTypeMapping TypeName="TtcnWebModel.GEWard">
+        <MappingFragment StoreEntitySet="GEWards">
+          <ScalarProperty Name="GEWardID" ColumnName="GEWardID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="FK_GEDistrictID" ColumnName="FK_GEDistrictID" />
+          <ScalarProperty Name="GEWardName" ColumnName="GEWardName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,43 @@
+﻿@model Ttcn_web.Models.ARFurnitureType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ARFurnitureType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARFurnitureTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARFurnitureTypeNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARFurnitureTypeDesc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ARFurnitureTypeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
