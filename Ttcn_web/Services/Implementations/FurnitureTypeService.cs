@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,7 +13,7 @@ namespace Ttcn_web.Services.Implementations
     {
         private TtcnWebEntities db = new TtcnWebEntities();
 
-        public ARFurnitureType Create(FormCollection formCollection)
+        public void Create(FormCollection formCollection)
         {
             var furnitureType = new ARFurnitureType();
             var lastFurnitureType = db.ARFurnitureTypes.ToList().LastOrDefault();
@@ -24,16 +25,22 @@ namespace Ttcn_web.Services.Implementations
             furnitureType.ARFurnitureTypeNo = formCollection["ARFurnitureTypeNo"];
             furnitureType.ARFurnitureTypeDesc = formCollection["ARFurnitureTypeDesc"];
 
-            return furnitureType;
+            if (furnitureType == null)
+            {
+                return;
+            }
+
+            db.ARFurnitureTypes.Add(furnitureType);
+            db.SaveChanges();
         }
 
-        public ARFurnitureType Edit(FormCollection formCollection, int furnitureTypeId)
+        public void Edit(FormCollection formCollection, int furnitureTypeId)
         {
-            ARFurnitureType furnitureType = db.ARFurnitureTypes.Find(furnitureTypeId);
+            var furnitureType = db.ARFurnitureTypes.Find(furnitureTypeId);
 
             if (furnitureType == null)
             {
-                return null;
+                return;
             }
 
             furnitureType.AAUpdatedDate = DateTime.Now;
@@ -41,7 +48,8 @@ namespace Ttcn_web.Services.Implementations
             furnitureType.ARFurnitureTypeNo = formCollection["ARFurnitureTypeNo"];
             furnitureType.ARFurnitureTypeDesc = formCollection["ARFurnitureTypeDesc"];
 
-            return furnitureType;
+            db.ARFurnitureTypes.AddOrUpdate();
+            db.SaveChanges();
         }
 
         public IEnumerable<ARFurnitureType> GetAll()
@@ -50,6 +58,30 @@ namespace Ttcn_web.Services.Implementations
 
             return a;
         }
-        
+
+        public ARFurnitureType Get(int furnitureTypeId)
+        {
+            return db.ARFurnitureTypes.Find(furnitureTypeId);
+        }
+
+        public void Delete(int furnitureTypeId)
+        {
+            var furnitureType = db.ARFurnitureTypes.Find(furnitureTypeId);
+
+            if (furnitureType == null)
+            {
+                return;
+            }
+
+            furnitureType.AAStatus = "Delete";
+
+            db.ARFurnitureTypes.AddOrUpdate();
+            db.SaveChanges();
+        }
+
+        public IEnumerable<ARFurnitureType> Filter(int furnitureTypeGroupId)
+        {
+            return db.ARFurnitureTypes.Where(x => x.FK_ARFurnitureTypeGroupID == furnitureTypeGroupId && x.AAStatus == "Alive").ToList();
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace Ttcn_web
 
             container.RegisterType<IFurnitureTypeService, FurnitureTypeService>();
             container.RegisterType<ILoginService, LoginService>();
+            container.RegisterType<IFurnitureTypeGroupService, FurnitureTypeGroupService>();
+            container.RegisterType<IProductService, ProductService>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

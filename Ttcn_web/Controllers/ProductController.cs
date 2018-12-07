@@ -4,27 +4,25 @@ using Ttcn_web.Services.Abtractions;
 
 namespace Ttcn_web.Controllers
 {
-    public class FurnitureTypeController : Controller
+    public class ProductController : Controller
     {
-        private readonly IFurnitureTypeService _furnitureTypeService;
 
-        private readonly IProductService _productService;
+        private IProductService _productService;
 
-        public FurnitureTypeController(IFurnitureTypeService furnitureTypeService, IProductService productService)
+        public ProductController(IProductService productService)
         {
-            _furnitureTypeService = furnitureTypeService;
             _productService = productService;
         }
 
-        // GET: FurnitureType
+        // GET: Product
         public ActionResult Index()
         {
-            var result = _furnitureTypeService.GetAll();
+            var result = _productService.GetAll();
 
             return View(result);
         }
 
-        // GET: FurnitureType/Details/5
+        // GET: Product/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -32,45 +30,26 @@ namespace Ttcn_web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var furnitureType = _furnitureTypeService.Get(id.GetValueOrDefault());
+            var product = _productService.Get(id.GetValueOrDefault());
 
-            if (furnitureType == null)
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(furnitureType);
+            return View(product);
         }
 
-        /// <summary>
-        /// get all product of type id
-        /// </summary>
-        public ActionResult Filter(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            var products = _productService.Filter(id.GetValueOrDefault());
-
-            if (products == null)
-            {
-                return HttpNotFound();
-            }
-            return View(products);
-        }
-
-        // GET: FurnitureType/Create
+        // GET: Product/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: FurnitureType/Create
+        // POST: Product/Create
         [HttpPost]
         public ActionResult Create(FormCollection formCollection)
         {
-            _furnitureTypeService.Create(formCollection);
+            _productService.Create(formCollection);
 
             if (ModelState.IsValid)
             {
@@ -80,7 +59,7 @@ namespace Ttcn_web.Controllers
             return View();
         }
 
-        // GET: FurnitureType/Edit/5
+        // GET: Product/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,25 +67,25 @@ namespace Ttcn_web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var furnitureType = _furnitureTypeService.Get(id.GetValueOrDefault());
+            var product = _productService.Get(id.GetValueOrDefault());
 
-            if (furnitureType == null)
+            if (product == null)
             {
                 return HttpNotFound();
             }
 
-            return View(furnitureType);
+            return View(product);
         }
 
-        // POST: FurnitureType/Edit/5
+        // POST: Product/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(FormCollection formCollection, int id)
         {
-            _furnitureTypeService.Edit(formCollection, id);
-            
+            _productService.Edit(formCollection, id);
+
             if (ModelState.IsValid)
             {
                 return RedirectToAction("Index");
@@ -114,7 +93,7 @@ namespace Ttcn_web.Controllers
             return View();
         }
 
-        // GET: FurnitureType/Delete/5
+        // GET: Product/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -122,22 +101,22 @@ namespace Ttcn_web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var furnitureType = _furnitureTypeService.Get(id.GetValueOrDefault());
+            var product = _productService.Get(id.GetValueOrDefault());
 
-            if (furnitureType == null)
+            if (product == null)
             {
                 return HttpNotFound();
             }
 
-            return View(furnitureType);
+            return View(product);
         }
 
-        // POST: FurnitureType/Delete/5
+        // POST: Product/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            _furnitureTypeService.Delete(id);
+            _productService.Delete(id);
 
             return RedirectToAction("Index");
         }

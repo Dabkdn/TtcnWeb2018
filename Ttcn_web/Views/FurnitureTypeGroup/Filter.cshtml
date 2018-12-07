@@ -1,0 +1,57 @@
+﻿@using System.Activities.Expressions
+@model IEnumerable<Ttcn_web.Models.ARFurnitureType>
+
+@{
+    ViewBag.Title = "Filter";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeDesc)
+        </th>
+        <th></th>
+    </tr>
+    @{
+        int count = 0;
+
+        foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>
+                    @count
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeDesc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "FurnitureType", new { id = item.ARFurnitureTypeID }, new { }) |
+                    @Html.ActionLink("Details", "Details", "FurnitureType", new { id = item.ARFurnitureTypeID }, new { }) |
+                    @Html.ActionLink("Delete", "Delete", "FurnitureType", new { id = item.ARFurnitureTypeID }, new { }) |
+                    @Html.ActionLink("danh sach san pham", "Filter", "FurnitureType", new { id = item.ARFurnitureTypeID }, new {});
+                </td>
+            </tr>
+        }
+    }
+
+</table>

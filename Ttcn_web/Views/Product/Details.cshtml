@@ -1,0 +1,45 @@
+﻿@model Ttcn_web.Models.ICProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ICProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.ICProductNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICProductNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ICProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ICProductDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ICProductDesc)
+        </dd>
+
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ICProductID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

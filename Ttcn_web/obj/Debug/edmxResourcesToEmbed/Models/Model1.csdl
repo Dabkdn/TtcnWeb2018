@@ -104,6 +104,8 @@
     <Property Name="ARFurnitureTypeNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="ARFurnitureTypeDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ICProducts" Relationship="Self.FK_ICProducts_ARFurnitureTypes" FromRole="ARFurnitureTypes" ToRole="ICProducts" />
+    <Property Name="FK_ARFurnitureTypeGroupID" Type="Int32" />
+    <NavigationProperty Name="ARFurnitureTypeGroup" Relationship="TTCNWEBModel.FK_ARFurnitureTypes_ARFurnitureTypeGroups" FromRole="ARFurnitureType" ToRole="ARFurnitureTypeGroup" />
   </EntityType>
   <EntityType Name="GEDistrict">
     <Key>
@@ -399,5 +401,37 @@
       <End Role="GEWards" EntitySet="GEWards" />
       <End Role="GEStreets" EntitySet="GEStreets" />
     </AssociationSet>
+    <EntitySet Name="ARFurnitureTypeGroups" EntityType="TTCNWEBModel.ARFurnitureTypeGroup" />
+    <AssociationSet Name="FK_ARFurnitureTypes_ARFurnitureTypeGroups" Association="TTCNWEBModel.FK_ARFurnitureTypes_ARFurnitureTypeGroups">
+      <End Role="ARFurnitureTypeGroup" EntitySet="ARFurnitureTypeGroups" />
+      <End Role="ARFurnitureType" EntitySet="ARFurnitureTypes" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="ARFurnitureTypeGroup">
+    <Key>
+      <PropertyRef Name="ARFurnitureTypeGroupID" />
+    </Key>
+    <Property Name="ARFurnitureTypeGroupID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ARFurnitureTypeGroupName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ARFurnitureTypeGroupNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ARFurnitureTypeGroupDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ARFurnitureTypes" Relationship="TTCNWEBModel.FK_ARFurnitureTypes_ARFurnitureTypeGroups" FromRole="ARFurnitureTypeGroup" ToRole="ARFurnitureType" />
+  </EntityType>
+  <Association Name="FK_ARFurnitureTypes_ARFurnitureTypeGroups">
+    <End Type="TTCNWEBModel.ARFurnitureTypeGroup" Role="ARFurnitureTypeGroup" Multiplicity="0..1" />
+    <End Type="TTCNWEBModel.ARFurnitureType" Role="ARFurnitureType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARFurnitureTypeGroup">
+        <PropertyRef Name="ARFurnitureTypeGroupID" />
+      </Principal>
+      <Dependent Role="ARFurnitureType">
+        <PropertyRef Name="FK_ARFurnitureTypeGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

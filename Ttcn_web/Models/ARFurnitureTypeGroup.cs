@@ -12,27 +12,25 @@ namespace Ttcn_web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ARFurnitureType
+    public partial class ARFurnitureTypeGroup
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ARFurnitureType()
+        public ARFurnitureTypeGroup()
         {
-            this.ICProducts = new HashSet<ICProduct>();
+            this.ARFurnitureTypes = new HashSet<ARFurnitureType>();
         }
     
-        public int ARFurnitureTypeID { get; set; }
+        public int ARFurnitureTypeGroupID { get; set; }
         public string AAStatus { get; set; }
         public string AACreatedUser { get; set; }
         public string AAUpdatedUser { get; set; }
         public Nullable<System.DateTime> AACreatedDate { get; set; }
         public Nullable<System.DateTime> AAUpdatedDate { get; set; }
-        public string ARFurnitureTypeName { get; set; }
-        public string ARFurnitureTypeNo { get; set; }
-        public string ARFurnitureTypeDesc { get; set; }
-        public Nullable<int> FK_ARFurnitureTypeGroupID { get; set; }
+        public string ARFurnitureTypeGroupName { get; set; }
+        public string ARFurnitureTypeGroupNo { get; set; }
+        public string ARFurnitureTypeGroupDesc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ICProduct> ICProducts { get; set; }
-        public virtual ARFurnitureTypeGroup ARFurnitureTypeGroup { get; set; }
+        public virtual ICollection<ARFurnitureType> ARFurnitureTypes { get; set; }
     }
 }

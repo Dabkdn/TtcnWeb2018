@@ -77,6 +77,20 @@
     <Property Name="ARCustomerContactEmail" Type="nvarchar" MaxLength="100" />
     <Property Name="ARCustomerContactPhone" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="ARFurnitureTypeGroups">
+    <Key>
+      <PropertyRef Name="ARFurnitureTypeGroupID" />
+    </Key>
+    <Property Name="ARFurnitureTypeGroupID" Type="int" Nullable="false" />
+    <Property Name="AAStatus" Type="varchar" MaxLength="10" />
+    <Property Name="AACreatedUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="AAUpdatedUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="AACreatedDate" Type="datetime" />
+    <Property Name="AAUpdatedDate" Type="datetime" />
+    <Property Name="ARFurnitureTypeGroupName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ARFurnitureTypeGroupNo" Type="varchar" MaxLength="20" />
+    <Property Name="ARFurnitureTypeGroupDesc" Type="nvarchar" MaxLength="500" />
+  </EntityType>
   <EntityType Name="ARFurnitureTypes">
     <Key>
       <PropertyRef Name="ARFurnitureTypeID" />
@@ -90,6 +104,7 @@
     <Property Name="ARFurnitureTypeName" Type="nvarchar" MaxLength="200" />
     <Property Name="ARFurnitureTypeNo" Type="varchar" MaxLength="20" />
     <Property Name="ARFurnitureTypeDesc" Type="nvarchar" MaxLength="500" />
+    <Property Name="FK_ARFurnitureTypeGroupID" Type="int" />
   </EntityType>
   <EntityType Name="GEDistricts">
     <Key>
@@ -249,6 +264,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ARFurnitureTypes_ARFurnitureTypeGroups">
+    <End Role="ARFurnitureTypeGroups" Type="Self.ARFurnitureTypeGroups" Multiplicity="0..1" />
+    <End Role="ARFurnitureTypes" Type="Self.ARFurnitureTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARFurnitureTypeGroups">
+        <PropertyRef Name="ARFurnitureTypeGroupID" />
+      </Principal>
+      <Dependent Role="ARFurnitureTypes">
+        <PropertyRef Name="FK_ARFurnitureTypeGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_GEDistricts_GEStateProvinces">
     <End Role="GEStateProvinces" Type="Self.GEStateProvinces" Multiplicity="0..1" />
     <End Role="GEDistricts" Type="Self.GEDistricts" Multiplicity="*" />
@@ -315,6 +342,7 @@
     <EntitySet Name="APSuppliers" EntityType="Self.APSuppliers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARCustomerDeliveryAddresss" EntityType="Self.ARCustomerDeliveryAddresss" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARCustomers" EntityType="Self.ARCustomers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARFurnitureTypeGroups" EntityType="Self.ARFurnitureTypeGroups" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARFurnitureTypes" EntityType="Self.ARFurnitureTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GEDistricts" EntityType="Self.GEDistricts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GEStateProvinces" EntityType="Self.GEStateProvinces" Schema="dbo" store:Type="Tables" />
@@ -352,6 +380,10 @@
     <AssociationSet Name="FK_ARCustomers_ADUsers" Association="Self.FK_ARCustomers_ADUsers">
       <End Role="ADUsers" EntitySet="ADUsers" />
       <End Role="ARCustomers" EntitySet="ARCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARFurnitureTypes_ARFurnitureTypeGroups" Association="Self.FK_ARFurnitureTypes_ARFurnitureTypeGroups">
+      <End Role="ARFurnitureTypeGroups" EntitySet="ARFurnitureTypeGroups" />
+      <End Role="ARFurnitureTypes" EntitySet="ARFurnitureTypes" />
     </AssociationSet>
     <AssociationSet Name="FK_GEDistricts_GEStateProvinces" Association="Self.FK_GEDistricts_GEStateProvinces">
       <End Role="GEStateProvinces" EntitySet="GEStateProvinces" />

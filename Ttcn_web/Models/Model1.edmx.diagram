@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c9bef581abf74b88b74220dd1d04dd28" Name="Diagram1">
+      <Diagram DiagramId="c9bef581abf74b88b74220dd1d04dd28" Name="Diagram1" ZoomLevel="95">
         <EntityTypeShape EntityType="TTCNWEBModel.ADUserGroup" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TTCNWEBModel.ADUser" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="TTCNWEBModel.APSupplier" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
@@ -29,6 +29,8 @@
         <AssociationConnector Association="TTCNWEBModel.FK_GEDistricts_GEStateProvinces" ManuallyRouted="false" />
         <AssociationConnector Association="TTCNWEBModel.FK_GEWards_GEDistricts" ManuallyRouted="false" />
         <AssociationConnector Association="TTCNWEBModel.FK_GEStreets_GEWards" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TTCNWEBModel.ARFurnitureTypeGroup" Width="2" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ARFurnitureTypes_ARFurnitureTypeGroups" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -49,7 +49,8 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.ARFurnitureTypeID }) |
             @Html.ActionLink("Details", "Details", new { id = item.ARFurnitureTypeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ARFurnitureTypeID })
+            @Html.ActionLink("Delete", "Delete", new { id = item.ARFurnitureTypeID }) |
+            @Html.ActionLink("danh sach san pham", "Filter", "FurnitureType", new { id = item.ARFurnitureTypeID }, new { });
         </td>
     </tr>
     }

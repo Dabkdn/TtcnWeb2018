@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
 using Ttcn_web.Models;
@@ -13,8 +9,14 @@ namespace Ttcn_web.Services.Abtractions
     {
         IEnumerable<ARFurnitureType> GetAll();
 
-        ARFurnitureType Create(FormCollection formCollection);
+        ARFurnitureType Get(int furnitureTypeId);
 
-        ARFurnitureType Edit(FormCollection formCollection, int furnitureTypeId);
+        void Create(FormCollection formCollection);
+
+        void Edit(FormCollection formCollection, int furnitureTypeId);
+
+        void Delete(int furnitureTypeId);
+
+        IEnumerable<ARFurnitureType> Filter(int furnitureTypeGroupId);
     }
 }
