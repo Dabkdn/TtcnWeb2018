@@ -12,13 +12,12 @@
             <div class="rounded">
                 <div class="" style="display: inline-block">
                     <a title="@Html.DisplayFor(modelItem => item.ICProductName)" href="@Url.Action("Details","Product", new { id = item.ICProductID})" class="">
-                        <!--chèn link danh sách sản phẩm, filter ra sofa-->
+                        <!--chèn link chi tiết sản phẩm-->
                         <img src="https://cdn.shopify.com/s/files/1/2148/5399/products/norman-b-6552-p.png?v=1526050043" alt="Phối cảnh" style="width:250px;height:250px;" class="rounded">
                     </a>
                 </div>
                 <h5 style=" display: inline-block; margin-top: 10px">
-                    <a href="">
-                        <!--chèn link danh sách sản phẩm, filter ra sofa-->
+                    <a href="@Url.Action("Details","Product", new { id = item.ICProductID})">
                         @Html.DisplayFor(modelItem => item.ICProductName)
                     </a>
                 </h5>
