@@ -34,6 +34,12 @@
                 </ul>
             </div>
         </div>
+        <div>
+            <a class="text-uppercase text-expanded" href="@Url.Action("Login","Login")">ĐN</a>
+        </div>
+        <div>
+            <a class="text-uppercase text-expanded" href="@Url.Action("SignUp","SignUp")">ĐK</a>
+        </div>
     </nav>
 
     @*---------------------------------------------------------------------------------------------------*@
@@ -52,25 +58,28 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Index","Home")">Phòng ăn</a>
+                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 1})">Phòng khách</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Index","Home")">Phòng ngủ</a>
+                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 2})">Phòng ăn</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Index","Home")">Phòng làm việc</a>
+                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 3})">Phòng ngủ</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Index","Home")">Tủ bếp</a>
+                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 4})">Phòng làm việc</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Index","Home")">Hàng trang trí</a>
+                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 5})">Tủ bếp</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Index","Home")">Ngoại thất </a>
+                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 6})">Hàng trang trí</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Index","Home")">Thiết kế nội thất</a>
+                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 7})">Ngoại thất </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-expanded" href="@Url.Action("ThietKeNoiThat","Common")">Thiết kế nội thất</a>
                     </li>
                 </ul>
             </div>
