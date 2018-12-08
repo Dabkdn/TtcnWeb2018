@@ -5,53 +5,30 @@
     ViewBag.Title = "Filter";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.furnitureTypeGroupName</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            STT
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.ARFurnitureTypeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ARFurnitureTypeNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ARFurnitureTypeDesc)
-        </th>
-        <th></th>
-    </tr>
-    @{
-        int count = 0;
-
-        foreach (var item in Model)
-        {
-            count++;
-            <tr>
-                <td>
-                    @count
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeNo)
-                </td>
-                <td>
+@{
+    foreach (var item in Model)
+    {
+        <div class="rounded" style="border-radius: 15px 50px 30px 5px; border: 5px solid #73AD21; background: azure;">
+            <div class="rounded">
+                <div class="" style="display: inline-block">
+                    <a title="@Html.DisplayFor(modelItem => item.ARFurnitureTypeName)" href="@Url.Action("Filter","FurnitureType", new { id = item.ARFurnitureTypeID})" class="">
+                        <!--chèn link danh sách sản phẩm, filter ra sofa-->
+                        <img src="https://cdn.shopify.com/s/files/1/2148/5399/products/norman-b-6552-p.png?v=1526050043" alt="Phối cảnh" style="width:250px;height:250px;" class="rounded">
+                    </a>
+                </div>
+                <h5 style=" display: inline-block; margin-top: 10px">
+                    <a href="">
+                        <!--chèn link danh sách sản phẩm, filter ra sofa-->
+                        @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
+                    </a>
+                </h5>
+                <p style="display: inline-block">
                     @Html.DisplayFor(modelItem => item.ARFurnitureTypeDesc)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", "FurnitureType", new { id = item.ARFurnitureTypeID }, new { }) |
-                    @Html.ActionLink("Details", "Details", "FurnitureType", new { id = item.ARFurnitureTypeID }, new { }) |
-                    @Html.ActionLink("Delete", "Delete", "FurnitureType", new { id = item.ARFurnitureTypeID }, new { }) |
-                    @Html.ActionLink("danh sach san pham", "Filter", "FurnitureType", new { id = item.ARFurnitureTypeID }, new {});
-                </td>
-            </tr>
-        }
+                </p>
+            </div>
+        </div>
+        <br/>
     }
-
-</table>
+}

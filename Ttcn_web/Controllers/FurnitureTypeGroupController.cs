@@ -59,6 +59,8 @@ namespace Ttcn_web.Controllers
                 return HttpNotFound();
             }
 
+            ViewBag.furnitureTypeGroupName = id;
+
             return View(furnitureTypes);
         }
 
