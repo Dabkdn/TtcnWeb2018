@@ -159,7 +159,6 @@
           <ScalarProperty Name="ICProductWeight" ColumnName="ICProductWeight" />
           <ScalarProperty Name="ICProductPicture" ColumnName="ICProductPicture" />
           <ScalarProperty Name="ICProductPrice" ColumnName="ICProductPrice" />
-          <ScalarProperty Name="ICProductType" ColumnName="ICProductType" />
           <ScalarProperty Name="ICProductComment" ColumnName="ICProductComment" />
           <ScalarProperty Name="ICProductMaterial" ColumnName="ICProductMaterial" />
           <ScalarProperty Name="ICProductColor" ColumnName="ICProductColor" />

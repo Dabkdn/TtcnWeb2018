@@ -24,8 +24,6 @@ namespace Ttcn_web.Services.Implementations
             product.ICProductNo = formCollection["ICProductNo"];
             product.ICProductDesc = formCollection["ICProductDesc"];
             product.ICProductActiveCheck = true;
-            product.ICProductType = "hỏi thằng Bình vì sao có field này";
-
             if (product == null)
             {
                 return;

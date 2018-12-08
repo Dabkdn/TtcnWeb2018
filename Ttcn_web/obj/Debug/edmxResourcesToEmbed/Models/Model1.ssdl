@@ -153,17 +153,16 @@
     <Property Name="AAStatus" Type="varchar" MaxLength="10" />
     <Property Name="FK_ARFurnitureTypeID" Type="int" />
     <Property Name="FK_APSupplierID" Type="int" />
-    <Property Name="ICProductNo" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="ICProductName" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="ICProductDesc" Type="nvarchar" MaxLength="512" Nullable="false" />
-    <Property Name="ICProductActiveCheck" Type="bit" Nullable="false" />
+    <Property Name="ICProductNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ICProductName" Type="nvarchar" MaxLength="256" />
+    <Property Name="ICProductDesc" Type="nvarchar" MaxLength="512" />
+    <Property Name="ICProductActiveCheck" Type="bit" />
     <Property Name="ICProductLength" Type="decimal" Precision="18" Scale="5" />
     <Property Name="ICProductHeight" Type="decimal" Precision="18" Scale="5" />
     <Property Name="ICProductWidth" Type="decimal" Precision="18" Scale="5" />
     <Property Name="ICProductWeight" Type="decimal" Precision="18" Scale="5" />
     <Property Name="ICProductPicture" Type="varbinary(max)" />
     <Property Name="ICProductPrice" Type="decimal" Precision="18" Scale="5" />
-    <Property Name="ICProductType" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="ICProductComment" Type="nvarchar" MaxLength="512" />
     <Property Name="ICProductMaterial" Type="nvarchar" MaxLength="256" />
     <Property Name="ICProductColor" Type="nvarchar" MaxLength="256" />
@@ -324,18 +323,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ICProducts_ARFurnitureTypes">
-    <End Role="ARFurnitureTypes" Type="Self.ARFurnitureTypes" Multiplicity="0..1" />
-    <End Role="ICProducts" Type="Self.ICProducts" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ARFurnitureTypes">
-        <PropertyRef Name="ARFurnitureTypeID" />
-      </Principal>
-      <Dependent Role="ICProducts">
-        <PropertyRef Name="FK_ARFurnitureTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="TTCNWEBModelStoreContainer">
     <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroups" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADUsers" EntityType="Self.ADUsers" Schema="dbo" store:Type="Tables" />
@@ -399,10 +386,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_ICProducts_APSuppliers" Association="Self.FK_ICProducts_APSuppliers">
       <End Role="APSuppliers" EntitySet="APSuppliers" />
-      <End Role="ICProducts" EntitySet="ICProducts" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ICProducts_ARFurnitureTypes" Association="Self.FK_ICProducts_ARFurnitureTypes">
-      <End Role="ARFurnitureTypes" EntitySet="ARFurnitureTypes" />
       <End Role="ICProducts" EntitySet="ICProducts" />
     </AssociationSet>
   </EntityContainer>

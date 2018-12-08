@@ -25,14 +25,13 @@ namespace Ttcn_web.Models
         public string ICProductNo { get; set; }
         public string ICProductName { get; set; }
         public string ICProductDesc { get; set; }
-        public bool ICProductActiveCheck { get; set; }
+        public Nullable<bool> ICProductActiveCheck { get; set; }
         public Nullable<decimal> ICProductLength { get; set; }
         public Nullable<decimal> ICProductHeight { get; set; }
         public Nullable<decimal> ICProductWidth { get; set; }
         public Nullable<decimal> ICProductWeight { get; set; }
         public byte[] ICProductPicture { get; set; }
         public Nullable<decimal> ICProductPrice { get; set; }
-        public string ICProductType { get; set; }
         public string ICProductComment { get; set; }
         public string ICProductMaterial { get; set; }
         public string ICProductColor { get; set; }

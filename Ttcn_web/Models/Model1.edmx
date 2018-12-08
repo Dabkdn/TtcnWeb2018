@@ -158,17 +158,16 @@
           <Property Name="AAStatus" Type="varchar" MaxLength="10" />
           <Property Name="FK_ARFurnitureTypeID" Type="int" />
           <Property Name="FK_APSupplierID" Type="int" />
-          <Property Name="ICProductNo" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ICProductName" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="ICProductDesc" Type="nvarchar" MaxLength="512" Nullable="false" />
-          <Property Name="ICProductActiveCheck" Type="bit" Nullable="false" />
+          <Property Name="ICProductNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ICProductName" Type="nvarchar" MaxLength="256" />
+          <Property Name="ICProductDesc" Type="nvarchar" MaxLength="512" />
+          <Property Name="ICProductActiveCheck" Type="bit" />
           <Property Name="ICProductLength" Type="decimal" Precision="18" Scale="5" />
           <Property Name="ICProductHeight" Type="decimal" Precision="18" Scale="5" />
           <Property Name="ICProductWidth" Type="decimal" Precision="18" Scale="5" />
           <Property Name="ICProductWeight" Type="decimal" Precision="18" Scale="5" />
           <Property Name="ICProductPicture" Type="varbinary(max)" />
           <Property Name="ICProductPrice" Type="decimal" Precision="18" Scale="5" />
-          <Property Name="ICProductType" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ICProductComment" Type="nvarchar" MaxLength="512" />
           <Property Name="ICProductMaterial" Type="nvarchar" MaxLength="256" />
           <Property Name="ICProductColor" Type="nvarchar" MaxLength="256" />
@@ -329,18 +328,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ICProducts_ARFurnitureTypes">
-          <End Role="ARFurnitureTypes" Type="Self.ARFurnitureTypes" Multiplicity="0..1" />
-          <End Role="ICProducts" Type="Self.ICProducts" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ARFurnitureTypes">
-              <PropertyRef Name="ARFurnitureTypeID" />
-            </Principal>
-            <Dependent Role="ICProducts">
-              <PropertyRef Name="FK_ARFurnitureTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="TTCNWEBModelStoreContainer">
           <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADUsers" EntityType="Self.ADUsers" Schema="dbo" store:Type="Tables" />
@@ -404,10 +391,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_ICProducts_APSuppliers" Association="Self.FK_ICProducts_APSuppliers">
             <End Role="APSuppliers" EntitySet="APSuppliers" />
-            <End Role="ICProducts" EntitySet="ICProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ICProducts_ARFurnitureTypes" Association="Self.FK_ICProducts_ARFurnitureTypes">
-            <End Role="ARFurnitureTypes" EntitySet="ARFurnitureTypes" />
             <End Role="ICProducts" EntitySet="ICProducts" />
           </AssociationSet>
         </EntityContainer>
@@ -579,17 +562,16 @@
           <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="FK_ARFurnitureTypeID" Type="Int32" />
           <Property Name="FK_APSupplierID" Type="Int32" />
-          <Property Name="ICProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ICProductName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ICProductDesc" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ICProductActiveCheck" Type="Boolean" Nullable="false" />
+          <Property Name="ICProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ICProductName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ICProductDesc" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ICProductActiveCheck" Type="Boolean" />
           <Property Name="ICProductLength" Type="Decimal" Precision="18" Scale="5" />
           <Property Name="ICProductHeight" Type="Decimal" Precision="18" Scale="5" />
           <Property Name="ICProductWidth" Type="Decimal" Precision="18" Scale="5" />
           <Property Name="ICProductWeight" Type="Decimal" Precision="18" Scale="5" />
           <Property Name="ICProductPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="ICProductPrice" Type="Decimal" Precision="18" Scale="5" />
-          <Property Name="ICProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ICProductComment" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
           <Property Name="ICProductMaterial" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="ICProductColor" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
@@ -1013,7 +995,6 @@
                 <ScalarProperty Name="ICProductWeight" ColumnName="ICProductWeight" />
                 <ScalarProperty Name="ICProductPicture" ColumnName="ICProductPicture" />
                 <ScalarProperty Name="ICProductPrice" ColumnName="ICProductPrice" />
-                <ScalarProperty Name="ICProductType" ColumnName="ICProductType" />
                 <ScalarProperty Name="ICProductComment" ColumnName="ICProductComment" />
                 <ScalarProperty Name="ICProductMaterial" ColumnName="ICProductMaterial" />
                 <ScalarProperty Name="ICProductColor" ColumnName="ICProductColor" />

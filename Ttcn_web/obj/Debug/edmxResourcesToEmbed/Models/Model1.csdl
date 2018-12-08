@@ -164,17 +164,16 @@
     <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="FK_ARFurnitureTypeID" Type="Int32" />
     <Property Name="FK_APSupplierID" Type="Int32" />
-    <Property Name="ICProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ICProductName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ICProductDesc" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ICProductActiveCheck" Type="Boolean" Nullable="false" />
+    <Property Name="ICProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductDesc" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductActiveCheck" Type="Boolean" />
     <Property Name="ICProductLength" Type="Decimal" Precision="18" Scale="5" />
     <Property Name="ICProductHeight" Type="Decimal" Precision="18" Scale="5" />
     <Property Name="ICProductWidth" Type="Decimal" Precision="18" Scale="5" />
     <Property Name="ICProductWeight" Type="Decimal" Precision="18" Scale="5" />
     <Property Name="ICProductPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="ICProductPrice" Type="Decimal" Precision="18" Scale="5" />
-    <Property Name="ICProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ICProductComment" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
     <Property Name="ICProductMaterial" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
     <Property Name="ICProductColor" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
