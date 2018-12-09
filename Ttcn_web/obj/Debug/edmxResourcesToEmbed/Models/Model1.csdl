@@ -106,6 +106,7 @@
     <NavigationProperty Name="ICProducts" Relationship="Self.FK_ICProducts_ARFurnitureTypes" FromRole="ARFurnitureTypes" ToRole="ICProducts" />
     <Property Name="FK_ARFurnitureTypeGroupID" Type="Int32" />
     <NavigationProperty Name="ARFurnitureTypeGroup" Relationship="TTCNWEBModel.FK_ARFurnitureTypes_ARFurnitureTypeGroups" FromRole="ARFurnitureType" ToRole="ARFurnitureTypeGroup" />
+    <Property Name="ARFurnitureTypeImageUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="GEDistrict">
     <Key>

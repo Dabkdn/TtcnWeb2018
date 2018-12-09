@@ -105,6 +105,7 @@
     <Property Name="ARFurnitureTypeNo" Type="varchar" MaxLength="20" />
     <Property Name="ARFurnitureTypeDesc" Type="nvarchar" MaxLength="500" />
     <Property Name="FK_ARFurnitureTypeGroupID" Type="int" />
+    <Property Name="ARFurnitureTypeImageUrl" Type="varchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="GEDistricts">
     <Key>

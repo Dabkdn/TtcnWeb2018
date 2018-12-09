@@ -7,108 +7,76 @@
     @Styles.Render("~/vendor/bootstrap/css/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS
     <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="~/css/business-casual.min.css" rel="stylesheet">
+    <!-- Custom styles for this template
+    <link href="~/css/business-casual.min.css" rel="stylesheet"> -->
+    <!-- Custom styles from W3 school-->
+    <link href="~/Content/w3school.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive" style="float: left">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Home")">TRANG CHỦ</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("About","Home")">GIỚI THIỆU</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Contact","Home")">Liên hệ</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            <a class="text-uppercase text-expanded" href="@Url.Action("Login","Login")">ĐN</a>
-        </div>
-        <div>
-            <a class="text-uppercase text-expanded" href="@Url.Action("SignUp","SignUp")">ĐK</a>
-        </div>
-    </nav>
 
+    <div class="">
+        <div class="w3-center w3-light-green">
+            <h1 class="w3-lobster w3-animate-fading w3-light-green">Noithatviet.com</h1>
+        </div>
+        <div class="w3-bar w3-black">
+            <a href="@Url.Action("Index", "Home")" class="w3-bar-item w3-hover-green w3-btn w3-gray">TRANG CHỦ</a>
+            <a href="@Url.Action("About", "Home")" class="w3-bar-item w3-hover-green w3-btn">Giới thiệu</a>
+            <a href="@Url.Action("Contact", "Home")" class="w3-bar-item w3-hover-green w3-btn">Liên hệ</a>
+            <div class="w3-dropdown-hover">
+                <a class="w3-button w3-hover-green">Sản phẩm</a>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
+                             {
+                                 id = 1
+                             })" class="w3-bar-item w3-button w3-hover-green">Phòng khách</a>
+                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
+                             {
+                                 id = 2
+                             })" class="w3-bar-item w3-button w3-hover-green">Phòng ăn</a>
+                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
+                             {
+                                 id = 3
+                             })" class="w3-bar-item w3-button w3-hover-green">Phòng ngủ</a>
+                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
+                             {
+                                 id = 4
+                             })" class="w3-bar-item w3-button w3-hover-green">Phòng làm việc</a>
+                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
+                             {
+                                 id = 5
+                             })" class="w3-bar-item w3-button w3-hover-green">Tủ bếp</a>
+                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
+                             {
+                                 id = 6
+                             })" class="w3-bar-item w3-button w3-hover-green">Hàng trang trí</a>
+                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
+                             {
+                                 id = 7
+                             })" class="w3-bar-item w3-button w3-hover-green">Ngoại thất</a>
+                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
+                             {
+                                 id = 8
+                             })" class="w3-bar-item w3-button w3-hover-green">Thiết kế nội thất</a>
+                </div>
+            </div>
+            <a href="@Url.Action("Login", "Login")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng nhập</a>
+            <a href="@Url.Action("SignUp", "SignUp")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng ký</a>
+        </div>
+    </div>
     @*---------------------------------------------------------------------------------------------------*@
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-        <span class="site-heading-upper text-primary">Hệ thống quản lí bán hàng</span>
-        <br />
-        <span class="site-heading-lower">Nội thất Việt</span>
-    </h1>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 myHeader " id="myNav"  style=" z-index: 1030 !important;">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 1})">Phòng khách</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 2})">Phòng ăn</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 3})">Phòng ngủ</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 4})">Phòng làm việc</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 5})">Tủ bếp</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 6})">Hàng trang trí</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("Filter","FurnitureTypeGroup", new {id = 7})">Ngoại thất </a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-expanded" href="@Url.Action("ThietKeNoiThat","Common")">Thiết kế nội thất</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <script>
-        window.onscroll = function () { myFunction() };
-
-        var header = document.getElementById("myNav");
-        var sticky = header.offsetTop;
-
-        function myFunction() {
-            if (window.pageYOffset > sticky) {
-                header.classList.add("mySticky");
-            } else {
-                header.classList.remove("mySticky");
-            }
-        }
-    </script>
+    
+    
+   
     @*---------------------------------------------------------------------------------------------------*@
 
     <div class="container body-content">
         @RenderBody()
-    </div>
-    <div>
-        <footer class="footer text-faded text-center py-5">
-            <p class="m-0 small">Copyright &copy; Website @DateTime.Now.Year</p>
-        </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

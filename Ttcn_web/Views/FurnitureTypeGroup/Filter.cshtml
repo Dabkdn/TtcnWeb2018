@@ -5,30 +5,31 @@
     ViewBag.Title = "Filter";
 }
 
-<h2>@ViewBag.furnitureTypeGroupName</h2>
+@*<h2>@ViewBag.furnitureTypeGroupName</h2>*@
 
-@{
-    foreach (var item in Model)
-    {
-        <div class="rounded" style="border-radius: 15px 50px 30px 5px; border: 5px solid #73AD21; background: azure;">
-            <div class="rounded">
-                <div class="" style="display: inline-block">
-                    <a title="@Html.DisplayFor(modelItem => item.ARFurnitureTypeName)" href="@Url.Action("Filter","FurnitureType", new { id = item.ARFurnitureTypeID})" class="">
-                        <!--chèn link danh sách sản phẩm, filter ra sofa-->
-                        <img src="https://cdn.shopify.com/s/files/1/2148/5399/products/norman-b-6552-p.png?v=1526050043" alt="Phối cảnh" style="width:250px;height:250px;" class="rounded">
-                    </a>
-                </div>
-                <h5 style=" display: inline-block; margin-top: 10px">
-                    <a href="@Url.Action("Filter","FurnitureType", new { id = item.ARFurnitureTypeID})">
-                        <!--chèn link danh sách sản phẩm, filter ra sofa-->
-                        @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
-                    </a>
-                </h5>
-                <p style="display: inline-block">
-                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeDesc)
-                </p>
-            </div>
+<div class="w3-light-green" style="width: 100%">
+    <div class="w3-content" style="max-width:80%">
+        <br />
+        <div class="w3-row-padding" style="margin:0 -16px">
+            @{
+            foreach (var item in Model)
+            {
+                <div class="w3-third w3-margin-bottom w3-center">
+                    <div class="w3-display-container w3-opacity-min w3-hover-opacity-off" style="transition:1s">
+                        <img class="w3-round" src="@item.ARFurnitureTypeImageUrl" alt="Pants" style="width:100%">
+
+                        <div class="w3-display-middle w3-display-hover w3-large">
+                            <a href="@Url.Action("Filter", "FurnitureType", new
+                                         {
+                                             id = item.ARFurnitureTypeID
+                                         })" class="w3-green w3-animate-opacity w3-btn w3-round">@item.ARFurnitureTypeName</a>
+                                    </div>
+                                </div>
+                            </div>
+                    }
+            }
+
         </div>
-        <br/>
-    }
-}
+    </div>
+</div>
+

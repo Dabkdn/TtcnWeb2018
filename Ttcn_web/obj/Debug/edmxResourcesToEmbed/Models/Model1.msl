@@ -86,6 +86,7 @@
     <EntitySetMapping Name="ARFurnitureTypes">
       <EntityTypeMapping TypeName="TTCNWEBModel.ARFurnitureType">
         <MappingFragment StoreEntitySet="ARFurnitureTypes">
+          <ScalarProperty Name="ARFurnitureTypeImageUrl" ColumnName="ARFurnitureTypeImageUrl" />
           <ScalarProperty Name="FK_ARFurnitureTypeGroupID" ColumnName="FK_ARFurnitureTypeGroupID" />
           <ScalarProperty Name="ARFurnitureTypeID" ColumnName="ARFurnitureTypeID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
