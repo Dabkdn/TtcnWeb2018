@@ -4,42 +4,54 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>ICProduct</h4>
-    <hr />
-    <dl class="dl-horizontal">
+<div class="w3-light-green" style="width: 100%; padding-top: 0px">
+    <div class="w3-content" , style="max-width: 80%">
+        <br />
+        <div class="w3-row-padding" style="margin:0 0">
+            <div class="w3-half w3-margin-bottom w3-center">
+                <img class="w3-round" src="https://lh3.google.com/u/0/d/1rLcF-fJwFUs9oxeLdMNpMAARRUVazcd6=w1304-h648-iv1" alt="Pants" style="width:90%">
+            </div>
+            <div class="w3-half w3-display-container" style="height: 400px">
+                <h2>@Model.ICProductName</h2>
+                <h4>@Model.ICProductPrice</h4>
+                
+                    <button class="w3-yellow w3-round-large w3-display-bottomleft w3-padding-large" style="width: 48%">Mua ngay</button>
+                    <button class="w3-yellow w3-round-large w3-display-bottomright w3-padding-large" style="width: 48%">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
         
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductNo)
-        </dt>
+        <div class="">
 
-        <dd>
-            @Html.DisplayFor(model => model.ICProductNo)
-        </dd>
+            <button onclick="myFunction('Detail')" class="w3-button w3-block w3-left-align w3-green w3-round-large">
+                Chi tiết sản phẩm</button>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductName)
-        </dt>
+            <div id="Detail" class="w3-hide w3-container">
+                <p>Lorem ipsum...</p>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ICProductName)
-        </dd>
+            <button onclick="myFunction('Description')" class="w3-button w3-block w3-left-align w3-green w3-round-large">
+                Mô tả sản phẩm</button>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductDesc)
-        </dt>
+            <div id="Description" class="w3-hide w3-container">
+                <p>Lorem ipsum...</p>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ICProductDesc)
-        </dd>
+            <button onclick="myFunction('Review')" class="w3-button w3-block w3-left-align w3-green w3-round-large">
+                Đánh giá sản phẩm</button>
 
-       
-
-    </dl>
+            <div id="Review" class="w3-hide w3-container">
+                <p>Lorem ipsum...</p>
+            </div>
+        </div>
+        <script>
+            function myFunction(id) {
+                var x = document.getElementById(id);
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else { 
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ICProductID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
