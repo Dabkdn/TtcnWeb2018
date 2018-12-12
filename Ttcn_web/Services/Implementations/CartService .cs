@@ -37,11 +37,13 @@ namespace Ttcn_web.Services.Implementations
 
             if (objCustomerDeliveryAddress != null)
             {
-                objcart.DeliveryAddress = objCustomerDeliveryAddress.GEStreet.GEStreetName.FirstOrDefault() + " , "
-                                        + objCustomerDeliveryAddress.GEWard.GEWardName.FirstOrDefault() + " , "
-                                        + objCustomerDeliveryAddress.GEDistrict.GEDistrictName.FirstOrDefault() + " , "
-                                        + objCustomerDeliveryAddress.GEStateProvince.GEStateProvinceName.FirstOrDefault() + " , "
-                                        + objCustomerDeliveryAddress.ARCustomerDeliveryAddressContactPhone;
+                objcart.DeliveryAddress = objCustomer.ARCustomerAddress + objCustomer.ARCustomerContactPhone;
+
+                //objcart.DeliveryAddress = objCustomerDeliveryAddress.GEStreet.GEStreetName.FirstOrDefault() + " , "
+                //                        + objCustomerDeliveryAddress.GEWard.GEWardName.FirstOrDefault() + " , "
+                //                        + objCustomerDeliveryAddress.GEDistrict.GEDistrictName.FirstOrDefault() + " , "
+                //                        + objCustomerDeliveryAddress.GEStateProvince.GEStateProvinceName.FirstOrDefault() + " , "
+                //                        + objCustomerDeliveryAddress.ARCustomerDeliveryAddressContactPhone;
             }
             
             return (Carts)objcart;
