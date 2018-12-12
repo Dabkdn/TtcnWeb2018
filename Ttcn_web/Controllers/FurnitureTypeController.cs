@@ -156,7 +156,7 @@ namespace Ttcn_web.Controllers
         public ActionResult AddProductToCartValidateQty(int productID)
         {
             if (Session["token"] == null)
-                return RedirectToAction("Login", "Login");
+                return RedirectToAction("Login", "Account");
             int userID = Convert.ToInt32(Session["userID"]);
             if(_saleOrderService.CheckSaleOrderCurrentInUser(userID) != null)
             {
