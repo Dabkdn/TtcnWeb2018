@@ -17,6 +17,7 @@ namespace Ttcn_web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public APSupplier()
         {
+            this.ARSaleOrderItems = new HashSet<ARSaleOrderItem>();
             this.ICProducts = new HashSet<ICProduct>();
         }
     
@@ -35,6 +36,8 @@ namespace Ttcn_web.Models
         public string APSupplierContactPhone { get; set; }
     
         public virtual ADUser ADUser { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARSaleOrderItem> ARSaleOrderItems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ICProduct> ICProducts { get; set; }
     }

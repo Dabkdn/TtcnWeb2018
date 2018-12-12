@@ -18,6 +18,7 @@ namespace Ttcn_web.Models
         public GEStreet()
         {
             this.ARCustomerDeliveryAddressses = new HashSet<ARCustomerDeliveryAddresss>();
+            this.ARSaleOrders = new HashSet<ARSaleOrder>();
         }
     
         public int GEStreetID { get; set; }
@@ -27,6 +28,8 @@ namespace Ttcn_web.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ARCustomerDeliveryAddresss> ARCustomerDeliveryAddressses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARSaleOrder> ARSaleOrders { get; set; }
         public virtual GEWard GEWard { get; set; }
     }
 }

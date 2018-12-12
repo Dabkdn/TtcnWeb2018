@@ -18,6 +18,7 @@ namespace Ttcn_web.Models
         public ARCustomer()
         {
             this.ARCustomerDeliveryAddressses = new HashSet<ARCustomerDeliveryAddresss>();
+            this.ARSaleOrders = new HashSet<ARSaleOrder>();
         }
     
         public int ARCustomerID { get; set; }
@@ -30,13 +31,15 @@ namespace Ttcn_web.Models
         public string ARCustomerNo { get; set; }
         public string ARCustomerName { get; set; }
         public Nullable<System.DateTime> ARCustomerBirthDay { get; set; }
-        public Nullable<System.DateTime> ARCustomerSex { get; set; }
         public string ARCustomerAddress { get; set; }
         public string ARCustomerContactEmail { get; set; }
         public string ARCustomerContactPhone { get; set; }
+        public Nullable<bool> ARCustomerSex { get; set; }
     
         public virtual ADUser ADUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ARCustomerDeliveryAddresss> ARCustomerDeliveryAddressses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARSaleOrder> ARSaleOrders { get; set; }
     }
 }

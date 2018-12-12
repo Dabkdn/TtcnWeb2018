@@ -19,6 +19,7 @@ namespace Ttcn_web.Models
         {
             this.APSuppliers = new HashSet<APSupplier>();
             this.ARCustomers = new HashSet<ARCustomer>();
+            this.ARSaleOrders = new HashSet<ARSaleOrder>();
         }
     
         public int ADUserID { get; set; }
@@ -35,5 +36,7 @@ namespace Ttcn_web.Models
         public virtual ICollection<APSupplier> APSuppliers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ARCustomer> ARCustomers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARSaleOrder> ARSaleOrders { get; set; }
     }
 }

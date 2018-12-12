@@ -30,12 +30,15 @@ namespace Ttcn_web.Models
         public virtual DbSet<APSupplier> APSuppliers { get; set; }
         public virtual DbSet<ARCustomerDeliveryAddresss> ARCustomerDeliveryAddressses { get; set; }
         public virtual DbSet<ARCustomer> ARCustomers { get; set; }
+        public virtual DbSet<ARFurnitureTypeGroup> ARFurnitureTypeGroups { get; set; }
         public virtual DbSet<ARFurnitureType> ARFurnitureTypes { get; set; }
+        public virtual DbSet<ARSaleOrderItem> ARSaleOrderItems { get; set; }
+        public virtual DbSet<ARSaleOrder> ARSaleOrders { get; set; }
         public virtual DbSet<GEDistrict> GEDistricts { get; set; }
         public virtual DbSet<GEStateProvince> GEStateProvinces { get; set; }
         public virtual DbSet<GEStreet> GEStreets { get; set; }
         public virtual DbSet<GEWard> GEWards { get; set; }
         public virtual DbSet<ICProduct> ICProducts { get; set; }
-        public virtual DbSet<ARFurnitureTypeGroup> ARFurnitureTypeGroups { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

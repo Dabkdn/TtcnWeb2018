@@ -59,14 +59,27 @@
                              {
                                  id = 7
                              })" class="w3-bar-item w3-button w3-hover-green">Ngoại thất</a>
-                    <a href="@Url.Action("Filter", "FurnitureTypeGroup", new
-                             {
-                                 id = 8
-                             })" class="w3-bar-item w3-button w3-hover-green">Thiết kế nội thất</a>
+                    <a href="@Url.Action("ThietKeNoiThat", "Common")" class="w3-bar-item w3-button w3-hover-green">Thiết kế nội thất</a>
                 </div>
             </div>
-            <a href="@Url.Action("Login", "Login")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng nhập</a>
-            <a href="@Url.Action("SignUp", "SignUp")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng ký</a>
+            
+            @{
+                var token = Session["token"];
+
+                var userId = Session["userId"];
+
+                if (token == null)
+                {
+                    <a href="@Url.Action("SignUp", "Account")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng ký</a>
+                    <a href="@Url.Action("Login", "Account")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng nhập</a>
+                }
+                else
+                {
+                    //hiển thị tên người dùng, có thể đặt ở footer hoặc trên thanh bar
+                    <a href="@Url.Action("Logout", "Account")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng xuất</a>
+                }
+            }
+            
         </div>
     </div>
     @*---------------------------------------------------------------------------------------------------*@

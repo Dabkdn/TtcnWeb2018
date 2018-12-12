@@ -17,7 +17,7 @@ namespace Ttcn_web.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ARFurnitureType()
         {
-            this.ICProducts = new HashSet<ICProduct>();
+            this.ARSaleOrderItems = new HashSet<ARSaleOrderItem>();
         }
     
         public int ARFurnitureTypeID { get; set; }
@@ -32,8 +32,8 @@ namespace Ttcn_web.Models
         public Nullable<int> FK_ARFurnitureTypeGroupID { get; set; }
         public string ARFurnitureTypeImageUrl { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ICProduct> ICProducts { get; set; }
         public virtual ARFurnitureTypeGroup ARFurnitureTypeGroup { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARSaleOrderItem> ARSaleOrderItems { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace Ttcn_web.Models
         public ARFurnitureTypeGroup()
         {
             this.ARFurnitureTypes = new HashSet<ARFurnitureType>();
+            this.ARSaleOrderItems = new HashSet<ARSaleOrderItem>();
         }
     
         public int ARFurnitureTypeGroupID { get; set; }
@@ -32,5 +33,7 @@ namespace Ttcn_web.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ARFurnitureType> ARFurnitureTypes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARSaleOrderItem> ARSaleOrderItems { get; set; }
     }
 }

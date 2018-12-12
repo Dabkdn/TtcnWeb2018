@@ -182,7 +182,7 @@
     <Compile Include="Controllers\FurnitureTypeGroupController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Dtos\FurnitureTypeDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -207,6 +207,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ARFurnitureTypeGroup.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ARSaleOrder.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ARSaleOrderItem.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Common.cs" />
@@ -241,14 +247,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Abtractions\IFurnitureTypeGroupService.cs" />
     <Compile Include="Services\Abtractions\IProductService.cs" />
-    <Compile Include="Services\Abtractions\ILoginService.cs" />
+    <Compile Include="Services\Abtractions\IAccountService.cs" />
     <Compile Include="Services\Abtractions\IFurnitureTypeService.cs" />
     <Compile Include="Services\Implementations\FurnitureTypeGroupService.cs" />
     <Compile Include="Services\Implementations\ProductService.cs" />
-    <Compile Include="Services\Implementations\LoginService.cs" />
+    <Compile Include="Services\Implementations\AccountService.cs" />
     <Compile Include="Services\Implementations\FurnitureTypeService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -309,7 +318,7 @@
     <Content Include="Views\FurnitureType\Details.cshtml" />
     <Content Include="Views\FurnitureType\Edit.cshtml" />
     <Content Include="Views\FurnitureType\Index.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\FurnitureTypeGroup\Create.cshtml" />
     <Content Include="Views\FurnitureTypeGroup\Delete.cshtml" />
     <Content Include="Views\FurnitureTypeGroup\Details.cshtml" />
@@ -323,6 +332,7 @@
     <Content Include="Views\FurnitureTypeGroup\Filter.cshtml" />
     <Content Include="Views\FurnitureType\Filter.cshtml" />
     <Content Include="Views\Common\ThietKeNoiThat.cshtml" />
+    <Content Include="Views\Account\SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,6 +14,12 @@ namespace Ttcn_web.Models
     
     public partial class ICProduct
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ICProduct()
+        {
+            this.ARSaleOrderItems = new HashSet<ARSaleOrderItem>();
+        }
+    
         public int ICProductID { get; set; }
         public string AACreatedUser { get; set; }
         public Nullable<System.DateTime> AACreatedDate { get; set; }
@@ -35,8 +41,10 @@ namespace Ttcn_web.Models
         public string ICProductComment { get; set; }
         public string ICProductMaterial { get; set; }
         public string ICProductColor { get; set; }
+        public string ICProductPictureLink { get; set; }
     
         public virtual APSupplier APSupplier { get; set; }
-        public virtual ARFurnitureType ARFurnitureType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ARSaleOrderItem> ARSaleOrderItems { get; set; }
     }
 }

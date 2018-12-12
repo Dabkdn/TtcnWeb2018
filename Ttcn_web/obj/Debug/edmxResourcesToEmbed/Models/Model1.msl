@@ -76,18 +76,31 @@
           <ScalarProperty Name="ARCustomerNo" ColumnName="ARCustomerNo" />
           <ScalarProperty Name="ARCustomerName" ColumnName="ARCustomerName" />
           <ScalarProperty Name="ARCustomerBirthDay" ColumnName="ARCustomerBirthDay" />
-          <ScalarProperty Name="ARCustomerSex" ColumnName="ARCustomerSex" />
           <ScalarProperty Name="ARCustomerAddress" ColumnName="ARCustomerAddress" />
           <ScalarProperty Name="ARCustomerContactEmail" ColumnName="ARCustomerContactEmail" />
           <ScalarProperty Name="ARCustomerContactPhone" ColumnName="ARCustomerContactPhone" />
+          <ScalarProperty Name="ARCustomerSex" ColumnName="ARCustomerSex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARFurnitureTypeGroups">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ARFurnitureTypeGroup">
+        <MappingFragment StoreEntitySet="ARFurnitureTypeGroups">
+          <ScalarProperty Name="ARFurnitureTypeGroupID" ColumnName="ARFurnitureTypeGroupID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
+          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
+          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
+          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
+          <ScalarProperty Name="ARFurnitureTypeGroupName" ColumnName="ARFurnitureTypeGroupName" />
+          <ScalarProperty Name="ARFurnitureTypeGroupNo" ColumnName="ARFurnitureTypeGroupNo" />
+          <ScalarProperty Name="ARFurnitureTypeGroupDesc" ColumnName="ARFurnitureTypeGroupDesc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ARFurnitureTypes">
       <EntityTypeMapping TypeName="TTCNWEBModel.ARFurnitureType">
         <MappingFragment StoreEntitySet="ARFurnitureTypes">
-          <ScalarProperty Name="ARFurnitureTypeImageUrl" ColumnName="ARFurnitureTypeImageUrl" />
-          <ScalarProperty Name="FK_ARFurnitureTypeGroupID" ColumnName="FK_ARFurnitureTypeGroupID" />
           <ScalarProperty Name="ARFurnitureTypeID" ColumnName="ARFurnitureTypeID" />
           <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
           <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
@@ -97,6 +110,66 @@
           <ScalarProperty Name="ARFurnitureTypeName" ColumnName="ARFurnitureTypeName" />
           <ScalarProperty Name="ARFurnitureTypeNo" ColumnName="ARFurnitureTypeNo" />
           <ScalarProperty Name="ARFurnitureTypeDesc" ColumnName="ARFurnitureTypeDesc" />
+          <ScalarProperty Name="FK_ARFurnitureTypeGroupID" ColumnName="FK_ARFurnitureTypeGroupID" />
+          <ScalarProperty Name="ARFurnitureTypeImageUrl" ColumnName="ARFurnitureTypeImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARSaleOrderItems">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ARSaleOrderItem">
+        <MappingFragment StoreEntitySet="ARSaleOrderItems">
+          <ScalarProperty Name="ARSaleOrderItemID" ColumnName="ARSaleOrderItemID" />
+          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
+          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
+          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
+          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="FK_ARSaleOrderID" ColumnName="FK_ARSaleOrderID" />
+          <ScalarProperty Name="FK_ARFurnitureTypeGroupID" ColumnName="FK_ARFurnitureTypeGroupID" />
+          <ScalarProperty Name="FK_ARFurnitureTypeID" ColumnName="FK_ARFurnitureTypeID" />
+          <ScalarProperty Name="FK_ICProductID" ColumnName="FK_ICProductID" />
+          <ScalarProperty Name="FK_APSupplierID" ColumnName="FK_APSupplierID" />
+          <ScalarProperty Name="ARSaleOrderItemNo" ColumnName="ARSaleOrderItemNo" />
+          <ScalarProperty Name="ARSaleOrderItemName" ColumnName="ARSaleOrderItemName" />
+          <ScalarProperty Name="ARSaleOrderItemDesc" ColumnName="ARSaleOrderItemDesc" />
+          <ScalarProperty Name="ARSaleOrderItemDiscountPercent" ColumnName="ARSaleOrderItemDiscountPercent" />
+          <ScalarProperty Name="ARSaleOrderItemDiscountAmount" ColumnName="ARSaleOrderItemDiscountAmount" />
+          <ScalarProperty Name="ARSaleOrderItemQty" ColumnName="ARSaleOrderItemQty" />
+          <ScalarProperty Name="ARSaleOrderItemPrice" ColumnName="ARSaleOrderItemPrice" />
+          <ScalarProperty Name="ARSaleOrderItemSubTotalAmount" ColumnName="ARSaleOrderItemSubTotalAmount" />
+          <ScalarProperty Name="ARSaleOrderItemTotalAmount" ColumnName="ARSaleOrderItemTotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARSaleOrders">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ARSaleOrder">
+        <MappingFragment StoreEntitySet="ARSaleOrders">
+          <ScalarProperty Name="ARSaleOrderID" ColumnName="ARSaleOrderID" />
+          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
+          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
+          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
+          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="FK_ARCustomerID" ColumnName="FK_ARCustomerID" />
+          <ScalarProperty Name="FK_ADUserID" ColumnName="FK_ADUserID" />
+          <ScalarProperty Name="ARSaleOrderNo" ColumnName="ARSaleOrderNo" />
+          <ScalarProperty Name="ARSaleOrderName" ColumnName="ARSaleOrderName" />
+          <ScalarProperty Name="ARSaleOrderDesc" ColumnName="ARSaleOrderDesc" />
+          <ScalarProperty Name="ARSaleOrderComment" ColumnName="ARSaleOrderComment" />
+          <ScalarProperty Name="ARSaleOrderStatus" ColumnName="ARSaleOrderStatus" />
+          <ScalarProperty Name="ARSaleOrderPaymentMethod" ColumnName="ARSaleOrderPaymentMethod" />
+          <ScalarProperty Name="ARSaleOrderDate" ColumnName="ARSaleOrderDate" />
+          <ScalarProperty Name="ARSaleOrderDeliveryDate" ColumnName="ARSaleOrderDeliveryDate" />
+          <ScalarProperty Name="ARSaleOrderDiscountPerCent" ColumnName="ARSaleOrderDiscountPerCent" />
+          <ScalarProperty Name="ARSaleOrderDiscountAmount" ColumnName="ARSaleOrderDiscountAmount" />
+          <ScalarProperty Name="ARSaleOrderSubTotalAmount" ColumnName="ARSaleOrderSubTotalAmount" />
+          <ScalarProperty Name="ARSaleOrderTotalAmount" ColumnName="ARSaleOrderTotalAmount" />
+          <ScalarProperty Name="FK_GEStateProvinceID" ColumnName="FK_GEStateProvinceID" />
+          <ScalarProperty Name="FK_GEDistrictID" ColumnName="FK_GEDistrictID" />
+          <ScalarProperty Name="FK_GEWardID" ColumnName="FK_GEWardID" />
+          <ScalarProperty Name="FK_GEStreetID" ColumnName="FK_GEStreetID" />
+          <ScalarProperty Name="ARSaleOrderHomeNumber" ColumnName="ARSaleOrderHomeNumber" />
+          <ScalarProperty Name="ARSaleOrderFeeShipping" ColumnName="ARSaleOrderFeeShipping" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -163,21 +236,18 @@
           <ScalarProperty Name="ICProductComment" ColumnName="ICProductComment" />
           <ScalarProperty Name="ICProductMaterial" ColumnName="ICProductMaterial" />
           <ScalarProperty Name="ICProductColor" ColumnName="ICProductColor" />
+          <ScalarProperty Name="ICProductPictureLink" ColumnName="ICProductPictureLink" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ARFurnitureTypeGroups">
-      <EntityTypeMapping TypeName="TTCNWEBModel.ARFurnitureTypeGroup">
-        <MappingFragment StoreEntitySet="ARFurnitureTypeGroups">
-          <ScalarProperty Name="ARFurnitureTypeGroupDesc" ColumnName="ARFurnitureTypeGroupDesc" />
-          <ScalarProperty Name="ARFurnitureTypeGroupNo" ColumnName="ARFurnitureTypeGroupNo" />
-          <ScalarProperty Name="ARFurnitureTypeGroupName" ColumnName="ARFurnitureTypeGroupName" />
-          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
-          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
-          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
-          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
-          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
-          <ScalarProperty Name="ARFurnitureTypeGroupID" ColumnName="ARFurnitureTypeGroupID" />
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TTCNWEBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

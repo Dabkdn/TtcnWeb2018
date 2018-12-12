@@ -20,7 +20,7 @@ namespace Ttcn_web
             // e.g. container.RegisterType<ITestService, TestService>();
 
             container.RegisterType<IFurnitureTypeService, FurnitureTypeService>();
-            container.RegisterType<ILoginService, LoginService>();
+            container.RegisterType<IAccountService, AccountService>();
             container.RegisterType<IFurnitureTypeGroupService, FurnitureTypeGroupService>();
             container.RegisterType<IProductService, ProductService>();
 
