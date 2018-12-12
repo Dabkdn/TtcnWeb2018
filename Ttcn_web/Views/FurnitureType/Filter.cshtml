@@ -29,7 +29,7 @@
                                          })" class="w3-green w3-animate-opacity w3-btn w3-round">@item.ICProductName</a>
                             </div>*@
                             <div class="w3-display-topright w3-display-hover w3-large">
-                                <a class="w3-yellow w3-animate-opacity w3-btn w3-margin w3-round w3-btn" title="Shopping Cart">
+                                <a href="@Url.Action("AddProductToCartValidateQty", "FurnitureType", new { productID = item.ICProductID})" class="w3-yellow w3-animate-opacity w3-btn w3-margin w3-round w3-btn" title="Shopping Cart">
                                     <i class="fa fa-shopping-cart w3-text-grey"></i>
                                 </a>
                             </div>

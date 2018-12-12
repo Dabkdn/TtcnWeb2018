@@ -23,6 +23,10 @@ namespace Ttcn_web
             container.RegisterType<IAccountService, AccountService>();
             container.RegisterType<IFurnitureTypeGroupService, FurnitureTypeGroupService>();
             container.RegisterType<IProductService, ProductService>();
+			container.RegisterType<ISaleOrderService, SaleOrderService>();
+            container.RegisterType<ISaleOrderItemService, SaleOrderItemService>();
+            container.RegisterType<IUserService, UserService>();
+            container.RegisterType<ICartService, CartService>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

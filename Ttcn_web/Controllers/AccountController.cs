@@ -7,10 +7,13 @@ namespace Ttcn_web.Controllers
     public class AccountController : Controller
     {
         private readonly IAccountService _loginService;
+		
+		private readonly ISaleOrderService _saleOrderService;
 
-        public AccountController(IAccountService loginService)
+        public AccountController(IAccountService loginService, ISaleOrderService saleOrderService)
         {
             _loginService = loginService;
+			_saleOrderService = saleOrderService;
         }
 
         Function function = new Function();
@@ -43,6 +46,7 @@ namespace Ttcn_web.Controllers
             }
 
             Session["userId"] = user.ADUserID;
+			Session["CartItemQty"] = _saleOrderService.GetItemQuantityInSaleOrderByUserID(user.ADUserID);
 
             return RedirectToAction("Index", "Home");
         }

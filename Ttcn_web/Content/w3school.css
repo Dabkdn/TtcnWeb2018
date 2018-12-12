@@ -1369,3 +1369,87 @@ a{
 .w3-border-pale-blue,.w3-hover-border-pale-blue:hover{
     border-color:#e7ffff!important
 }
+.body-cart {
+	margin-top: 30px;
+}
+
+.left {
+	width: 60%;
+}
+
+.right {
+	width: 35%;
+	background: #F5F5F5;
+	margin-left: 5%;
+}
+
+.table-product {
+	width: 100%;
+	text-align: left;
+}
+
+	.table-product tr, th, td {
+		width: 25%;
+	}
+
+.table-product, th, td {
+	border: 0px solid #DDDDDD;
+	border-collapse: collapse;
+	padding: 10px;
+	font-size: 17px;
+}
+
+	.table-product th {
+		background: #F5F5F5;
+	}
+
+.fl_left {
+	float: left;
+}
+
+.fl_right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.padding-10 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.title {
+	margin-bottom: 10px;
+}
+
+.btn-checkout {
+	width: 95%;
+	margin: 10px;
+	background: #FFD700;
+	border: none;
+	height: 50px;
+	font-size: 15px;
+	margin-top: 50px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+
+.btn-quantity-sub, .btn-quantity-add, .btn-quantity-delete, .form-Delete {
+	display: inline-block;
+	border: none;
+	width: 30px;
+	cursor: pointer;
+}
+
+.input {
+	width: 30px;
+	text-align: center;
+}
+
+.fl_overflow {
+	width: 100%;
+	word-wrap: break-word;
+	padding-right: 30px;
+}

@@ -79,6 +79,15 @@
                     <a href="@Url.Action("Logout", "Account")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng xuất</a>
                 }
             }
+	    @{
+				if (Session["CartItemQty"] == null)
+				{
+					Session["CartItemQty"] = 0;
+				}
+			}
+			<a class="w3-bar-item w3-hover-opacity w3-btn w3-right" href="@Url.Action("ShowCartsOfUser","Cart")">
+				<img src="../../img/core-img/cart.png" alt=""> Cart <span>(@Session["CartItemQty"])</span>
+			</a>
             
         </div>
     </div>

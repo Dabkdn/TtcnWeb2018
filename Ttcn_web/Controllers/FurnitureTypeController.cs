@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Web.Mvc;
 using Ttcn_web.Services.Abtractions;
 
@@ -10,10 +11,19 @@ namespace Ttcn_web.Controllers
 
         private readonly IProductService _productService;
 
-        public FurnitureTypeController(IFurnitureTypeService furnitureTypeService, IProductService productService)
+        private readonly ISaleOrderService _saleOrderService;
+
+        private readonly ISaleOrderItemService _saleOrderServiceItem;
+
+        private readonly ICartService _cartService;
+
+        public FurnitureTypeController(IFurnitureTypeService furnitureTypeService, IProductService productService, ISaleOrderService saleOrderService, ISaleOrderItemService saleOrderServiceItem, ICartService cartService)
         {
             _furnitureTypeService = furnitureTypeService;
             _productService = productService;
+            _saleOrderService = saleOrderService;
+            _saleOrderServiceItem = saleOrderServiceItem;
+            _cartService = cartService;
         }
 
         // GET: FurnitureType
@@ -52,6 +62,7 @@ namespace Ttcn_web.Controllers
             }
 
             var products = _productService.Filter(id.GetValueOrDefault());
+            Session["FurnitureTypeGroupID"] = id;
 
             if (products == null)
             {
@@ -140,6 +151,38 @@ namespace Ttcn_web.Controllers
             _furnitureTypeService.Delete(id);
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult AddProductToCartValidateQty(int productID)
+        {
+            if (Session["token"] == null)
+                return RedirectToAction("Login", "Login");
+            int userID = Convert.ToInt32(Session["userID"]);
+            if(_saleOrderService.CheckSaleOrderCurrentInUser(userID) != null)
+            {
+                var saleOrder = _saleOrderService.CheckSaleOrderCurrentInUser(userID);
+                if (_saleOrderServiceItem.CheckExistingProductInListCart(userID, productID) != null)
+                {
+                    var saleOrderitem = _saleOrderServiceItem.CheckExistingProductInListCart(userID, productID);
+                    saleOrderitem.ARSaleOrderItemQty += 1;
+                    _saleOrderServiceItem.UpdateTotalAmount(saleOrderitem);
+                    _saleOrderServiceItem.UpdateObject(saleOrderitem);
+                }
+                else
+                {
+                    _saleOrderServiceItem.CreateObject(saleOrder.ARSaleOrderID, productID);
+                }
+                _saleOrderService.UpdateTotalAmount(saleOrder);
+            }
+            else
+            {
+                int saleOrderID = _saleOrderService.CreateObject(userID, productID);
+                _saleOrderServiceItem.CreateObject(saleOrderID, productID);
+            }
+            int cartItemQty = Convert.ToInt32(Session["CartItemQty"]) + 1;
+            Session["CartItemQty"] = cartItemQty;
+            int furnitureTypeGroupID = Convert.ToInt32(Session["FurnitureTypeGroupID"]);
+            return RedirectToAction("Filter", "FurnitureType", new { id = furnitureTypeGroupID });
         }
     }
 }
