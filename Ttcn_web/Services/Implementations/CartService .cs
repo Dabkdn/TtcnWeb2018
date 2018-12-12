@@ -29,9 +29,9 @@ namespace Ttcn_web.Services.Implementations
             {
                 objcart.DeliveryAddress = string.IsNullOrEmpty(objsaleOrder.ARSaleOrderHomeNumber) ? string.Empty : (objsaleOrder.ARSaleOrderHomeNumber + " , ");
                 objcart.DeliveryDate = objsaleOrder.ARSaleOrderDeliveryDate;
-                objcart.SubTotalAmount = (objsaleOrder.ARSaleOrderSubTotalAmount != null) ? string.Format("{0:#.##}", objsaleOrder.ARSaleOrderSubTotalAmount.ToString()) : string.Format("{0:#.##}","0");
-                objcart.FeeShipping = string.Format("{0:#.##}","0");
-                objcart.TotalAmount = (objsaleOrder.ARSaleOrderTotalAmount != null) ? string.Format("{0:#.##}", objsaleOrder.ARSaleOrderTotalAmount.ToString()) : string.Format("{0:#.##}", "0");
+                objcart.SubTotalAmount = objsaleOrder.ARSaleOrderSubTotalAmount.GetValueOrDefault();
+                objcart.FeeShipping = 0;
+                objcart.TotalAmount = objsaleOrder.ARSaleOrderTotalAmount.GetValueOrDefault();
                 objcart.SaleOrderItemList = objsaleOrder.ARSaleOrderItems.Where(p => p.AAStatus == "Alive").ToList();
             }
 

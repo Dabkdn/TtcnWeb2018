@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Ttcn_web.Models;
 
 namespace Ttcn_web.Models.DTO
 {
@@ -10,9 +11,9 @@ namespace Ttcn_web.Models.DTO
         public string _customerName = string.Empty;
         public string _deliveryAddress = string.Empty;
         public DateTime? _deliveryDate = DateTime.Now;
-        public string _subTotalAmount = string.Format("{0:#.##}", "0");
-        public string _feeShipping = string.Format("{0:#.##}", "0");
-        public string _totalAmount = string.Format("{0:#.##}", "0");
+        public decimal _subTotalAmount = 0;
+        public decimal _feeShipping = 0;
+        public decimal _totalAmount = 0;
         public List<ARSaleOrderItem> _saleOrderItemList = new List<ARSaleOrderItem>();
 
         public string CustomerName
@@ -48,7 +49,7 @@ namespace Ttcn_web.Models.DTO
                 }
             }
         }
-        public string SubTotalAmount
+        public decimal SubTotalAmount
         {
             get { return _subTotalAmount; }
             set
@@ -59,7 +60,7 @@ namespace Ttcn_web.Models.DTO
                 }
             }
         }
-        public string FeeShipping
+        public decimal FeeShipping
         {
             get { return _feeShipping; }
             set
@@ -70,7 +71,7 @@ namespace Ttcn_web.Models.DTO
                 }
             }
         }
-        public string TotalAmount
+        public decimal TotalAmount
         {
             get { return _totalAmount; }
             set
