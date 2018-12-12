@@ -23,6 +23,8 @@ namespace Ttcn_web.Controllers
 
         public ActionResult ShowCartsOfUser()
         {
+            if (Session["token"] == null)
+                return RedirectToAction("Login", "Account");
             int userID = Convert.ToInt32(Session["userID"]);
             Carts objCart = _cartService.GetCartsOfUser(userID);
             return View("Cart", objCart);

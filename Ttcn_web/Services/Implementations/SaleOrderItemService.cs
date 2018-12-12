@@ -46,6 +46,7 @@ namespace Ttcn_web.Services.Implementations
             objSaleOderItem.AACreatedDate = DateTime.Now;
             objSaleOderItem.AAStatus = "Alive";
             objSaleOderItem.FK_ARSaleOrderID = saleOrderID;
+            objSaleOderItem.ARSaleOrderItemQty = 1;
             var objProduct = db.ICProducts.Find(productID);
             if(objProduct != null)
             {
@@ -54,9 +55,10 @@ namespace Ttcn_web.Services.Implementations
                 objSaleOderItem.FK_ICProductID = objProduct.ICProductID;
                 objSaleOderItem.ARSaleOrderItemName = objProduct.ICProductName;
                 objSaleOderItem.ARSaleOrderItemDesc = objProduct.ICProductDesc;
-                objSaleOderItem.ARSaleOrderItemPrice = objProduct.ICProductPrice;
+                objSaleOderItem.ARSaleOrderItemPrice = objProduct.ICProductPrice.GetValueOrDefault();
+                objSaleOderItem.ARSaleOrderItemSubTotalAmount = objSaleOderItem.ARSaleOrderItemPrice * objSaleOderItem.ARSaleOrderItemQty;
+                objSaleOderItem.ARSaleOrderItemTotalAmount = objSaleOderItem.ARSaleOrderItemSubTotalAmount - objSaleOderItem.ARSaleOrderItemDiscountAmount.GetValueOrDefault();
             }
-            objSaleOderItem.ARSaleOrderItemQty = 1;
             db.ARSaleOrderItems.Add(objSaleOderItem);
             db.SaveChanges();
         }
