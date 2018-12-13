@@ -7,12 +7,6 @@
     @Styles.Render("~/vendor/bootstrap/css/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <!-- Bootstrap core CSS
-    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template
-    <link href="~/css/business-casual.min.css" rel="stylesheet"> -->
-    <!-- Custom styles from W3 school-->
     <link href="~/Content/w3school.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,9 +14,9 @@
 </head>
 <body>
 
-    <div class="">
-        <div class="w3-center w3-light-green">
-            <h1 class="w3-lobster w3-animate-fading w3-light-green">Noithatviet.com</h1>
+    <div class="w3-top">
+        <div class="w3-center w3-white">
+            <h1 class="w3-lobster w3-animate-fading w3-white">Noithatviet.com</h1>
         </div>
         <div class="w3-bar w3-black">
             <a href="@Url.Action("Index", "Home")" class="w3-bar-item w3-hover-green w3-btn w3-gray">TRANG CHỦ</a>
@@ -66,7 +60,7 @@
             @{
                 var token = Session["token"];
 
-                var userId = Session["userId"];
+                var userName = Session["userName"];
 
                 if (token == null)
                 {
@@ -75,7 +69,10 @@
                 }
                 else
                 {
-                    //hiển thị tên người dùng, có thể đặt ở footer hoặc trên thanh bar
+                    <div class="w3-bar-item w3-right">
+                        <i class="fa fa-user"></i>
+                        <a class="">@userName</a>
+                    </div>
                     <a href="@Url.Action("Logout", "Account")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Đăng xuất</a>
                 }
             }
@@ -97,12 +94,13 @@
    
     @*---------------------------------------------------------------------------------------------------*@
 
-    <div class="container body-content">
+    <div class="container body-content w3-margin-top-128">
         @RenderBody()
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>

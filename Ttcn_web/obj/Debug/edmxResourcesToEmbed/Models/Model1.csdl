@@ -683,5 +683,22 @@
       <End Role="GEWards" EntitySet="GEWards" />
       <End Role="GEStreets" EntitySet="GEStreets" />
     </AssociationSet>
+    <EntitySet Name="ARCommonImages" EntityType="TTCNWEBModel.ARCommonImage" />
   </EntityContainer>
+  <EntityType Name="ARCommonImage">
+    <Key>
+      <PropertyRef Name="ARCommonImageID" />
+    </Key>
+    <Property Name="ARCommonImageID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ARCommonImageUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ARCommonImageName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ARCommonImageType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ARCommonImageNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ARCommonImageDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

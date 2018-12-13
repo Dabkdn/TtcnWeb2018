@@ -570,7 +570,7 @@ a{
     margin-right:auto
 }
 .w3-content{
-    max-width:980px
+    max-width:1000px
 }
 .w3-auto{
     max-width:1140px
@@ -1024,7 +1024,7 @@ a{
     margin-top:16px!important
 }
 .w3-margin-top-128 {
-    margin-top: 128px !important
+    margin-top: 100px !important
 }
 .w3-margin-bottom{
     margin-bottom:16px!important

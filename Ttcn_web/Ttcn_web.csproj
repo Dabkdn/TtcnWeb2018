@@ -197,6 +197,9 @@
     <Compile Include="Models\APSupplier.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ARCommonImage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ARCustomer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

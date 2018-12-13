@@ -40,6 +40,22 @@
     <Property Name="APSupplierContactEmail" Type="nvarchar" MaxLength="100" />
     <Property Name="APSupplierContactPhone" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="ARCommonImages">
+    <Key>
+      <PropertyRef Name="ARCommonImageID" />
+    </Key>
+    <Property Name="ARCommonImageID" Type="int" Nullable="false" />
+    <Property Name="AAStatus" Type="varchar" MaxLength="10" />
+    <Property Name="AACreatedUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="AAUpdatedUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="AACreatedDate" Type="datetime" />
+    <Property Name="AAUpdatedDate" Type="datetime" />
+    <Property Name="ARCommonImageUrl" Type="varchar" MaxLength="500" />
+    <Property Name="ARCommonImageName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ARCommonImageType" Type="nvarchar" MaxLength="100" />
+    <Property Name="ARCommonImageNo" Type="varchar" MaxLength="20" />
+    <Property Name="ARCommonImageDesc" Type="nvarchar" MaxLength="500" />
+  </EntityType>
   <EntityType Name="ARCustomerDeliveryAddresss">
     <Key>
       <PropertyRef Name="ARCustomerDeliveryAddressID" />
@@ -527,6 +543,7 @@
     <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroups" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADUsers" EntityType="Self.ADUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="APSuppliers" EntityType="Self.APSuppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARCommonImages" EntityType="Self.ARCommonImages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARCustomerDeliveryAddresss" EntityType="Self.ARCustomerDeliveryAddresss" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARCustomers" EntityType="Self.ARCustomers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ARFurnitureTypeGroups" EntityType="Self.ARFurnitureTypeGroups" Schema="dbo" store:Type="Tables" />

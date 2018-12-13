@@ -3,9 +3,9 @@
     ViewBag.Title = "Login";
 }
 
-<div style="height: 400px">
+<div style="height: 400px" class="w3-animate-bottom">
     <div class="w3-round-large w3-half w3-card w3-display-middle">
-        <div class="w3-container w3-card w3-teal w3-round-large">
+        <div class="w3-container w3-card w3-green w3-round-large">
             <h3 class="w3-padding-large">Đăng nhập</h3>
         </div>
         <form class="w3-container w3-card-4 w3-round-large" action="/Account/CheckLogin" method="post">
@@ -20,7 +20,7 @@
             </p>
             <br>
             <p>
-                <button type="submit" class="w3-btn w3-border w3-hover-green w3-padding w3-teal w3-round-large" style="width:120px">Login</button>
+                <button type="submit" class="w3-btn w3-border w3-hover-yellow w3-padding w3-green w3-round-large" style="width:120px">Login</button>
                 <a href="@Url.Action("Index", "Home")">
                     <input type="button" class="w3-btn w3-border w3-light-grey w3-round-large" style="width:120px" value="Cancel">
                 </a>

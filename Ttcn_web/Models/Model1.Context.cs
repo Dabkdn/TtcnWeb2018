@@ -40,5 +40,6 @@ namespace Ttcn_web.Models
         public virtual DbSet<GEWard> GEWards { get; set; }
         public virtual DbSet<ICProduct> ICProducts { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<ARCommonImage> ARCommonImages { get; set; }
     }
 }

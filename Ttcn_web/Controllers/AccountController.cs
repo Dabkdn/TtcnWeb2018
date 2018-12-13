@@ -23,6 +23,7 @@ namespace Ttcn_web.Controllers
         {
             Session["token"] = null;
             Session["userId"] = null;
+            Session["userName"] = null;
 
             return View();
         }
@@ -46,6 +47,7 @@ namespace Ttcn_web.Controllers
             }
 
             Session["userId"] = user.ADUserID;
+            Session["userName"] = user.ADUserName;
 			Session["CartItemQty"] = _saleOrderService.GetItemQuantityInSaleOrderByUserID(user.ADUserID);
 
             return RedirectToAction("Index", "Home");
