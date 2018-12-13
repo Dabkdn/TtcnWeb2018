@@ -1436,16 +1436,18 @@ a{
 	cursor: pointer;
 }
 
-.btn-quantity-sub, .btn-quantity-add, .btn-quantity-delete, .form-Delete {
-	display: inline-block;
+.btn-quantity-delete, .form-Delete, .btn-quantity-sub, .btn-quantity-add {
 	border: none;
+	border-radius: 50%;
 	width: 30px;
 	cursor: pointer;
+	display: inline-block;
 }
 
 .input {
 	width: 30px;
 	text-align: center;
+	border-radius: 10px;
 }
 
 .fl_overflow {

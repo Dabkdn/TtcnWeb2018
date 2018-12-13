@@ -91,12 +91,14 @@ namespace Ttcn_web.Services.Implementations
             var saleOrder = db.ARSaleOrders.FirstOrDefault(p => p.ARSaleOrderID == objSaleOrder.ARSaleOrderID && p.AAStatus == "Alive");
             if(saleOrderItemList != null && saleOrder != null)
             {
+                saleOrder.ARSaleOrderSubTotalAmount = new decimal();
+                saleOrder.ARSaleOrderTotalAmount = new decimal();
                 saleOrderItemList.ForEach(p =>
                 {
-                    saleOrder.ARSaleOrderSubTotalAmount += p.ARSaleOrderItemSubTotalAmount;
-                    saleOrder.ARSaleOrderTotalAmount += p.ARSaleOrderItemTotalAmount;
+                    saleOrder.ARSaleOrderSubTotalAmount += p.ARSaleOrderItemSubTotalAmount.GetValueOrDefault();
+                    saleOrder.ARSaleOrderTotalAmount += p.ARSaleOrderItemTotalAmount.GetValueOrDefault();
                 });
-                saleOrder.ARSaleOrderTotalAmount += (saleOrder.ARSaleOrderFeeShipping - saleOrder.ARSaleOrderDiscountAmount);
+                saleOrder.ARSaleOrderTotalAmount += (saleOrder.ARSaleOrderFeeShipping.GetValueOrDefault() - saleOrder.ARSaleOrderDiscountAmount.GetValueOrDefault());
             }
             db.SaveChanges();
         }
