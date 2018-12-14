@@ -21,9 +21,7 @@ namespace Ttcn_web.Controllers
         // GET: Login
         public ActionResult Login()
         {
-            Session["token"] = null;
-            Session["userId"] = null;
-            Session["userName"] = null;
+            Session.Clear();
 
             return View();
         }

@@ -11,7 +11,9 @@ namespace Ttcn_web.Controllers
         {
             var token = Session["token"];
 
-            if (token == null)
+            var username = Session["userName"];
+
+            if (token == null || "ha.nguyen".Equals(username))
             {
                 return RedirectToAction(nameof(AccountController.Login), "Account");
             }

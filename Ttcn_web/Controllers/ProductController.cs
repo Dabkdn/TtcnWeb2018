@@ -18,6 +18,13 @@ namespace Ttcn_web.Controllers
         // GET: Product
         public ActionResult Index()
         {
+            var userType = Session["userType"];
+
+            if ("Admin".Equals(userType) == false)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             var result = _productService.GetAll();
 
             return View(result);
@@ -43,6 +50,13 @@ namespace Ttcn_web.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
+            var userType = Session["userType"];
+
+            if ("Admin".Equals(userType) == false)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             return View();
         }
 
@@ -50,6 +64,13 @@ namespace Ttcn_web.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection formCollection)
         {
+            var userType = Session["userType"];
+
+            if ("Admin".Equals(userType) == false)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             _productService.Create(formCollection);
 
             if (ModelState.IsValid)
@@ -63,6 +84,13 @@ namespace Ttcn_web.Controllers
         // GET: Product/Edit/5
         public ActionResult Edit(int? id)
         {
+            var userType = Session["userType"];
+
+            if ("Admin".Equals(userType) == false)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -85,6 +113,13 @@ namespace Ttcn_web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(FormCollection formCollection, int id)
         {
+            var userType = Session["userType"];
+
+            if ("Admin".Equals(userType) == false)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             _productService.Edit(formCollection, id);
 
             if (ModelState.IsValid)
@@ -97,6 +132,13 @@ namespace Ttcn_web.Controllers
         // GET: Product/Delete/5
         public ActionResult Delete(int? id)
         {
+            var userType = Session["userType"];
+
+            if ("Admin".Equals(userType) == false)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -117,6 +159,13 @@ namespace Ttcn_web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            var userType = Session["userType"];
+
+            if ("Admin".Equals(userType) == false)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             _productService.Delete(id);
 
             return RedirectToAction("Index");
