@@ -50,6 +50,8 @@ namespace Ttcn_web.Controllers
             Session["userName"] = user.ADUserName;
 			Session["CartItemQty"] = _saleOrderService.GetItemQuantityInSaleOrderByUserID(user.ADUserID);
 
+            Session["userType"] = _loginService.GetUserGroupNameByID(user.FK_ADUserGroupID);
+
             return RedirectToAction("Index", "Home");
         }
 
@@ -77,7 +79,9 @@ namespace Ttcn_web.Controllers
                 return View();
             }
 
-            string check = _loginService.CreateUser(signupForm);
+            string userType = Request.Form["userType"].ToString();
+
+            string check = _loginService.CreateUser(signupForm, userType);
 
             if (check == "fail")
             {

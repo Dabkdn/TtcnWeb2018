@@ -6,6 +6,8 @@ namespace Ttcn_web.Services.Abtractions
     {
         string GetToken(string userName, string password);
 
-        string CreateUser(FormCollection signupForm);
+        string CreateUser(FormCollection signupForm, string userType);
+
+        string GetUserGroupNameByID(int userGroupID);
     }
 }

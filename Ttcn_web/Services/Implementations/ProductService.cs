@@ -33,6 +33,28 @@ namespace Ttcn_web.Services.Implementations
             db.SaveChanges();
         }
 
+        public int CreateObject(FormCollection formCollection, int userID, int furnitureTypeID)
+        {
+            var product = new ICProduct();
+            var lastProduct = db.ICProducts.ToList().LastOrDefault();
+            
+            product.ICProductID = lastProduct.ICProductID + 1;
+            product.AAStatus = "Alive";
+            product.AACreatedDate = DateTime.Now;
+            product.ICProductNo = "SP" + product.ICProductID.ToString();
+            product.ICProductName = formCollection["productName"].ToString();
+            product.ICProductDesc = formCollection["productDesc"].ToString();
+            product.ICProductPrice = Convert.ToDecimal(formCollection["productPrice"].ToString());
+            product.ICProductPictureLink = "../.." + formCollection["productPictureLink"].ToString();
+            product.FK_ARFurnitureTypeID = furnitureTypeID;
+            product.FK_APSupplierID = userID;
+            product.ICProductActiveCheck = true;
+
+            db.ICProducts.Add(product);
+            db.SaveChanges();
+            return product.ICProductID;
+        }
+
         public void Edit(FormCollection formCollection, int productId)
         {
             var product = db.ICProducts.Find(productId);
