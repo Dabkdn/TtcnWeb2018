@@ -1430,10 +1430,11 @@ a{
 	background: #FFD700;
 	border: none;
 	height: 50px;
-	font-size: 15px;
+	font-size: 20px;
 	margin-top: 50px;
 	transition: 0.4s;
 	cursor: pointer;
+	font-weight: bold;
 }
 
 .btn-quantity-delete, .form-Delete, .btn-quantity-sub, .btn-quantity-add {
