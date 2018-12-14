@@ -121,5 +121,20 @@ namespace Ttcn_web.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult AddNewProduct(FormCollection form)
+        {
+            if (Session["token"] == null)
+                return RedirectToAction("Login", "Account");
+            int furnitureTypeID = Convert.ToInt32(Request.Form["selectedItemFurnitureType"].ToString());
+            int userID = Convert.ToInt32(Session["userID"]);
+            int productID = _productService.CreateObject(form, userID, furnitureTypeID);
+            return RedirectToAction("Details", "Product", new { id = productID });
+        }
+
+        public ActionResult ShowAddProduct()
+        {
+            return View("Create");
+        }
     }
 }
