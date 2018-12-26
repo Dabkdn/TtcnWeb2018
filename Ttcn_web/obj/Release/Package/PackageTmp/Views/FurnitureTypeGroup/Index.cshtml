@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Ttcn_web.Models.ARFurnitureTypeGroup>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeGroupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeGroupNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeGroupDesc)
+        </th>
+        <th></th>
+    </tr>
+    @{
+        int count = 0;
+
+        foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>
+                    @count
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeGroupName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeGroupNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ARFurnitureTypeGroupDesc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ARFurnitureTypeGroupID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ARFurnitureTypeGroupID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ARFurnitureTypeGroupID }) |
+                    @Html.ActionLink("danh sach loai noi that", "Filter", "FurnitureTypeGroup", new { id = item.ARFurnitureTypeGroupID }, new { });
+                </td>
+            </tr>
+        }
+    }
+
+</table>

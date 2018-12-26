@@ -376,3 +376,9 @@ C:\Users\PC\Desktop\testGit\Ttcn\Ttcn\TtcnWeb2018\Ttcn_web\obj\Debug\Ttcn_web.cs
 C:\Users\PC\Desktop\testGit\Ttcn\Ttcn\TtcnWeb2018\Ttcn_web\obj\Debug\Ttcn_web.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\testGit\Ttcn\Ttcn\TtcnWeb2018\Ttcn_web\obj\Debug\Ttcn_web.dll
 C:\Users\PC\Desktop\testGit\Ttcn\Ttcn\TtcnWeb2018\Ttcn_web\obj\Debug\Ttcn_web.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\TTCNWEB2018_2\Ttcn_web\bin\CKFinder.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\TTCNWEB2018_2\Ttcn_web\bin\CKFinder.pdb
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\TTCNWEB2018_2\Ttcn_web\bin\PagedList.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\TTCNWEB2018_2\Ttcn_web\bin\PagedList.Mvc.dll
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\TTCNWEB2018_2\Ttcn_web\bin\PagedList.xml
+E:\Downloads\Học\THỰC TẬP CÔNG NHÂN\TTCNWEB2018_2\Ttcn_web\bin\PagedList.Mvc.xml

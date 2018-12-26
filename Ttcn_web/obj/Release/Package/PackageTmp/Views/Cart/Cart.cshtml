@@ -1,0 +1,88 @@
+﻿@model Ttcn_web.Models.DTO.Carts
+@{
+	ViewBag.Title = "Cart";
+}
+<script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+
+<div class="body-cart">
+	<div class="left fl_left">
+		<table class="table-product w3-table">
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+			</tr>
+			@foreach (var item in Model.SaleOrderItemList)
+			{
+				<tr>
+					<td>
+						<img src="@item.ICProduct.ICProductPictureLink" height="100px" width="100px">
+					</td>
+					<td>@item.ARSaleOrderItemName</td>
+					<td>@String.Format("{0:n0}", @item.ARSaleOrderItemPrice)</td>
+					<td>
+						<button class="btn-quantity-sub" type="button" name="button">-</button>
+						<input class="input" type="text" name="name" value="@String.Format("{0:n0}", item.ARSaleOrderItemQty)">
+						<button class="btn-quantity-add" type="button" name="button">+</button>
+						<form class="form-Delete" action="/Cart/DeleteItemInCart" method="post">
+							<button class="btn-quantity-delete" type="submit" name="buttonDelete" value="@item.ARSaleOrderItemID">x</button>
+						</form>
+					</td>
+				</tr>
+			}
+
+		</table>
+	</div>
+	<div class="right fl_left">
+		<h2 class="padding-10 title">Shipping & Billing</h2>
+		<label class="fl_left padding-10">Ship to</label>
+		<label class="fl_left padding-10 clear" style="font-weight: bold;">@Html.DisplayFor(model => model.CustomerName)</label>
+		<label class="fl_left padding-10 fl_overflow clear" va>@Html.DisplayFor(model => model.DeliveryAddress)</label>
+		<label class="fl_left padding-10 clear">Delivery Date</label>
+		<label class="fl_left padding-10">@String.Format("{0:dd/MM/yyyy}", Model.DeliveryDate)</label>
+		<div style="height: 50px" class="clear"></div>
+		<h2 class="padding-10 title">Order Summary</h2>
+		<div style="height: 10px" class="clear"></div>
+		<label class="fl_left padding-10">SubTotal</label>
+		<label class="fl_right padding-10">@String.Format("{0:n0}", Model.SubTotalAmount)</label>
+		<div style="height: 50px" class="clear"></div>
+		<label class="fl_left padding-10">Shipping Fee</label>
+		<label class="fl_right padding-10">@String.Format("{0:n0}", Model.FeeShipping)</label>
+		<div style="height: 50px" class="clear"></div>
+		<label class="fl_left padding-10">Total</label>
+		<label class="fl_right padding-10">@String.Format("{0:n0}", Model.TotalAmount)</label>
+		<div style="height: 50px" class="clear"></div>
+		<form class="form" action="/Cart/Checkout" method="post">
+			<div style="width:100%; text-align:center">
+				<button class="btn-checkout w3-btn" type="submit">Checkout</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('.btn-quantity-sub').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $input = $this.closest('td').find('input');
+		var value = parseInt($input.val());
+		if (value > 1) {
+			value = value - 1;
+		} else {
+			value = 0;
+		}
+		$input.val(value);
+	})
+
+	$('.btn-quantity-add').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $input = $this.closest('td').find('input');
+		var value = parseInt($input.val());
+		value++;
+		$input.val(value);
+	})
+</script>
+
+

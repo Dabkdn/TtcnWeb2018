@@ -14,7 +14,7 @@
         <th>
             STT
         </th>
-        
+
         <th>
             @Html.DisplayNameFor(model => model.ARFurnitureTypeName)
         </th>
@@ -32,26 +32,27 @@
     foreach (var item in Model)
     {
         count++;
-        <tr>
-            <td>
-                @count
-            </td>
-        
-            <td>
-                @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ARFurnitureTypeNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ARFurnitureTypeDesc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ARFurnitureTypeID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ARFurnitureTypeID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ARFurnitureTypeID })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @count
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ARFurnitureTypeNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ARFurnitureTypeDesc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ARFurnitureTypeID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ARFurnitureTypeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ARFurnitureTypeID }) |
+            @Html.ActionLink("danh sach san pham", "Filter", "FurnitureType", new { id = item.ARFurnitureTypeID }, new { });
+        </td>
+    </tr>
     }
 }
 

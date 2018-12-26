@@ -17,7 +17,7 @@ namespace Ttcn_web.Services.Abtractions
 
         void Delete(int productId);
 
-        IEnumerable<ICProduct> Filter(int furnitureTypeId);
+        IEnumerable<ICProduct> Filter(int furnitureTypeId, int page, int pageSize);
 
         int CreateObject(FormCollection formCollection, int userID, int furnitureTypeID);
     }

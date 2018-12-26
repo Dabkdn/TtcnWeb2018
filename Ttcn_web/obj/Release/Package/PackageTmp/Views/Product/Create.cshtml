@@ -1,0 +1,78 @@
+﻿@model Ttcn_web.Models.ICProduct
+
+@{
+    ViewBag.Title = "Create";
+}
+<script src="~/Scripts/ckfinder/ckfinder.js"></script>
+<div class="w3-content w3-animate-bottom">
+	<div class="w3-margin w3-card">
+		<div class="w3-container w3-card w3-green w3-round-large">
+			<h3 class="w3-padding-large">Thêm sản phẩm</h3>
+		</div>
+
+		<form action="/Product/AddNewProduct" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-light-green w3-round-large">
+
+			<div class="w3-row w3-section">
+				<div class="w3-col" style="width:120px"><label class="w3-text-grey">Tên sản phẩm</label></div>
+				<div class="w3-rest">
+					<input class="w3-input w3-border" name="productName" type="text" required>
+				</div>
+			</div>
+
+			<div class="w3-row w3-section">
+				<div class="w3-col" style="width:120px"><label class="w3-text-grey">Giá</label></div>
+				<div class="w3-rest">
+					<input class="w3-input w3-border" name="productPrice" type="text" required>
+				</div>
+			</div>
+
+			<div class="w3-row w3-section">
+				<div class="w3-col" style="width:120px"><label class="w3-text-grey">Ảnh</label></div>
+				<div class="w3-rest">
+					<input class="w3-input w3-border" style="width: 85%; float: left;" name="productPictureLink" type="text" id="Picture" readonly required>
+					<button class="w3-btn w3-border" style="width: 10%; float: right;" id="Browse">...</button>
+					<script>
+						$("#Browse").click(function () {
+							var finder = new CKFinder();
+							finder.selectActionFunction = function (fileUrl) {
+								$("#Picture").val(fileUrl);
+							};
+							finder.popup();
+						});
+					</script>
+				</div>
+			</div>
+
+			<div class="w3-row w3-section">
+				<div class="w3-col" style="width:120px"><label class="w3-text-grey">Mô tả</label></div>
+				<div class="w3-rest">
+					<input class="w3-input w3-border" name="productDesc" type="text" required>
+				</div>
+			</div>
+
+			<div class="w3-row w3-section">
+				<div class="w3-col" style="width:120px"><label class="w3-text-grey">Loại nội thất</label></div>
+				<div class="w3-rest">
+					<select class="w3-select w3-border" id="selectedItemFurnitureType" name="selectedItemFurnitureType">
+						<option class="w3-text-grey" value="1">Phòng khách</option>
+						<option class="w3-text-grey" value="2">Phòng ăn</option>
+						<option class="w3-text-grey" value="3">Phòng ngủ</option>
+						<option class="w3-text-grey" value="4">Phòng làm việc</option>
+						<option class="w3-text-grey" value="5">Tủ bếpc</option>
+						<option class="w3-text-grey" value="6">Hàng trang trí</option>
+						<option class="w3-text-grey" value="7">Ngoại thất</option>
+						<option class="w3-text-grey" value="8">Thiết kế nội thất</option>
+					</select>
+				</div>
+			</div>
+
+			<p>
+				<button type="submit" class="w3-btn w3-border w3-hover-yellow w3-padding w3-green w3-round-large" style="width:120px">Thêm</button>
+				<a href="@Url.Action("Index", "Home")">
+					<input type="button" class="w3-btn w3-border w3-light-grey w3-round-large" style="width:120px" value="Hủy">
+				</a>
+			</p>
+		</form>
+	</div>
+
+</div>

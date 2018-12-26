@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="TtcnWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="TTCNWEBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="ADUserGroup">
     <Key>
       <PropertyRef Name="ADUserGroupID" />
@@ -25,6 +25,7 @@
     <NavigationProperty Name="ADUserGroup" Relationship="Self.FK_ADUsers_ADUserGroups" FromRole="ADUsers" ToRole="ADUserGroups" />
     <NavigationProperty Name="APSuppliers" Relationship="Self.FK_APSuppliers_ADUsers" FromRole="ADUsers" ToRole="APSuppliers" />
     <NavigationProperty Name="ARCustomers" Relationship="Self.FK_ARCustomers_ADUsers" FromRole="ADUsers" ToRole="ARCustomers" />
+    <NavigationProperty Name="ARSaleOrders" Relationship="Self.FK_ARSaleOrders_ADUsers" FromRole="ADUsers" ToRole="ARSaleOrders" />
   </EntityType>
   <EntityType Name="APSupplier">
     <Key>
@@ -44,6 +45,24 @@
     <Property Name="APSupplierContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="APSupplierContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ADUser" Relationship="Self.FK_APSuppliers_ADUsers" FromRole="APSuppliers" ToRole="ADUsers" />
+    <NavigationProperty Name="ARSaleOrderItems" Relationship="Self.FK_ARSaleOrderItems_APSuppliers" FromRole="APSuppliers" ToRole="ARSaleOrderItems" />
+    <NavigationProperty Name="ICProducts" Relationship="Self.FK_ICProducts_APSuppliers" FromRole="APSuppliers" ToRole="ICProducts" />
+  </EntityType>
+  <EntityType Name="ARCommonImage">
+    <Key>
+      <PropertyRef Name="ARCommonImageID" />
+    </Key>
+    <Property Name="ARCommonImageID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ARCommonImageUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ARCommonImageName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ARCommonImageType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ARCommonImageNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ARCommonImageDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ARCustomerDeliveryAddresss">
     <Key>
@@ -82,12 +101,29 @@
     <Property Name="ARCustomerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ARCustomerName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
     <Property Name="ARCustomerBirthDay" Type="DateTime" Precision="3" />
-    <Property Name="ARCustomerSex" Type="DateTime" Precision="3" />
     <Property Name="ARCustomerAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="ARCustomerContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ARCustomerContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ARCustomerSex" Type="Boolean" />
     <NavigationProperty Name="ADUser" Relationship="Self.FK_ARCustomers_ADUsers" FromRole="ARCustomers" ToRole="ADUsers" />
     <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_ARCustomers" FromRole="ARCustomers" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="ARSaleOrders" Relationship="Self.FK_ARSaleOrders_ARCustomers" FromRole="ARCustomers" ToRole="ARSaleOrders" />
+  </EntityType>
+  <EntityType Name="ARFurnitureTypeGroup">
+    <Key>
+      <PropertyRef Name="ARFurnitureTypeGroupID" />
+    </Key>
+    <Property Name="ARFurnitureTypeGroupID" Type="Int32" Nullable="false" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ARFurnitureTypeGroupName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ARFurnitureTypeGroupNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ARFurnitureTypeGroupDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ARFurnitureTypes" Relationship="Self.FK_ARFurnitureTypes_ARFurnitureTypeGroups" FromRole="ARFurnitureTypeGroups" ToRole="ARFurnitureTypes" />
+    <NavigationProperty Name="ARSaleOrderItems" Relationship="Self.FK_ARSaleOrderItems_ARFurnitureTypeGroups" FromRole="ARFurnitureTypeGroups" ToRole="ARSaleOrderItems" />
   </EntityType>
   <EntityType Name="ARFurnitureType">
     <Key>
@@ -102,6 +138,78 @@
     <Property Name="ARFurnitureTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="ARFurnitureTypeNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="ARFurnitureTypeDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FK_ARFurnitureTypeGroupID" Type="Int32" />
+    <Property Name="ARFurnitureTypeImageUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ARFurnitureTypeGroup" Relationship="Self.FK_ARFurnitureTypes_ARFurnitureTypeGroups" FromRole="ARFurnitureTypes" ToRole="ARFurnitureTypeGroups" />
+    <NavigationProperty Name="ARSaleOrderItems" Relationship="Self.FK_ARSaleOrderItems_ARFurnitureTypes" FromRole="ARFurnitureTypes" ToRole="ARSaleOrderItems" />
+  </EntityType>
+  <EntityType Name="ARSaleOrderItem">
+    <Key>
+      <PropertyRef Name="ARSaleOrderItemID" />
+    </Key>
+    <Property Name="ARSaleOrderItemID" Type="Int32" Nullable="false" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FK_ARSaleOrderID" Type="Int32" />
+    <Property Name="FK_ARFurnitureTypeGroupID" Type="Int32" />
+    <Property Name="FK_ARFurnitureTypeID" Type="Int32" />
+    <Property Name="FK_ICProductID" Type="Int32" />
+    <Property Name="FK_APSupplierID" Type="Int32" />
+    <Property Name="ARSaleOrderItemNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ARSaleOrderItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ARSaleOrderItemDesc" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ARSaleOrderItemDiscountPercent" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ARSaleOrderItemDiscountAmount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ARSaleOrderItemQty" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ARSaleOrderItemPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ARSaleOrderItemSubTotalAmount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ARSaleOrderItemTotalAmount" Type="Decimal" Precision="18" Scale="5" />
+    <NavigationProperty Name="APSupplier" Relationship="Self.FK_ARSaleOrderItems_APSuppliers" FromRole="ARSaleOrderItems" ToRole="APSuppliers" />
+    <NavigationProperty Name="ARFurnitureTypeGroup" Relationship="Self.FK_ARSaleOrderItems_ARFurnitureTypeGroups" FromRole="ARSaleOrderItems" ToRole="ARFurnitureTypeGroups" />
+    <NavigationProperty Name="ARFurnitureType" Relationship="Self.FK_ARSaleOrderItems_ARFurnitureTypes" FromRole="ARSaleOrderItems" ToRole="ARFurnitureTypes" />
+    <NavigationProperty Name="ARSaleOrder" Relationship="Self.FK_ARSaleOrderItems_ARSaleOrders" FromRole="ARSaleOrderItems" ToRole="ARSaleOrders" />
+    <NavigationProperty Name="ICProduct" Relationship="Self.FK_ARSaleOrderItems_ICProducts" FromRole="ARSaleOrderItems" ToRole="ICProducts" />
+  </EntityType>
+  <EntityType Name="ARSaleOrder">
+    <Key>
+      <PropertyRef Name="ARSaleOrderID" />
+    </Key>
+    <Property Name="ARSaleOrderID" Type="Int32" Nullable="false" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FK_ARCustomerID" Type="Int32" />
+    <Property Name="FK_ADUserID" Type="Int32" />
+    <Property Name="ARSaleOrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ARSaleOrderName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ARSaleOrderDesc" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="ARSaleOrderComment" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="ARSaleOrderStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ARSaleOrderPaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ARSaleOrderDate" Type="DateTime" Precision="3" />
+    <Property Name="ARSaleOrderDeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="ARSaleOrderDiscountPerCent" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ARSaleOrderDiscountAmount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ARSaleOrderSubTotalAmount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ARSaleOrderTotalAmount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="FK_GEStateProvinceID" Type="Int32" />
+    <Property Name="FK_GEDistrictID" Type="Int32" />
+    <Property Name="FK_GEWardID" Type="Int32" />
+    <Property Name="FK_GEStreetID" Type="Int32" />
+    <Property Name="ARSaleOrderHomeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ARSaleOrderFeeShipping" Type="Decimal" Precision="18" Scale="5" />
+    <NavigationProperty Name="ADUser" Relationship="Self.FK_ARSaleOrders_ADUsers" FromRole="ARSaleOrders" ToRole="ADUsers" />
+    <NavigationProperty Name="ARCustomer" Relationship="Self.FK_ARSaleOrders_ARCustomers" FromRole="ARSaleOrders" ToRole="ARCustomers" />
+    <NavigationProperty Name="ARSaleOrderItems" Relationship="Self.FK_ARSaleOrderItems_ARSaleOrders" FromRole="ARSaleOrders" ToRole="ARSaleOrderItems" />
+    <NavigationProperty Name="GEDistrict" Relationship="Self.FK_ARSaleOrders_GEDistricts" FromRole="ARSaleOrders" ToRole="GEDistricts" />
+    <NavigationProperty Name="GEStateProvince" Relationship="Self.FK_ARSaleOrders_GEStateProvinces" FromRole="ARSaleOrders" ToRole="GEStateProvinces" />
+    <NavigationProperty Name="GEStreet" Relationship="Self.FK_ARSaleOrders_GEStreets" FromRole="ARSaleOrders" ToRole="GEStreets" />
+    <NavigationProperty Name="GEWard" Relationship="Self.FK_ARSaleOrders_GEWards" FromRole="ARSaleOrders" ToRole="GEWards" />
   </EntityType>
   <EntityType Name="GEDistrict">
     <Key>
@@ -112,6 +220,7 @@
     <Property Name="FK_GEStateProvinceID" Type="Int32" />
     <Property Name="GEDistrictName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEDistricts" FromRole="GEDistricts" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="ARSaleOrders" Relationship="Self.FK_ARSaleOrders_GEDistricts" FromRole="GEDistricts" ToRole="ARSaleOrders" />
     <NavigationProperty Name="GEStateProvince" Relationship="Self.FK_GEDistricts_GEStateProvinces" FromRole="GEDistricts" ToRole="GEStateProvinces" />
     <NavigationProperty Name="GEWards" Relationship="Self.FK_GEWards_GEDistricts" FromRole="GEDistricts" ToRole="GEWards" />
   </EntityType>
@@ -123,6 +232,7 @@
     <Property Name="AAStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GEStateProvinceName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEStateProvinces" FromRole="GEStateProvinces" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="ARSaleOrders" Relationship="Self.FK_ARSaleOrders_GEStateProvinces" FromRole="GEStateProvinces" ToRole="ARSaleOrders" />
     <NavigationProperty Name="GEDistricts" Relationship="Self.FK_GEDistricts_GEStateProvinces" FromRole="GEStateProvinces" ToRole="GEDistricts" />
   </EntityType>
   <EntityType Name="GEStreet">
@@ -134,6 +244,7 @@
     <Property Name="FK_GEWardID" Type="Int32" />
     <Property Name="GEStreetName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEStreets" FromRole="GEStreets" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="ARSaleOrders" Relationship="Self.FK_ARSaleOrders_GEStreets" FromRole="GEStreets" ToRole="ARSaleOrders" />
     <NavigationProperty Name="GEWard" Relationship="Self.FK_GEStreets_GEWards" FromRole="GEStreets" ToRole="GEWards" />
   </EntityType>
   <EntityType Name="GEWard">
@@ -145,8 +256,48 @@
     <Property Name="FK_GEDistrictID" Type="Int32" />
     <Property Name="GEWardName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ARCustomerDeliveryAddressses" Relationship="Self.FK_ARCustomerDeliveryAddresss_GEWards" FromRole="GEWards" ToRole="ARCustomerDeliveryAddresss" />
+    <NavigationProperty Name="ARSaleOrders" Relationship="Self.FK_ARSaleOrders_GEWards" FromRole="GEWards" ToRole="ARSaleOrders" />
     <NavigationProperty Name="GEDistrict" Relationship="Self.FK_GEWards_GEDistricts" FromRole="GEWards" ToRole="GEDistricts" />
     <NavigationProperty Name="GEStreets" Relationship="Self.FK_GEStreets_GEWards" FromRole="GEWards" ToRole="GEStreets" />
+  </EntityType>
+  <EntityType Name="ICProduct">
+    <Key>
+      <PropertyRef Name="ICProductID" />
+    </Key>
+    <Property Name="ICProductID" Type="Int32" Nullable="false" />
+    <Property Name="AACreatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AACreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAUpdatedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AAUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="AAStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FK_ARFurnitureTypeID" Type="Int32" />
+    <Property Name="FK_APSupplierID" Type="Int32" />
+    <Property Name="ICProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductDesc" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductActiveCheck" Type="Boolean" />
+    <Property Name="ICProductLength" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ICProductHeight" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ICProductWidth" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ICProductWeight" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ICProductPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ICProductPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ICProductComment" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductMaterial" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductColor" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ICProductPictureLink" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="APSupplier" Relationship="Self.FK_ICProducts_APSuppliers" FromRole="ICProducts" ToRole="APSuppliers" />
+    <NavigationProperty Name="ARSaleOrderItems" Relationship="Self.FK_ARSaleOrderItems_ICProducts" FromRole="ICProducts" ToRole="ARSaleOrderItems" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_ADUsers_ADUserGroups">
     <End Role="ADUserGroups" Type="Self.ADUserGroup" Multiplicity="1" />
@@ -181,6 +332,42 @@
       </Principal>
       <Dependent Role="ARCustomers">
         <PropertyRef Name="FK_ADUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrders_ADUsers">
+    <End Role="ADUsers" Type="Self.ADUser" Multiplicity="0..1" />
+    <End Role="ARSaleOrders" Type="Self.ARSaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADUsers">
+        <PropertyRef Name="ADUserID" />
+      </Principal>
+      <Dependent Role="ARSaleOrders">
+        <PropertyRef Name="FK_ADUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrderItems_APSuppliers">
+    <End Role="APSuppliers" Type="Self.APSupplier" Multiplicity="0..1" />
+    <End Role="ARSaleOrderItems" Type="Self.ARSaleOrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APSuppliers">
+        <PropertyRef Name="APSupplierID" />
+      </Principal>
+      <Dependent Role="ARSaleOrderItems">
+        <PropertyRef Name="FK_APSupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ICProducts_APSuppliers">
+    <End Role="APSuppliers" Type="Self.APSupplier" Multiplicity="0..1" />
+    <End Role="ICProducts" Type="Self.ICProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APSuppliers">
+        <PropertyRef Name="APSupplierID" />
+      </Principal>
+      <Dependent Role="ICProducts">
+        <PropertyRef Name="FK_APSupplierID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -244,6 +431,126 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ARSaleOrders_ARCustomers">
+    <End Role="ARCustomers" Type="Self.ARCustomer" Multiplicity="0..1" />
+    <End Role="ARSaleOrders" Type="Self.ARSaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARCustomers">
+        <PropertyRef Name="ARCustomerID" />
+      </Principal>
+      <Dependent Role="ARSaleOrders">
+        <PropertyRef Name="FK_ARCustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARFurnitureTypes_ARFurnitureTypeGroups">
+    <End Role="ARFurnitureTypeGroups" Type="Self.ARFurnitureTypeGroup" Multiplicity="0..1" />
+    <End Role="ARFurnitureTypes" Type="Self.ARFurnitureType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARFurnitureTypeGroups">
+        <PropertyRef Name="ARFurnitureTypeGroupID" />
+      </Principal>
+      <Dependent Role="ARFurnitureTypes">
+        <PropertyRef Name="FK_ARFurnitureTypeGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrderItems_ARFurnitureTypeGroups">
+    <End Role="ARFurnitureTypeGroups" Type="Self.ARFurnitureTypeGroup" Multiplicity="0..1" />
+    <End Role="ARSaleOrderItems" Type="Self.ARSaleOrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARFurnitureTypeGroups">
+        <PropertyRef Name="ARFurnitureTypeGroupID" />
+      </Principal>
+      <Dependent Role="ARSaleOrderItems">
+        <PropertyRef Name="FK_ARFurnitureTypeGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrderItems_ARFurnitureTypes">
+    <End Role="ARFurnitureTypes" Type="Self.ARFurnitureType" Multiplicity="0..1" />
+    <End Role="ARSaleOrderItems" Type="Self.ARSaleOrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARFurnitureTypes">
+        <PropertyRef Name="ARFurnitureTypeID" />
+      </Principal>
+      <Dependent Role="ARSaleOrderItems">
+        <PropertyRef Name="FK_ARFurnitureTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrderItems_ARSaleOrders">
+    <End Role="ARSaleOrders" Type="Self.ARSaleOrder" Multiplicity="0..1" />
+    <End Role="ARSaleOrderItems" Type="Self.ARSaleOrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARSaleOrders">
+        <PropertyRef Name="ARSaleOrderID" />
+      </Principal>
+      <Dependent Role="ARSaleOrderItems">
+        <PropertyRef Name="FK_ARSaleOrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrderItems_ICProducts">
+    <End Role="ICProducts" Type="Self.ICProduct" Multiplicity="0..1" />
+    <End Role="ARSaleOrderItems" Type="Self.ARSaleOrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ICProducts">
+        <PropertyRef Name="ICProductID" />
+      </Principal>
+      <Dependent Role="ARSaleOrderItems">
+        <PropertyRef Name="FK_ICProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrders_GEDistricts">
+    <End Role="GEDistricts" Type="Self.GEDistrict" Multiplicity="0..1" />
+    <End Role="ARSaleOrders" Type="Self.ARSaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEDistricts">
+        <PropertyRef Name="GEDistrictID" />
+      </Principal>
+      <Dependent Role="ARSaleOrders">
+        <PropertyRef Name="FK_GEDistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrders_GEStateProvinces">
+    <End Role="GEStateProvinces" Type="Self.GEStateProvince" Multiplicity="0..1" />
+    <End Role="ARSaleOrders" Type="Self.ARSaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEStateProvinces">
+        <PropertyRef Name="GEStateProvinceID" />
+      </Principal>
+      <Dependent Role="ARSaleOrders">
+        <PropertyRef Name="FK_GEStateProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrders_GEStreets">
+    <End Role="GEStreets" Type="Self.GEStreet" Multiplicity="0..1" />
+    <End Role="ARSaleOrders" Type="Self.ARSaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEStreets">
+        <PropertyRef Name="GEStreetID" />
+      </Principal>
+      <Dependent Role="ARSaleOrders">
+        <PropertyRef Name="FK_GEStreetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARSaleOrders_GEWards">
+    <End Role="GEWards" Type="Self.GEWard" Multiplicity="0..1" />
+    <End Role="ARSaleOrders" Type="Self.ARSaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEWards">
+        <PropertyRef Name="GEWardID" />
+      </Principal>
+      <Dependent Role="ARSaleOrders">
+        <PropertyRef Name="FK_GEWardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_GEDistricts_GEStateProvinces">
     <End Role="GEStateProvinces" Type="Self.GEStateProvince" Multiplicity="0..1" />
     <End Role="GEDistricts" Type="Self.GEDistrict" Multiplicity="*" />
@@ -284,13 +591,19 @@
     <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroup" />
     <EntitySet Name="ADUsers" EntityType="Self.ADUser" />
     <EntitySet Name="APSuppliers" EntityType="Self.APSupplier" />
+    <EntitySet Name="ARCommonImages" EntityType="Self.ARCommonImage" />
     <EntitySet Name="ARCustomerDeliveryAddressses" EntityType="Self.ARCustomerDeliveryAddresss" />
     <EntitySet Name="ARCustomers" EntityType="Self.ARCustomer" />
+    <EntitySet Name="ARFurnitureTypeGroups" EntityType="Self.ARFurnitureTypeGroup" />
     <EntitySet Name="ARFurnitureTypes" EntityType="Self.ARFurnitureType" />
+    <EntitySet Name="ARSaleOrderItems" EntityType="Self.ARSaleOrderItem" />
+    <EntitySet Name="ARSaleOrders" EntityType="Self.ARSaleOrder" />
     <EntitySet Name="GEDistricts" EntityType="Self.GEDistrict" />
     <EntitySet Name="GEStateProvinces" EntityType="Self.GEStateProvince" />
     <EntitySet Name="GEStreets" EntityType="Self.GEStreet" />
     <EntitySet Name="GEWards" EntityType="Self.GEWard" />
+    <EntitySet Name="ICProducts" EntityType="Self.ICProduct" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK_ADUsers_ADUserGroups" Association="Self.FK_ADUsers_ADUserGroups">
       <End Role="ADUserGroups" EntitySet="ADUserGroups" />
       <End Role="ADUsers" EntitySet="ADUsers" />
@@ -302,6 +615,18 @@
     <AssociationSet Name="FK_ARCustomers_ADUsers" Association="Self.FK_ARCustomers_ADUsers">
       <End Role="ADUsers" EntitySet="ADUsers" />
       <End Role="ARCustomers" EntitySet="ARCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrders_ADUsers" Association="Self.FK_ARSaleOrders_ADUsers">
+      <End Role="ADUsers" EntitySet="ADUsers" />
+      <End Role="ARSaleOrders" EntitySet="ARSaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrderItems_APSuppliers" Association="Self.FK_ARSaleOrderItems_APSuppliers">
+      <End Role="APSuppliers" EntitySet="APSuppliers" />
+      <End Role="ARSaleOrderItems" EntitySet="ARSaleOrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ICProducts_APSuppliers" Association="Self.FK_ICProducts_APSuppliers">
+      <End Role="APSuppliers" EntitySet="APSuppliers" />
+      <End Role="ICProducts" EntitySet="ICProducts" />
     </AssociationSet>
     <AssociationSet Name="FK_ARCustomerDeliveryAddresss_ARCustomers" Association="Self.FK_ARCustomerDeliveryAddresss_ARCustomers">
       <End Role="ARCustomers" EntitySet="ARCustomers" />
@@ -322,6 +647,46 @@
     <AssociationSet Name="FK_ARCustomerDeliveryAddresss_GEWards" Association="Self.FK_ARCustomerDeliveryAddresss_GEWards">
       <End Role="GEWards" EntitySet="GEWards" />
       <End Role="ARCustomerDeliveryAddresss" EntitySet="ARCustomerDeliveryAddressses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrders_ARCustomers" Association="Self.FK_ARSaleOrders_ARCustomers">
+      <End Role="ARCustomers" EntitySet="ARCustomers" />
+      <End Role="ARSaleOrders" EntitySet="ARSaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARFurnitureTypes_ARFurnitureTypeGroups" Association="Self.FK_ARFurnitureTypes_ARFurnitureTypeGroups">
+      <End Role="ARFurnitureTypeGroups" EntitySet="ARFurnitureTypeGroups" />
+      <End Role="ARFurnitureTypes" EntitySet="ARFurnitureTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrderItems_ARFurnitureTypeGroups" Association="Self.FK_ARSaleOrderItems_ARFurnitureTypeGroups">
+      <End Role="ARFurnitureTypeGroups" EntitySet="ARFurnitureTypeGroups" />
+      <End Role="ARSaleOrderItems" EntitySet="ARSaleOrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrderItems_ARFurnitureTypes" Association="Self.FK_ARSaleOrderItems_ARFurnitureTypes">
+      <End Role="ARFurnitureTypes" EntitySet="ARFurnitureTypes" />
+      <End Role="ARSaleOrderItems" EntitySet="ARSaleOrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrderItems_ARSaleOrders" Association="Self.FK_ARSaleOrderItems_ARSaleOrders">
+      <End Role="ARSaleOrders" EntitySet="ARSaleOrders" />
+      <End Role="ARSaleOrderItems" EntitySet="ARSaleOrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrderItems_ICProducts" Association="Self.FK_ARSaleOrderItems_ICProducts">
+      <End Role="ICProducts" EntitySet="ICProducts" />
+      <End Role="ARSaleOrderItems" EntitySet="ARSaleOrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrders_GEDistricts" Association="Self.FK_ARSaleOrders_GEDistricts">
+      <End Role="GEDistricts" EntitySet="GEDistricts" />
+      <End Role="ARSaleOrders" EntitySet="ARSaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrders_GEStateProvinces" Association="Self.FK_ARSaleOrders_GEStateProvinces">
+      <End Role="GEStateProvinces" EntitySet="GEStateProvinces" />
+      <End Role="ARSaleOrders" EntitySet="ARSaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrders_GEStreets" Association="Self.FK_ARSaleOrders_GEStreets">
+      <End Role="GEStreets" EntitySet="GEStreets" />
+      <End Role="ARSaleOrders" EntitySet="ARSaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARSaleOrders_GEWards" Association="Self.FK_ARSaleOrders_GEWards">
+      <End Role="GEWards" EntitySet="GEWards" />
+      <End Role="ARSaleOrders" EntitySet="ARSaleOrders" />
     </AssociationSet>
     <AssociationSet Name="FK_GEDistricts_GEStateProvinces" Association="Self.FK_GEDistricts_GEStateProvinces">
       <End Role="GEStateProvinces" EntitySet="GEStateProvinces" />
