@@ -1,0 +1,46 @@
+﻿@model Ttcn_web.Models.ARFurnitureTypeGroup
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ARFurnitureTypeGroup</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeGroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARFurnitureTypeGroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeGroupNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARFurnitureTypeGroupNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ARFurnitureTypeGroupDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARFurnitureTypeGroupDesc)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ARFurnitureTypeGroupID }) |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("danh sach loai noi that", "Filter", "FurnitureTypeGroup", new { id = Model.ARFurnitureTypeGroupID }, new { });
+</p>

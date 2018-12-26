@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Ttcn_web.Models.ICProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.ICProductNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ICProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ICProductDesc)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.ICProductNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ICProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ICProductDesc)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ICProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ICProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ICProductID })
+        </td>
+    </tr>
+}
+
+</table>

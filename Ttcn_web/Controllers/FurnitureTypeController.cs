@@ -2,6 +2,7 @@
 using System.Net;
 using System.Web.Mvc;
 using Ttcn_web.Services.Abtractions;
+using PagedList;
 
 namespace Ttcn_web.Controllers
 {
@@ -68,14 +69,14 @@ namespace Ttcn_web.Controllers
         /// <summary>
         /// get all product of type id
         /// </summary>
-        public ActionResult Filter(int? id)
+        public ActionResult Filter(int? id, int page = 1, int pageSize = 9)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var products = _productService.Filter(id.GetValueOrDefault());
+            var products = _productService.Filter(id.GetValueOrDefault(), page, pageSize);
             Session["FurnitureTypeGroupID"] = id;
 
             if (products == null)

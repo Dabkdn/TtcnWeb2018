@@ -44,6 +44,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ARCommonImages">
+      <EntityTypeMapping TypeName="TTCNWEBModel.ARCommonImage">
+        <MappingFragment StoreEntitySet="ARCommonImages">
+          <ScalarProperty Name="ARCommonImageID" ColumnName="ARCommonImageID" />
+          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
+          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
+          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
+          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
+          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
+          <ScalarProperty Name="ARCommonImageUrl" ColumnName="ARCommonImageUrl" />
+          <ScalarProperty Name="ARCommonImageName" ColumnName="ARCommonImageName" />
+          <ScalarProperty Name="ARCommonImageType" ColumnName="ARCommonImageType" />
+          <ScalarProperty Name="ARCommonImageNo" ColumnName="ARCommonImageNo" />
+          <ScalarProperty Name="ARCommonImageDesc" ColumnName="ARCommonImageDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ARCustomerDeliveryAddressses">
       <EntityTypeMapping TypeName="TTCNWEBModel.ARCustomerDeliveryAddresss">
         <MappingFragment StoreEntitySet="ARCustomerDeliveryAddresss">
@@ -248,23 +265,6 @@
           <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ARCommonImages">
-      <EntityTypeMapping TypeName="TTCNWEBModel.ARCommonImage">
-        <MappingFragment StoreEntitySet="ARCommonImages">
-          <ScalarProperty Name="ARCommonImageDesc" ColumnName="ARCommonImageDesc" />
-          <ScalarProperty Name="ARCommonImageNo" ColumnName="ARCommonImageNo" />
-          <ScalarProperty Name="ARCommonImageType" ColumnName="ARCommonImageType" />
-          <ScalarProperty Name="ARCommonImageName" ColumnName="ARCommonImageName" />
-          <ScalarProperty Name="ARCommonImageUrl" ColumnName="ARCommonImageUrl" />
-          <ScalarProperty Name="AAUpdatedDate" ColumnName="AAUpdatedDate" />
-          <ScalarProperty Name="AACreatedDate" ColumnName="AACreatedDate" />
-          <ScalarProperty Name="AAUpdatedUser" ColumnName="AAUpdatedUser" />
-          <ScalarProperty Name="AACreatedUser" ColumnName="AACreatedUser" />
-          <ScalarProperty Name="AAStatus" ColumnName="AAStatus" />
-          <ScalarProperty Name="ARCommonImageID" ColumnName="ARCommonImageID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Ttcn_web.Models;
 using Ttcn_web.Services.Abtractions;
+using PagedList;
 
 namespace Ttcn_web.Services.Implementations
 {
@@ -47,7 +48,7 @@ namespace Ttcn_web.Services.Implementations
             product.ICProductPrice = Convert.ToDecimal(formCollection["productPrice"].ToString());
             product.ICProductPictureLink = "../.." + formCollection["productPictureLink"].ToString();
             product.FK_ARFurnitureTypeID = furnitureTypeID;
-            product.FK_APSupplierID = userID;
+            product.FK_APSupplierID = db.APSuppliers.FirstOrDefault(p => p.FK_ADUserID == userID) != null ? db.APSuppliers.FirstOrDefault(p => p.FK_ADUserID == userID).APSupplierID : 0;
             product.ICProductActiveCheck = true;
 
             db.ICProducts.Add(product);
@@ -100,9 +101,9 @@ namespace Ttcn_web.Services.Implementations
             db.SaveChanges();
         }
 
-        public IEnumerable<ICProduct> Filter(int furnitureTypeId)
+        public IEnumerable<ICProduct> Filter(int furnitureTypeId, int page, int pageSize)
         {
-            return db.ICProducts.Where(x => x.FK_ARFurnitureTypeID == furnitureTypeId && x.AAStatus == "Alive").ToList();
+            return db.ICProducts.Where(x => x.FK_ARFurnitureTypeID == furnitureTypeId && x.AAStatus == "Alive").OrderByDescending(p => p.ICProductID).ToPagedList(page, pageSize);
         }
     }
 }

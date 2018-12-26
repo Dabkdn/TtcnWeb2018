@@ -1,0 +1,63 @@
+﻿@model Ttcn_web.Models.ICProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="w3-content">
+    <br />
+    <div>
+        <div class="w3-threequarter w3-margin-bottom w3-left">
+            <img class="w3-round w3-margin-bottom" src="@Model.ICProductPictureLink" alt="Pants" style="width:95%">
+            <div style="width: 95%">
+                    <div class="w3-half">
+                        <a class="w3-btn w3-yellow w3-padding-large w3-round-xxlarge" style="width: 100%">Mua ngay</a>
+                    </div>
+                    <div class="w3-half">
+                        <a class="w3-btn w3-yellow w3-padding-large w3-round-xxlarge" style="width: 100%">Thêm vào giỏ hàng</a>
+                    </div>
+            </div>
+        </div>
+        <div class="w3-quarter w3-display-container">
+            <h2>@Model.ICProductName</h2>
+            <h4>@String.Format("{0:n0}", Model.ICProductPrice)</h4>
+        </div>
+    </div>
+</div>
+
+<div class="w3-content">
+
+    <button onclick="myFunction('Detail')" class="w3-button w3-block w3-left-align w3-light-blue">
+        Chi tiết sản phẩm
+    </button>
+
+    <div id="Detail" class="w3-hide w3-container">
+        <p>Lorem ipsum...</p>
+    </div>
+
+    <button onclick="myFunction('Description')" class="w3-button w3-block w3-left-align w3-light-blue">
+        Mô tả sản phẩm
+    </button>
+
+    <div id="Description" class="w3-hide w3-container">
+        <p>Lorem ipsum...</p>
+    </div>
+
+    <button onclick="myFunction('Review')" class="w3-button w3-block w3-left-align w3-light-blue">
+        Đánh giá sản phẩm
+    </button>
+
+    <div id="Review" class="w3-hide w3-container">
+        <p>Lorem ipsum...</p>
+    </div>
+</div>
+
+<script>
+    function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>

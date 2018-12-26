@@ -28,6 +28,7 @@ namespace Ttcn_web.Models
         public virtual DbSet<ADUserGroup> ADUserGroups { get; set; }
         public virtual DbSet<ADUser> ADUsers { get; set; }
         public virtual DbSet<APSupplier> APSuppliers { get; set; }
+        public virtual DbSet<ARCommonImage> ARCommonImages { get; set; }
         public virtual DbSet<ARCustomerDeliveryAddresss> ARCustomerDeliveryAddressses { get; set; }
         public virtual DbSet<ARCustomer> ARCustomers { get; set; }
         public virtual DbSet<ARFurnitureTypeGroup> ARFurnitureTypeGroups { get; set; }
@@ -40,6 +41,5 @@ namespace Ttcn_web.Models
         public virtual DbSet<GEWard> GEWards { get; set; }
         public virtual DbSet<ICProduct> ICProducts { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<ARCommonImage> ARCommonImages { get; set; }
     }
 }
