@@ -1,0 +1,74 @@
+﻿@model Ttcn_web.Models.ADUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ADUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AAStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AAStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AACreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AACreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AAUpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AAUpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADUserResetToken)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADUserResetToken)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADUserGroup.AAStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADUserGroup.AAStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ADUserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

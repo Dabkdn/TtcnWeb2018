@@ -1,18 +1,19 @@
-﻿@model IEnumerable<Ttcn_web.Models.ARFurnitureType>
+﻿@model IEnumerable<Ttcn_web.Models.ADUser>
 
 @{
-    ViewBag.Title = "Loại nội thất";
+    ViewBag.Title = "User";
 }
 
-<div class="w3-container">
-    <h3>Danh sách Loại nội thất</h3>
-    <hr />
-    <a href="@Url.Action("Create","FurnitureType")" class="w3-button w3-yellow w3-round-large">
-        <i class="fa fa-plus"></i>
-        <span>Tạo mới Loại nội thất</span>
-    </a>
 
-    <hr />
+<div class="w3-container">
+    <h3>Danh sách tài khoản</h3>
+    <hr/>
+    <a href="@Url.Action("Create","User")" class="w3-button w3-yellow w3-round-large">
+        <i class="fa fa-plus"></i>
+        <span>Tạo mới tài khoản</span>
+    </a>
+    
+    <hr/>
     <div>
         <table class="table-admin w3-table-all">
             <tr>
@@ -20,13 +21,16 @@
                     STT
                 </th>
                 <th>
-                    Tên
+                    Tên user
                 </th>
                 <th>
-                    No
+                    Password
                 </th>
                 <th>
-                    Nhóm
+                    Ngày tạo
+                </th>
+                <th>
+                    Ngày chỉnh sửa
                 </th>
                 <th></th>
             </tr>
@@ -41,21 +45,24 @@
                     <tr>
                         <td>@count</td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
+                            @Html.DisplayFor(modelItem => item.ADUserName)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ARFurnitureTypeNo)
+                            @Html.DisplayFor(modelItem => item.ADPassword)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ARFurnitureTypeGroup.ARFurnitureTypeGroupName)
+                            @Html.DisplayFor(modelItem => item.AACreatedDate)
                         </td>
                         <td>
-                            <a href="@Url.Action("Edit","FurnitureType",new {id = item.ARFurnitureTypeID})" class="w3-button w3-light-blue w3-round-large">
+                            @Html.DisplayFor(modelItem => item.AAUpdatedDate)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit","User",new {id = item.ADUserID})" class="w3-button w3-light-blue w3-round-large">
                                 <i class="fa fa-edit"></i>
                                 <span>Sửa</span>
                             </a>
 
-                            <a href="@Url.Action("Delete","FurnitureType",new {id = item.ARFurnitureTypeID})" class="w3-button w3-red w3-round-large">
+                            <a href="@Url.Action("Delete","User",new {id = item.ADUserID})" class="w3-button w3-red w3-round-large">
                                 <i class="fa fa-remove"></i>
                                 <span>Xóa</span>
                             </a>
@@ -67,3 +74,6 @@
         </table>
     </div>
 </div>
+
+
+

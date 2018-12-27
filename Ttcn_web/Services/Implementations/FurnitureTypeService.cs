@@ -21,9 +21,11 @@ namespace Ttcn_web.Services.Implementations
             furnitureType.ARFurnitureTypeID = lastFurnitureType.ARFurnitureTypeID + 1;
             furnitureType.AAStatus = "Alive";
             furnitureType.AACreatedDate = DateTime.Now;
-            furnitureType.ARFurnitureTypeName = formCollection["ARFurnitureTypeName"];
-            furnitureType.ARFurnitureTypeNo = formCollection["ARFurnitureTypeNo"];
-            furnitureType.ARFurnitureTypeDesc = formCollection["ARFurnitureTypeDesc"];
+            furnitureType.ARFurnitureTypeName = formCollection["name"];
+            furnitureType.ARFurnitureTypeNo = formCollection["no"];
+            furnitureType.ARFurnitureTypeDesc = formCollection["desc"];
+            furnitureType.FK_ARFurnitureTypeGroupID = Int32.Parse(formCollection["group"]);
+            furnitureType.ARFurnitureTypeImageUrl = formCollection["url"];
 
             if (furnitureType == null)
             {
@@ -44,9 +46,11 @@ namespace Ttcn_web.Services.Implementations
             }
 
             furnitureType.AAUpdatedDate = DateTime.Now;
-            furnitureType.ARFurnitureTypeName = formCollection["ARFurnitureTypeName"];
-            furnitureType.ARFurnitureTypeNo = formCollection["ARFurnitureTypeNo"];
-            furnitureType.ARFurnitureTypeDesc = formCollection["ARFurnitureTypeDesc"];
+            furnitureType.ARFurnitureTypeName = formCollection["name"];
+            furnitureType.ARFurnitureTypeNo = formCollection["no"];
+            furnitureType.ARFurnitureTypeDesc = formCollection["desc"];
+            furnitureType.FK_ARFurnitureTypeGroupID = Int32.Parse(formCollection["group"]);
+            furnitureType.ARFurnitureTypeImageUrl = formCollection["url"];
 
             db.ARFurnitureTypes.AddOrUpdate();
             db.SaveChanges();

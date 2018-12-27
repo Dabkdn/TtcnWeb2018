@@ -30,27 +30,27 @@ namespace Ttcn_web.Controllers
         // GET: FurnitureType
         public ActionResult Index()
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
             var result = _furnitureTypeService.GetAll();
 
-            return View(result);
+            return View("Index","_AdminLayout",result);
         }
 
         // GET: FurnitureType/Details/5
         public ActionResult Details(int? id)
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
             if (id == null)
             {
@@ -63,7 +63,7 @@ namespace Ttcn_web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(furnitureType);
+            return View("Details", "_AdminLayout", furnitureType);
         }
 
         /// <summary>
@@ -89,26 +89,26 @@ namespace Ttcn_web.Controllers
         // GET: FurnitureType/Create
         public ActionResult Create()
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
-            return View();
+            return View("Create", "_AdminLayout");
         }
 
         // POST: FurnitureType/Create
         [HttpPost]
         public ActionResult Create(FormCollection formCollection)
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
             _furnitureTypeService.Create(formCollection);
 
@@ -117,18 +117,18 @@ namespace Ttcn_web.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View();
+            return View("Create", "_AdminLayout");
         }
 
         // GET: FurnitureType/Edit/5
         public ActionResult Edit(int? id)
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
             if (id == null)
             {
@@ -142,7 +142,7 @@ namespace Ttcn_web.Controllers
                 return HttpNotFound();
             }
 
-            return View(furnitureType);
+            return View("Edit", "_AdminLayout", furnitureType);
         }
 
         // POST: FurnitureType/Edit/5
@@ -152,12 +152,12 @@ namespace Ttcn_web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(FormCollection formCollection, int id)
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
             _furnitureTypeService.Edit(formCollection, id);
             
@@ -165,18 +165,18 @@ namespace Ttcn_web.Controllers
             {
                 return RedirectToAction("Index");
             }
-            return View();
+            return View("Edit", "_AdminLayout");
         }
 
         // GET: FurnitureType/Delete/5
         public ActionResult Delete(int? id)
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
             if (id == null)
             {
@@ -190,7 +190,7 @@ namespace Ttcn_web.Controllers
                 return HttpNotFound();
             }
 
-            return View(furnitureType);
+            return View("Delete", "_AdminLayout", furnitureType);
         }
 
         // POST: FurnitureType/Delete/5
@@ -198,12 +198,12 @@ namespace Ttcn_web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
             _furnitureTypeService.Delete(id);
 

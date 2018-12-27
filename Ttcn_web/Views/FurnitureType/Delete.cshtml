@@ -1,49 +1,64 @@
 ﻿@model Ttcn_web.Models.ARFurnitureType
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Xóa";
 }
 
-<h2>Delete</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ARFurnitureType</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.ARFurnitureTypeName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ARFurnitureTypeName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ARFurnitureTypeNo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ARFurnitureTypeNo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ARFurnitureTypeDesc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ARFurnitureTypeDesc)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="w3-content w3-animate-bottom">
+    <div class="w3-margin w3-card">
+        <div class="w3-container w3-card w3-blue w3-round-large">
+            <h3 class="w3-padding-large">Chi tiết Loại nội thất</h3>
         </div>
-    }
+        <hr />
+
+        <div class="w3-row w3-section w3-padding">
+            <div class="w3-col" style="width:50px"><i class="w3-large fa fa-user-plus"></i></div>
+            <div class="w3-rest">
+                <h5><b>Tên loại nội thất: </b>@Html.DisplayFor(model => model.ARFurnitureTypeName)</h5>
+            </div>
+        </div>
+
+        <div class="w3-row w3-section w3-padding">
+            <div class="w3-col" style="width:50px"><i class="w3-large fa fa-user-secret"></i></div>
+            <div class="w3-rest">
+                <h5><b>No:  </b>@Html.DisplayFor(model => model.ARFurnitureTypeNo)</h5>
+            </div>
+        </div>
+
+        <div class="w3-row w3-section w3-padding">
+            <div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+            <div class="w3-rest">
+                <h5><b>Mô tả:  </b>@Html.DisplayFor(model => model.ARFurnitureTypeDesc)</h5>
+            </div>
+        </div>
+
+        <div class="w3-row w3-section w3-padding">
+            <div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+            <div class="w3-rest">
+                <h5><b>Nhóm:  </b>@Html.DisplayFor(model => model.ARFurnitureTypeGroup.ARFurnitureTypeGroupName)</h5>
+            </div>
+        </div>
+
+        <div class="w3-row w3-section w3-padding">
+            <div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+            <div class="w3-rest">
+                <h5><b>url:  </b>@Html.DisplayFor(model => model.ARFurnitureTypeImageUrl)</h5>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-actions w3-padding">
+            <h4>Xác nhận xóa?</h4>
+            <input type="submit" value="Xóa" class="w3-button w3-red w3-round-large w3-padding" style="width:120px" />
+            <a href="@Url.Action("Index", "FurnitureType")">
+                <input type="button" class="w3-button w3-border w3-light-grey w3-round-large" style="width:120px" value="Hủy">
+            </a>
+        </div>
+    </div>
 </div>
+}

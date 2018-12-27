@@ -9,6 +9,14 @@ namespace Ttcn_web.Services.Abtractions
     {
         IEnumerable<ADUser> GetAll();
 
+        ADUser Get(int userId);
+
+        void Create(FormCollection formCollection);
+
+        void Edit(FormCollection formCollection, int userId);
+
+        void Delete(int userId);
+
         ADUser GetUserByID(int userUD);
     }
 }
