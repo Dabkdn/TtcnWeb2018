@@ -22,9 +22,9 @@
 					<td>@item.ARSaleOrderItemName</td>
 					<td>@String.Format("{0:n0}", @item.ARSaleOrderItemPrice)</td>
 					<td>
-						<button class="btn-quantity-sub" type="button" name="button">-</button>
+						<button class="btn-quantity-sub" type="button" name="button" data-id="@item.ARSaleOrderItemID">-</button>
 						<input class="input" type="text" name="name" value="@String.Format("{0:n0}", item.ARSaleOrderItemQty)">
-						<button class="btn-quantity-add" type="button" name="button">+</button>
+						<button class="btn-quantity-add" type="button" name="button" data-id="@item.ARSaleOrderItemID">+</button>
 						<form class="form-Delete" action="/Cart/DeleteItemInCart" method="post">
 							<button class="btn-quantity-delete" type="submit" name="buttonDelete" value="@item.ARSaleOrderItemID">x</button>
 						</form>
@@ -60,29 +60,37 @@
 		</form>
 	</div>
 </div>
-
 <script type="text/javascript">
-	$('.btn-quantity-sub').on('click', function (e) {
+	$('.btn-quantity-sub').off('click').on('click', function (e) {
 		e.preventDefault();
+		var id = $(this).data('id');
 		var $this = $(this);
 		var $input = $this.closest('td').find('input');
-		var value = parseInt($input.val());
-		if (value > 1) {
-			value = value - 1;
-		} else {
-			value = 0;
-		}
-		$input.val(value);
-	})
-
-	$('.btn-quantity-add').on('click', function (e) {
+		$.ajax({
+			url: "/Cart/DecreaseItemInCart",
+			data: { id: id },
+			dataType: "json",
+			type: "POST",
+			success: function (response) {
+				$input.val(response.status);
+			}
+		});
+	});
+	$('.btn-quantity-add').off('click').on('click', function (e) {
 		e.preventDefault();
+		var id = $(this).data('id');
 		var $this = $(this);
 		var $input = $this.closest('td').find('input');
-		var value = parseInt($input.val());
-		value++;
-		$input.val(value);
-	})
+		$.ajax({
+			url: "/Cart/IncreaseItemInCart",
+			data: { id: id },
+			dataType: "json",
+			type: "POST",
+			success: function (response) {
+				$input.val(response.status);
+			}
+		});
+	});
 </script>
 
 

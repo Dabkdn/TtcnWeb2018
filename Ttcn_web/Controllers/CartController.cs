@@ -50,5 +50,33 @@ namespace Ttcn_web.Controllers
             Session["CartItemQty"] = Convert.ToInt32(Session["CartItemQty"]) - _saleOrderItemService.GetSaleOrderItemQuantity(saleOrderItemID);
             return RedirectToAction("ShowCartsOfUser", "Cart");
         }
+
+        [HttpPost]
+        public JsonResult IncreaseItemInCart(int id)
+        {
+            var quantity = _saleOrderItemService.IncreaseItemQuantity(id);
+            ARSaleOrder objsaleOrder = _saleOrderService.GetObjectByItemID(id);
+            if (objsaleOrder != null)
+                _saleOrderService.UpdateTotalAmount(objsaleOrder);
+            Session["CartItemQty"] = Convert.ToInt32(Session["CartItemQty"]) + 1;
+            return Json(new
+            {
+                status = quantity
+            });
+        }
+
+        [HttpPost]
+        public JsonResult DecreaseItemInCart(int id)
+        {
+            var quantity = _saleOrderItemService.DecreaseItemQuantity(id);
+            ARSaleOrder objsaleOrder = _saleOrderService.GetObjectByItemID(id);
+            if (objsaleOrder != null)
+                _saleOrderService.UpdateTotalAmount(objsaleOrder);
+            Session["CartItemQty"] = Convert.ToInt32(Session["CartItemQty"]) - 1;
+            return Json(new
+            {
+                status = quantity
+            });
+        }
     }
 }
