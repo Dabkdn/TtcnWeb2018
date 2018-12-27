@@ -1,0 +1,50 @@
+﻿@model Ttcn_web.Models.ADUser
+
+@{
+    ViewBag.Title = "Xóa";
+}
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="w3-content w3-animate-bottom">
+            <div class="w3-margin w3-card">
+                <div class="w3-container w3-card w3-blue w3-round-large">
+                    <h3 class="w3-padding-large">Chi tiết tài khoản</h3>
+                </div>
+                <hr />
+
+                <div class="w3-row w3-section w3-padding">
+                    <div class="w3-col" style="width:50px"><i class="w3-large fa fa-user-plus"></i></div>
+                    <div class="w3-rest">
+                        <h5><b>Tên đăng nhập:  </b>@Html.DisplayFor(model => model.ADUserName)</h5>
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section w3-padding">
+                    <div class="w3-col" style="width:50px"><i class="w3-large fa fa-user-secret"></i></div>
+                    <div class="w3-rest">
+                        <h5><b>Mật khẩu:  </b>@Html.DisplayFor(model => model.ADPassword)</h5>
+                    </div>
+                </div>
+
+                <div class="w3-row w3-section w3-padding">
+                    <div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+                    <div class="w3-rest">
+                        <h5><b>Ngày tạo:  </b>@Html.DisplayFor(model => model.AACreatedDate)</h5>
+                    </div>
+                </div>
+
+                <hr />
+                
+                <div class="form-actions w3-padding">
+                    <h4>Xác nhận xóa?</h4>
+                    <input type="submit" value="Xóa" class="w3-button w3-red w3-round-large w3-padding" style="width:120px" />
+                    <a href="@Url.Action("Index", "User")">
+                        <input type="button" class="w3-button w3-border w3-light-grey w3-round-large" style="width:120px" value="Hủy">
+                    </a>
+                </div>
+            </div>
+        </div>
+    }

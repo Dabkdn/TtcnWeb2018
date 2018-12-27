@@ -1456,3 +1456,24 @@ a{
 	word-wrap: break-word;
 	padding-right: 30px;
 }
+
+.table-admin {
+    width: 100%;
+    text-align: left;
+}
+
+.table-admin tr, th, td {
+    text-align: right;
+    width: auto;
+}
+
+.table-admin, th, td {
+    border: 0px solid #DDDDDD;
+    border-collapse: collapse;
+    padding: 10px;
+    font-size: 13px;
+}
+
+    .table-admin th {
+        background-color: #2196F3;
+    }
