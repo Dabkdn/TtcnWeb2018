@@ -20,5 +20,9 @@ namespace Ttcn_web.Services.Abtractions
         void UpdateStatusObject(int saleOrderItemID);
 
         int GetSaleOrderItemQuantity(int saleOrderItemID);
+
+        int IncreaseItemQuantity(int saleOrderItemID);
+
+        int DecreaseItemQuantity(int saleOrderItemID);
     }
 }

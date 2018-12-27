@@ -70,8 +70,8 @@ namespace Ttcn_web.Services.Implementations
 
         public void UpdateTotalAmount(ARSaleOrderItem saleOrderItem)
         {
-            saleOrderItem.ARSaleOrderItemSubTotalAmount = saleOrderItem.ARSaleOrderItemPrice * saleOrderItem.ARSaleOrderItemQty;
-            saleOrderItem.ARSaleOrderItemSubTotalAmount = saleOrderItem.ARSaleOrderItemSubTotalAmount - saleOrderItem.ARSaleOrderItemDiscountAmount;
+            saleOrderItem.ARSaleOrderItemSubTotalAmount = saleOrderItem.ARSaleOrderItemPrice.GetValueOrDefault() * saleOrderItem.ARSaleOrderItemQty.GetValueOrDefault();
+            saleOrderItem.ARSaleOrderItemTotalAmount = saleOrderItem.ARSaleOrderItemSubTotalAmount.GetValueOrDefault() - saleOrderItem.ARSaleOrderItemDiscountAmount.GetValueOrDefault();
         }
 
         public void UpdateStatusObject(int saleOrderItemID)
@@ -89,6 +89,33 @@ namespace Ttcn_web.Services.Implementations
             if (itemQuantity == null)
                 return 0;
             return Convert.ToInt32(itemQuantity);
+        }
+
+        public int IncreaseItemQuantity(int saleOrderItemID)
+        {
+            var objSaleOrderItem = db.ARSaleOrderItems.FirstOrDefault(p => p.ARSaleOrderItemID == saleOrderItemID);
+            if (objSaleOrderItem == null)
+                return Decimal.ToInt32(objSaleOrderItem.ARSaleOrderItemQty.GetValueOrDefault());
+            objSaleOrderItem.ARSaleOrderItemQty += 1;
+            objSaleOrderItem.ARSaleOrderItemSubTotalAmount = objSaleOrderItem.ARSaleOrderItemPrice.GetValueOrDefault() * objSaleOrderItem.ARSaleOrderItemQty.GetValueOrDefault();
+            objSaleOrderItem.ARSaleOrderItemTotalAmount = objSaleOrderItem.ARSaleOrderItemSubTotalAmount.GetValueOrDefault() - objSaleOrderItem.ARSaleOrderItemDiscountAmount.GetValueOrDefault();
+            db.SaveChanges();
+            return objSaleOrderItem != null ? (Decimal.ToInt32(objSaleOrderItem.ARSaleOrderItemQty.GetValueOrDefault())) : Decimal.ToInt32(objSaleOrderItem.ARSaleOrderItemQty.GetValueOrDefault());
+        }
+
+        public int DecreaseItemQuantity(int saleOrderItemID)
+        {
+            var objSaleOrderItem = db.ARSaleOrderItems.FirstOrDefault(p => p.ARSaleOrderItemID == saleOrderItemID);
+            if(objSaleOrderItem != null)
+            { 
+                if (objSaleOrderItem.ARSaleOrderItemQty.GetValueOrDefault() == 1)
+                    return 1;
+                objSaleOrderItem.ARSaleOrderItemQty -= 1;
+                objSaleOrderItem.ARSaleOrderItemSubTotalAmount = objSaleOrderItem.ARSaleOrderItemPrice.GetValueOrDefault() * objSaleOrderItem.ARSaleOrderItemQty.GetValueOrDefault();
+                objSaleOrderItem.ARSaleOrderItemTotalAmount = objSaleOrderItem.ARSaleOrderItemSubTotalAmount.GetValueOrDefault() - objSaleOrderItem.ARSaleOrderItemDiscountAmount.GetValueOrDefault();
+                db.SaveChanges();
+            }
+            return objSaleOrderItem != null ? (Decimal.ToInt32(objSaleOrderItem.ARSaleOrderItemQty.GetValueOrDefault())) : Decimal.ToInt32(objSaleOrderItem.ARSaleOrderItemQty.GetValueOrDefault());
         }
     }
 }
