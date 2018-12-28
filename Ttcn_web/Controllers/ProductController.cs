@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Ttcn_web.Services.Abtractions;
@@ -63,6 +64,14 @@ namespace Ttcn_web.Controllers
             var furnitureTypes = _furnitureTypeService.GetAll();
 
             return View(furnitureTypes);
+        }
+
+        // GET: Product/Search
+        public ActionResult Search(FormCollection formCollection)
+        {
+            var products = _productService.GetAll().Where(x => x.ICProductName.Contains(formCollection["search"]));
+
+            return View(products);
         }
 
         // POST: Product/Create
