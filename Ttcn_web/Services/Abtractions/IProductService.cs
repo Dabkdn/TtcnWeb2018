@@ -7,7 +7,7 @@ namespace Ttcn_web.Services.Abtractions
 {
     public interface IProductService
     {
-        IEnumerable<ICProduct> GetAll(int page, int pageSize);
+        IEnumerable<ICProduct> GetAllObjectOfCurrentPage(int page, int pageSize);
 
         ICProduct Get(int productId);
 
@@ -20,5 +20,7 @@ namespace Ttcn_web.Services.Abtractions
         IEnumerable<ICProduct> Filter(int furnitureTypeId, int page, int pageSize);
 
         int CreateObject(FormCollection formCollection, int userID, int furnitureTypeID);
+
+        IEnumerable<ICProduct> GetAll();
     }
 }

@@ -75,7 +75,7 @@ namespace Ttcn_web.Services.Implementations
             db.SaveChanges();
         }
 
-        public IEnumerable<ICProduct> GetAll(int page, int pageSize)
+        public IEnumerable<ICProduct> GetAllObjectOfCurrentPage(int page, int pageSize)
         {
             var a = db.ICProducts.Where(x => x.AAStatus == "Alive").OrderBy(p => p.ICProductID).ToPagedList(page, pageSize);
 
@@ -105,6 +105,13 @@ namespace Ttcn_web.Services.Implementations
         public IEnumerable<ICProduct> Filter(int furnitureTypeId, int page, int pageSize)
         {
             return db.ICProducts.Where(x => x.FK_ARFurnitureTypeID == furnitureTypeId && x.AAStatus == "Alive").OrderByDescending(p => p.ICProductID).ToPagedList(page, pageSize);
+        }
+
+        public IEnumerable<ICProduct> GetAll()
+        {
+            var a = db.ICProducts.Where(x => x.AAStatus == "Alive").ToList();
+
+            return a;
         }
     }
 }
