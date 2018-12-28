@@ -10,22 +10,25 @@ namespace Ttcn_web.Controllers
 
         private IProductService _productService;
 
-        public ProductController(IProductService productService)
+        private IFurnitureTypeService _furnitureTypeService;
+
+        public ProductController(IProductService productService, IFurnitureTypeService furnitureTypeService)
         {
             _productService = productService;
+            _furnitureTypeService = furnitureTypeService;
         }
 
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 20)
         {
-            var userType = Session["userType"];
+            //var userType = Session["userType"];
 
-            if ("Admin".Equals(userType) == false)
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            //if ("Admin".Equals(userType) == false)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
-            var result = _productService.GetAll();
+            var result = _productService.GetAll(page, pageSize);
 
             return View(result);
         }
@@ -57,7 +60,9 @@ namespace Ttcn_web.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            return View();
+            var furnitureTypes = _furnitureTypeService.GetAll();
+
+            return View(furnitureTypes);
         }
 
         // POST: Product/Create
@@ -97,6 +102,8 @@ namespace Ttcn_web.Controllers
             }
 
             var product = _productService.Get(id.GetValueOrDefault());
+            var furnitureTypeList = _furnitureTypeService.GetAll();
+            ViewBag.FurnitureList = furnitureTypeList;
 
             if (product == null)
             {
@@ -178,12 +185,7 @@ namespace Ttcn_web.Controllers
             int furnitureTypeID = Convert.ToInt32(Request.Form["selectedItemFurnitureType"].ToString());
             int userID = Convert.ToInt32(Session["userID"]);
             int productID = _productService.CreateObject(form, userID, furnitureTypeID);
-            return RedirectToAction("Details", "Product", new { id = productID });
-        }
-
-        public ActionResult ShowAddProduct()
-        {
-            return View("Create");
+            return RedirectToAction("Index", "Product", new { id = productID });
         }
     }
 }

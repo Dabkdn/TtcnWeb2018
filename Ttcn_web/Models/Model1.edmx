@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TTCNWEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TTCNWEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ADUserGroups">
           <Key>
             <PropertyRef Name="ADUserGroupID" />
@@ -544,6 +544,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ICProducts_ARFurnitureTypes">
+          <End Role="ARFurnitureTypes" Type="Self.ARFurnitureTypes" Multiplicity="0..1" />
+          <End Role="ICProducts" Type="Self.ICProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARFurnitureTypes">
+              <PropertyRef Name="ARFurnitureTypeID" />
+            </Principal>
+            <Dependent Role="ICProducts">
+              <PropertyRef Name="FK_ARFurnitureTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="TTCNWEBModelStoreContainer">
           <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADUsers" EntityType="Self.ADUsers" Schema="dbo" store:Type="Tables" />
@@ -657,9 +669,12 @@
             <End Role="APSuppliers" EntitySet="APSuppliers" />
             <End Role="ICProducts" EntitySet="ICProducts" />
           </AssociationSet>
+          <AssociationSet Name="FK_ICProducts_ARFurnitureTypes" Association="Self.FK_ICProducts_ARFurnitureTypes">
+            <End Role="ARFurnitureTypes" EntitySet="ARFurnitureTypes" />
+            <End Role="ICProducts" EntitySet="ICProducts" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TTCNWEBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -805,6 +820,7 @@
           <Property Name="ARFurnitureTypeImageUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ARFurnitureTypeGroup" Relationship="Self.FK_ARFurnitureTypes_ARFurnitureTypeGroups" FromRole="ARFurnitureTypes" ToRole="ARFurnitureTypeGroups" />
           <NavigationProperty Name="ARSaleOrderItems" Relationship="Self.FK_ARSaleOrderItems_ARFurnitureTypes" FromRole="ARFurnitureTypes" ToRole="ARSaleOrderItems" />
+          <NavigationProperty Name="ICProducts" Relationship="TTCNWEBModel.FK_ICProducts_ARFurnitureTypes" FromRole="ARFurnitureType" ToRole="ICProduct" />
         </EntityType>
         <EntityType Name="ARSaleOrderItem">
           <Key>
@@ -951,6 +967,7 @@
           <Property Name="ICProductPictureLink" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="APSupplier" Relationship="Self.FK_ICProducts_APSuppliers" FromRole="ICProducts" ToRole="APSuppliers" />
           <NavigationProperty Name="ARSaleOrderItems" Relationship="Self.FK_ARSaleOrderItems_ICProducts" FromRole="ICProducts" ToRole="ARSaleOrderItems" />
+          <NavigationProperty Name="ARFurnitureType" Relationship="TTCNWEBModel.FK_ICProducts_ARFurnitureTypes" FromRole="ICProduct" ToRole="ARFurnitureType" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1363,7 +1380,23 @@
             <End Role="GEWards" EntitySet="GEWards" />
             <End Role="GEStreets" EntitySet="GEStreets" />
           </AssociationSet>
+          <AssociationSet Name="FK_ICProducts_ARFurnitureTypes" Association="TTCNWEBModel.FK_ICProducts_ARFurnitureTypes">
+            <End Role="ARFurnitureType" EntitySet="ARFurnitureTypes" />
+            <End Role="ICProduct" EntitySet="ICProducts" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_ICProducts_ARFurnitureTypes">
+          <End Type="TTCNWEBModel.ARFurnitureType" Role="ARFurnitureType" Multiplicity="0..1" />
+          <End Type="TTCNWEBModel.ICProduct" Role="ICProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ARFurnitureType">
+              <PropertyRef Name="ARFurnitureTypeID" />
+            </Principal>
+            <Dependent Role="ICProduct">
+              <PropertyRef Name="FK_ARFurnitureTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

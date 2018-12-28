@@ -42,7 +42,7 @@ namespace Ttcn_web.Services.Implementations
             product.ICProductID = lastProduct.ICProductID + 1;
             product.AAStatus = "Alive";
             product.AACreatedDate = DateTime.Now;
-            product.ICProductNo = "SP" + product.ICProductID.ToString();
+            product.ICProductNo = "SP" +"-"+ product.ICProductID.ToString();
             product.ICProductName = formCollection["productName"].ToString();
             product.ICProductDesc = formCollection["productDesc"].ToString();
             product.ICProductPrice = Convert.ToDecimal(formCollection["productPrice"].ToString());
@@ -66,17 +66,18 @@ namespace Ttcn_web.Services.Implementations
             }
 
             product.AAUpdatedDate = DateTime.Now;
-            product.ICProductName = formCollection["ICProductName"];
-            product.ICProductNo = formCollection["ICProductNo"];
-            product.ICProductDesc = formCollection["ICProductDesc"];
+            product.ICProductName = formCollection["productName"] != string.Empty ? formCollection["productName"] : product.ICProductName;
+            product.ICProductPrice = formCollection["productPrice"] != string.Empty? Convert.ToDecimal(formCollection["productPrice"]): product.ICProductPrice;
+            product.ICProductPictureLink = formCollection["productPictureLink"] != string.Empty ? formCollection["productPictureLink"] : product.ICProductPictureLink;
+            product.ICProductDesc = formCollection["productDesc"] != string.Empty ? formCollection["productDesc"] : product.ICProductDesc;
+            product.FK_ARFurnitureTypeID = formCollection["selectedItemFurnitureType"] != string.Empty ? Convert.ToInt32(formCollection["selectedItemFurnitureType"]) : product.FK_ARFurnitureTypeID;
 
-            db.ICProducts.AddOrUpdate();
             db.SaveChanges();
         }
 
-        public IEnumerable<ICProduct> GetAll()
+        public IEnumerable<ICProduct> GetAll(int page, int pageSize)
         {
-            var a = db.ICProducts.Where(x => x.AAStatus == "Alive").ToList();
+            var a = db.ICProducts.Where(x => x.AAStatus == "Alive").OrderBy(p => p.ICProductID).ToPagedList(page, pageSize);
 
             return a;
         }

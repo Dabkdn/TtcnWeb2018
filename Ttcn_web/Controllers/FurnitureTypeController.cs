@@ -28,7 +28,7 @@ namespace Ttcn_web.Controllers
         }
 
         // GET: FurnitureType
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 20)
         {
             //var userType = Session["userType"];
 
@@ -37,7 +37,7 @@ namespace Ttcn_web.Controllers
             //    return RedirectToAction("Login", "Account");
             //}
 
-            var result = _furnitureTypeService.GetAll();
+            var result = _furnitureTypeService.GetAllObjectOfCurrentPage(page, pageSize);
 
             return View("Index","_AdminLayout",result);
         }

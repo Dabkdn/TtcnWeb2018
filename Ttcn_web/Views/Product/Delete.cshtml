@@ -1,192 +1,69 @@
 ﻿@model Ttcn_web.Models.ICProduct
 
 @{
-    ViewBag.Title = "Delete";
+	ViewBag.Title = "Xóa";
 }
 
-<h2>Delete</h2>
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ICProduct</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AACreatedUser)
-        </dt>
+	<div class="w3-content w3-animate-bottom">
+		<div class="w3-margin w3-card">
+			<div class="w3-container w3-card w3-blue w3-round-large">
+				<h3 class="w3-padding-large">Chi tiết sản phẩm</h3>
+			</div>
+			<hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.AACreatedUser)
-        </dd>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-user-plus"></i></div>
+				<div class="w3-rest">
+					<h5><b>Mã sản phẩm: </b>@Html.DisplayFor(model => model.ICProductNo)</h5>
+				</div>
+			</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AACreatedDate)
-        </dt>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-user-secret"></i></div>
+				<div class="w3-rest">
+					<h5><b>Tên sản phẩm:  </b>@Html.DisplayFor(model => model.ICProductName)</h5>
+				</div>
+			</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.AACreatedDate)
-        </dd>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+				<div class="w3-rest">
+					<h5><b>Mô tả:  </b>@Html.DisplayFor(model => model.ICProductDesc)</h5>
+				</div>
+			</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AAUpdatedUser)
-        </dt>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+				<div class="w3-rest">
+					<h5><b>Nhóm:  </b>@Html.DisplayFor(model => model.ARFurnitureType.ARFurnitureTypeName)</h5>
+				</div>
+			</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.AAUpdatedUser)
-        </dd>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+				<div class="w3-rest">
+					<div style="float:left; width: 20%">
+						<h5><b>Ảnh:  </b></h5>
+					</div>
+					<div style="float:left; width: 300px; height: 300px">
+						<img class="w3-round" src="@Model.ICProductPictureLink" style="width:100%; height: 100%"/>
+					</div>
+				</div>
+			</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AAUpdatedDate)
-        </dt>
+			<hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.AAUpdatedDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AAStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AAStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductNo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductNo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductDesc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductDesc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductActiveCheck)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductActiveCheck)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductLength)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductLength)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductHeight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductHeight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductWidth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductWidth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductWeight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductWeight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductPicture)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductPicture)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductPrice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductPrice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductComment)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductComment)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductMaterial)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductMaterial)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ICProductColor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ICProductColor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.APSupplier.AAStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.APSupplier.AAStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ARFurnitureType.AAStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ARFurnitureType.AAStatus)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+			<div class="form-actions w3-padding">
+				<h4>Xác nhận xóa?</h4>
+				<input type="submit" value="Xóa" class="w3-button w3-red w3-round-large w3-padding" style="width:120px" />
+				<a href="@Url.Action("Index", "FurnitureType")">
+					<input type="button" class="w3-button w3-border w3-light-grey w3-round-large" style="width:120px" value="Hủy">
+				</a>
+			</div>
+		</div>
+	</div>
+}

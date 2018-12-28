@@ -1,13 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - @ViewBag.Title</title>
-
-    <link href="~/Content/w3school.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin - @ViewBag.Title</title>
+	@Scripts.Render("~/bundles/jquery")
+	<script src="~/Scripts/ckfinder/ckfinder.js"></script>
+	<link href="~/Content/w3school.css" rel="stylesheet">
+	<link href="~/Content/PagedList.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -76,40 +78,47 @@
             <a href="#" class="w3-bar-item w3-button">Link 3</a>
         </div>*@
 
-    <div class="w3-sidebar w3-bar-block w3-blue w3-card w3-animate-left" style="width:150px; display:none" id="mySidebar">
-        <button class="w3-bar-item w3-button w3-large"
-                onclick="w3_close()">
-            &#10094;
-        </button>
-        <div class="w3-center">
-            <a href="@Url.Action("Index","Home")" class="w3-button w3-light-blue w3-round-xxlarge w3-padding-12 w3-margin">View</a>
-        </div>
-        <div class="w3-light-blue">
-            <h5 class="w3-bar-item w3-center">Menu</h5>
-        </div>
+	<div class="w3-sidebar w3-bar-block w3-blue w3-card w3-animate-left" style="width:150px; display:none" id="mySidebar">
+		<button class="w3-bar-item w3-button w3-large"
+				onclick="w3_close()">
+			&#10094;
+		</button>
+		<div class="w3-center">
+			<a href="@Url.Action("Index","Home")" class="w3-button w3-light-blue w3-round-xxlarge w3-padding-12 w3-margin">View</a>
+		</div>
+		<div class="w3-light-blue">
+			<h5 class="w3-bar-item w3-center">Menu</h5>
+		</div>
 
-        <div class="">
-            <a href="@Url.Action("Index","Admin")" class="w3-button w3-bar-item">
-                <i class="fa fa-home"></i>
-                <span>Trang chủ</span>
-            </a>
-        </div>
+		<div class="">
+			<a href="@Url.Action("Index","Admin")" class="w3-button w3-bar-item">
+				<i class="fa fa-home"></i>
+				<span>Trang chủ</span>
+			</a>
+		</div>
 
-        <div class="">
-            <a href="@Url.Action("Index","User")" class="w3-button w3-bar-item">
-                <i class="fa fa-user"></i>
-                <span>User</span>
-            </a>
-        </div>
-        
-        <div class="">
-            <a href="@Url.Action("Index","FurnitureType")" class="w3-button w3-bar-item">
-                <i class="fa fa-envira"></i>
-                <span>Loại nội thất</span>
-            </a>
-        </div>
+		<div class="">
+			<a href="@Url.Action("Index","User")" class="w3-button w3-bar-item">
+				<i class="fa fa-user"></i>
+				<span>User</span>
+			</a>
+		</div>
 
-    </div>
+		<div class="">
+			<a href="@Url.Action("Index","FurnitureType")" class="w3-button w3-bar-item">
+				<i class="fa fa-envira"></i>
+				<span>Loại nội thất</span>
+			</a>
+		</div>
+
+		<div class="">
+			<a href="@Url.Action("Index","Product")" class="w3-button w3-bar-item">
+				<i class="fa fa-envira"></i>
+				<span>Sản phẩm</span>
+			</a>
+		</div>
+
+	</div>
 
     <div id="main" class="w3-animate-right">
 

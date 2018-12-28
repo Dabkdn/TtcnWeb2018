@@ -44,9 +44,14 @@
 
             <div class="w3-row w3-section w3-padding">
                 <div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
-                <div class="w3-rest">
-                    <h5><b>url:  </b>@Html.DisplayFor(model => model.ARFurnitureTypeImageUrl)</h5>
-                </div>
+				<div class="w3-rest">
+					<div style="float:left; width: 20%">
+						<h5><b>Ảnh:  </b></h5>
+					</div>
+					<div style="float:left; width: 300px; height: 300px">
+						<img class="w3-round" src="@Model.ARFurnitureTypeImageUrl" style="width:100%; height: 100%" />
+					</div>
+				</div>
             </div>
 
             <hr />
@@ -62,21 +67,14 @@
                 <div class="w3-row w3-section">
                     <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user-plus"></i></div>
                     <div class="w3-rest">
-                        <input class="w3-input w3-border" name="name" type="text" placeholder="Tên" required>
+                        <input class="w3-input w3-border" name="name" type="text" placeholder="Tên">
                     </div>
                 </div>
 
                 <div class="w3-row w3-section">
                     <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user-secret"></i></div>
                     <div class="w3-rest">
-                        <input class="w3-input w3-border" name="no" type="text" placeholder="No" required>
-                    </div>
-                </div>
-
-                <div class="w3-row w3-section">
-                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user-secret"></i></div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border" name="desc" type="text" placeholder="Mô tả" required>
+                        <input class="w3-input w3-border" name="desc" type="text" placeholder="Mô tả">
                     </div>
                 </div>
 
@@ -99,7 +97,7 @@
                 <div class="w3-row w3-section">
                     <div class="w3-col" style="width: 50px"><i class="w3-xxlarge fa fa-image"></i></div>
                     <div class="w3-rest">
-                        <input class="w3-input w3-border" style="width: 85%; float: left;" name="url" type="text" id="Picture" readonly required>
+                        <input class="w3-input w3-border" style="width: 85%; float: left;" name="url" type="text" id="Picture" readonly>
                         <button class="w3-btn w3-border" style="width: 10%; float: right;" id="Browse">...</button>
                         <script>
                             $("#Browse").click(function () {
