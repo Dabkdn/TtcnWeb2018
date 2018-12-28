@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Ttcn_web.Models.ICProduct>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="w3-content w3-animate-bottom" style=" width: 100%">
+    <br />
+    <div class="w3-row-padding" style="margin:0 -16px">
+        @{
+            foreach (var item in Model)
+            {
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-display-container w3-opacity-min w3-hover-opacity-off" style="transition:1s;width:100%">
+                        <a href="@Url.Action("Details", "Product", new
+                                 {
+                                     id = item.ICProductID
+                                 })">
+                            <img class="w3-round" src="@item.ICProductPictureLink" alt="Pants" style="width:100%">
+                        </a>
+
+                        <div class="w3-display-topright w3-display-hover w3-large">
+                            <a href="@Url.Action("AddProductToCartValidateQty", "FurnitureType", new { productID = item.ICProductID })" class="w3-yellow w3-animate-opacity w3-btn w3-margin w3-round w3-btn" title="Shopping Cart">
+                                <i class="fa fa-shopping-cart w3-text-grey"></i>
+                            </a>
+                        </div>
+                        <div class="w3-display-bottomleft w3-display-hover w3-large w3-text-black">
+                            <div class="w3-padding w3-animate-opacity">@item.ICProductName @item.ICProductPrice</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+
+</div>
