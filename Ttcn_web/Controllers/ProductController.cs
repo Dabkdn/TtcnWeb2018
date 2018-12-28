@@ -29,7 +29,7 @@ namespace Ttcn_web.Controllers
             //    return RedirectToAction("Login", "Account");
             //}
 
-            var result = _productService.GetAll(page, pageSize);
+            var result = _productService.GetAllObjectOfCurrentPage(page, pageSize);
 
             return View(result);
         }
