@@ -1,49 +1,84 @@
-﻿@model IEnumerable<Ttcn_web.Models.ICProduct>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Ttcn_web.Models.ICProduct>
 
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Product";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.ICProductNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ICProductName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ICProductDesc)
-        </th>
-       
-        <th></th>
-    </tr>
+<div class="w3-container">
+	<h3>Danh sách sản phẩm</h3>
+	<hr />
+	<a href="@Url.Action("Create","Product")" class="w3-button w3-yellow w3-round-large">
+		<i class="fa fa-plus"></i>
+		<span>Thêm sản phẩm mới</span>
+	</a>
 
-@foreach (var item in Model) {
-    <tr>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.ICProductNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ICProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ICProductDesc)
-        </td>
-        
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ICProductID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ICProductID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ICProductID })
-        </td>
-    </tr>
-}
+	<hr />
+	<div>
+		<table class="table-admin w3-table-all">
+			<tr>
+				<th>
+					STT
+				</th>
+				<th>
+					Mã sản phẩm
+				</th>
+				<th>
+					Tên sản phẩm
+				</th>
+				<th>
+					Ngày tạo
+				</th>
+				<th>
+					Ngày chỉnh sửa
+				</th>
+				<th></th>
+			</tr>
 
-</table>
+			@{
+				int count = 0;
+
+				foreach (var item in Model)
+				{
+
+					count++;
+					<tr>
+						<td>@count</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.ICProductNo)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.ICProductName)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.AACreatedDate)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.AAUpdatedDate)
+						</td>
+						<td>
+							<a href="@Url.Action("Edit","Product",new {id = item.ICProductID})" class="w3-button w3-light-blue w3-round-large">
+								<i class="fa fa-edit"></i>
+								<span>Sửa</span>
+							</a>
+
+							<a href="@Url.Action("Delete","Product",new {id = item.ICProductID})" class="w3-button w3-red w3-round-large">
+								<i class="fa fa-remove"></i>
+								<span>Xóa</span>
+							</a>
+						</td>
+					</tr>
+				}
+			}
+
+		</table>
+	</div>
+</div>
+<div class="pagerNew" style="text-align: center">
+	@Html.PagedListPager(Model, page => Url.Action("Index", "Product", new {  page }))
+</div>
+
+
+

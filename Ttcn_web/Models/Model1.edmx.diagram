@@ -45,6 +45,7 @@
         <AssociationConnector Association="TTCNWEBModel.FK_GEDistricts_GEStateProvinces" ManuallyRouted="false" />
         <AssociationConnector Association="TTCNWEBModel.FK_GEWards_GEDistricts" ManuallyRouted="false" />
         <AssociationConnector Association="TTCNWEBModel.FK_GEStreets_GEWards" ManuallyRouted="false" />
+        <AssociationConnector Association="TTCNWEBModel.FK_ICProducts_ARFurnitureTypes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

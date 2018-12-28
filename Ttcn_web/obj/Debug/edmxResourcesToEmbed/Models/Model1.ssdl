@@ -539,6 +539,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ICProducts_ARFurnitureTypes">
+    <End Role="ARFurnitureTypes" Type="Self.ARFurnitureTypes" Multiplicity="0..1" />
+    <End Role="ICProducts" Type="Self.ICProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARFurnitureTypes">
+        <PropertyRef Name="ARFurnitureTypeID" />
+      </Principal>
+      <Dependent Role="ICProducts">
+        <PropertyRef Name="FK_ARFurnitureTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="TTCNWEBModelStoreContainer">
     <EntitySet Name="ADUserGroups" EntityType="Self.ADUserGroups" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADUsers" EntityType="Self.ADUsers" Schema="dbo" store:Type="Tables" />
@@ -650,6 +662,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_ICProducts_APSuppliers" Association="Self.FK_ICProducts_APSuppliers">
       <End Role="APSuppliers" EntitySet="APSuppliers" />
+      <End Role="ICProducts" EntitySet="ICProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ICProducts_ARFurnitureTypes" Association="Self.FK_ICProducts_ARFurnitureTypes">
+      <End Role="ARFurnitureTypes" EntitySet="ARFurnitureTypes" />
       <End Role="ICProducts" EntitySet="ICProducts" />
     </AssociationSet>
   </EntityContainer>

@@ -1,58 +1,131 @@
 ﻿@model Ttcn_web.Models.ICProduct
+@using Ttcn_web.Models
 
 @{
-    ViewBag.Title = "Edit";
+	ViewBag.Title = "Create";
+	List<ARFurnitureType> furnitureTypeList = ViewBag.FurnitureList;
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h2>Edit</h2>
-
-
+<script src="~/Scripts/ckfinder/ckfinder.js"></script>
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>ICProduct</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.ICProductID)
+	@Html.AntiForgeryToken()
+	<div class="w3-content w3-animate-bottom">
+		<div class="w3-margin w3-card">
+			<div class="w3-container w3-card w3-blue w3-round-large">
+				<h3 class="w3-padding-large">Chi tiết sản phẩm</h3>
+			</div>
+			<hr />
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ICProductNo, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ICProductNo, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ICProductNo, "", new { @class = "text-danger" })
-        </div>
-    </div>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-user-plus"></i></div>
+				<div class="w3-rest">
+					<h5><b>Tên sản phẩm: </b>@Html.DisplayFor(model => model.ICProductName)</h5>
+				</div>
+			</div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ICProductName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ICProductName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ICProductName, "", new { @class = "text-danger" })
-        </div>
-    </div>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-user-secret"></i></div>
+				<div class="w3-rest">
+					<h5><b>Mã sản phẩm:  </b>@Html.DisplayFor(model => model.ICProductNo)</h5>
+				</div>
+			</div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ICProductDesc, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ICProductDesc, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ICProductDesc, "", new { @class = "text-danger" })
-        </div>
-    </div>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+				<div class="w3-rest">
+					<h5><b>Mô tả:  </b>@Html.DisplayFor(model => model.ICProductDesc)</h5>
+				</div>
+			</div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
-        </div>
-    </div>
-</div>
-}
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+				<div class="w3-rest">
+					<h5><b>Nhóm:  </b>@Html.DisplayFor(model => model.ARFurnitureType.ARFurnitureTypeName)</h5>
+				</div>
+			</div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+			<div class="w3-row w3-section w3-padding">
+				<div class="w3-col" style="width:50px"><i class="w3-large fa fa-calendar"></i></div>
+				<div class="w3-rest">
+					<div style="float:left; width: 20%">
+						<h5><b>Ảnh:  </b></h5>
+					</div>
+					<div style="float:left; width: 300px; height: 300px">
+						<img class="w3-round" src="@Model.ICProductPictureLink" style="width:100%; height: 100%" />
+					</div>
+				</div>
+			</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+			<hr />
+		</div>
+		<div class="w3-margin w3-card">
+			<div class="w3-container w3-card w3-blue w3-round-large">
+				<h3 class="w3-padding-large">Cập nhật sản phẩm</h3>
+			</div>
+
+			<form action="@Url.Action("Edit", "Product")" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-light-green w3-round-large">
+
+				<div class="w3-row w3-section">
+					<div class="w3-col" style="width:120px"><label class="w3-text-grey">Tên sản phẩm</label></div>
+					<div class="w3-rest">
+						<input class="w3-input w3-border" name="productName" type="text">
+					</div>
+				</div>
+
+				<div class="w3-row w3-section">
+					<div class="w3-col" style="width:120px"><label class="w3-text-grey">Giá</label></div>
+					<div class="w3-rest">
+						<input class="w3-input w3-border" name="productPrice" type="text">
+					</div>
+				</div>
+
+				<div class="w3-row w3-section">
+					<div class="w3-col" style="width:120px"><label class="w3-text-grey">Ảnh</label></div>
+					<div class="w3-rest">
+						<input class="w3-input w3-border" style="width: 85%; float: left;" name="productPictureLink" type="text" id="Picture" readonly>
+						<button class="w3-btn w3-border" style="width: 10%; float: right;" id="Browse">...</button>
+						<script>
+							$("#Browse").click(function () {
+								var finder = new CKFinder();
+								finder.selectActionFunction = function (fileUrl) {
+									$("#Picture").val(fileUrl);
+								};
+								finder.popup();
+							});
+						</script>
+					</div>
+				</div>
+
+				<div class="w3-row w3-section">
+					<div class="w3-col" style="width:120px"><label class="w3-text-grey">Mô tả</label></div>
+					<div class="w3-rest">
+						<input class="w3-input w3-border" name="productDesc" type="text">
+					</div>
+				</div>
+
+				<div class="w3-row w3-section">
+					<div class="w3-col" style="width:120px"><label class="w3-text-grey">Loại nội thất</label></div>
+					<div class="w3-rest">
+						<select class="w3-select w3-border" id="selectedItemFurnitureType" name="selectedItemFurnitureType" onchange="funcChange()">
+							@{
+								foreach (var item in furnitureTypeList)
+								{
+									<option class="w3-text-grey" value=@item.ARFurnitureTypeID>@item.ARFurnitureTypeGroup.ARFurnitureTypeGroupName - @item.ARFurnitureTypeName</option>
+								}
+							}
+						</select>
+					</div>
+				</div>
+
+				<p>
+					<button type="submit" class="w3-btn w3-border w3-hover-yellow w3-padding w3-blue w3-round-large" style="width:120px">Cập nhật</button>
+					<a href="@Url.Action("Index", "Product")">
+						<input type="button" class="w3-btn w3-border w3-light-grey w3-round-large" style="width:120px" value="Hủy">
+					</a>
+				</p>
+			</form>
+		</div>
+
+	</div>
 }

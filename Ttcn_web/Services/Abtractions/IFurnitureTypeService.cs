@@ -18,5 +18,7 @@ namespace Ttcn_web.Services.Abtractions
         void Delete(int furnitureTypeId);
 
         IEnumerable<ARFurnitureType> Filter(int furnitureTypeGroupId);
+
+        IEnumerable<ARFurnitureType> GetAllObjectOfCurrentPage(int page, int pageSize);
     }
 }

@@ -7,7 +7,7 @@ namespace Ttcn_web.Services.Abtractions
 {
     public interface IProductService
     {
-        IEnumerable<ICProduct> GetAll();
+        IEnumerable<ICProduct> GetAll(int page, int pageSize);
 
         ICProduct Get(int productId);
 

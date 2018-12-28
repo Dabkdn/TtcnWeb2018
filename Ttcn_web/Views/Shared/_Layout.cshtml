@@ -1,19 +1,19 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - My ASP.NET Application</title>
 
-    @Scripts.Render("~/bundles/jquery")
-    <script src="~/Scripts/ckfinder/ckfinder.js"></script>
-    @Styles.Render("~/vendor/bootstrap/css/css")
-    @Scripts.Render("~/bundles/modernizr")
+	@Scripts.Render("~/bundles/jquery")
+	<script src="~/Scripts/ckfinder/ckfinder.js"></script>
+	@Styles.Render("~/vendor/bootstrap/css/css")
+	@Scripts.Render("~/bundles/modernizr")
 
-    <link href="~/Content/w3school.css" rel="stylesheet">
-    <link href="~/Content/PagedList.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="~/Content/w3school.css" rel="stylesheet">
+	<link href="~/Content/PagedList.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         * {
@@ -176,7 +176,7 @@
 				var userType = Session["userType"];
 				if ("Supplier".Equals(userType) || "Admin".Equals(userType))
 				{
-						<a href="@Url.Action("Create", "Product")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Thêm mới sản phẩm</a>
+						<a href="@Url.Action("Index", "Admin")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Quản lý Website</a>
 				}
 			}
 

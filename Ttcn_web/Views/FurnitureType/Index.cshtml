@@ -1,69 +1,73 @@
-﻿@model IEnumerable<Ttcn_web.Models.ARFurnitureType>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Ttcn_web.Models.ARFurnitureType>
 
 @{
-    ViewBag.Title = "Loại nội thất";
+	ViewBag.Title = "Loại nội thất";
 }
 
 <div class="w3-container">
-    <h3>Danh sách Loại nội thất</h3>
-    <hr />
-    <a href="@Url.Action("Create","FurnitureType")" class="w3-button w3-yellow w3-round-large">
-        <i class="fa fa-plus"></i>
-        <span>Tạo mới Loại nội thất</span>
-    </a>
+	<h3>Danh sách Loại nội thất</h3>
+	<hr />
+	<a href="@Url.Action("Create","FurnitureType")" class="w3-button w3-yellow w3-round-large">
+		<i class="fa fa-plus"></i>
+		<span>Tạo mới Loại nội thất</span>
+	</a>
 
-    <hr />
-    <div>
-        <table class="table-admin w3-table-all">
-            <tr>
-                <th>
-                    STT
-                </th>
-                <th>
-                    Tên
-                </th>
-                <th>
-                    No
-                </th>
-                <th>
-                    Nhóm
-                </th>
-                <th></th>
-            </tr>
+	<hr />
+	<div>
+		<table class="table-admin w3-table-all">
+			<tr>
+				<th>
+					STT
+				</th>
+				<th>
+					Tên loại nội thất
+				</th>
+				<th>
+					Mã loại nội thất
+				</th>
+				<th>
+					Nhóm
+				</th>
+				<th></th>
+			</tr>
 
-            @{
-                int count = 0;
+			@{
+				int count = 0;
 
-                foreach (var item in Model)
-                {
+				foreach (var item in Model)
+				{
 
-                    count++;
-                    <tr>
-                        <td>@count</td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ARFurnitureTypeNo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ARFurnitureTypeGroup.ARFurnitureTypeGroupName)
-                        </td>
-                        <td>
-                            <a href="@Url.Action("Edit","FurnitureType",new {id = item.ARFurnitureTypeID})" class="w3-button w3-light-blue w3-round-large">
-                                <i class="fa fa-edit"></i>
-                                <span>Sửa</span>
-                            </a>
+					count++;
+					<tr>
+						<td>@count</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.ARFurnitureTypeName)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.ARFurnitureTypeNo)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.ARFurnitureTypeGroup.ARFurnitureTypeGroupName)
+						</td>
+						<td>
+							<a href="@Url.Action("Edit","FurnitureType",new {id = item.ARFurnitureTypeID})" class="w3-button w3-light-blue w3-round-large">
+								<i class="fa fa-edit"></i>
+								<span>Sửa</span>
+							</a>
 
-                            <a href="@Url.Action("Delete","FurnitureType",new {id = item.ARFurnitureTypeID})" class="w3-button w3-red w3-round-large">
-                                <i class="fa fa-remove"></i>
-                                <span>Xóa</span>
-                            </a>
-                        </td>
-                    </tr>
-                }
-            }
+							<a href="@Url.Action("Delete","FurnitureType",new {id = item.ARFurnitureTypeID})" class="w3-button w3-red w3-round-large">
+								<i class="fa fa-remove"></i>
+								<span>Xóa</span>
+							</a>
+						</td>
+					</tr>
+				}
+			}
 
-        </table>
-    </div>
+		</table>
+	</div>
+</div>
+<div class="pagerNew" style="text-align: center">
+	@Html.PagedListPager(Model, page => Url.Action("Index", "FurnitureType", new { page }))
 </div>

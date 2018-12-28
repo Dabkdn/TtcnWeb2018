@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Ttcn_web.Models;
 using Ttcn_web.Services.Abtractions;
+using PagedList;
 
 namespace Ttcn_web.Services.Implementations
 {
@@ -22,7 +23,7 @@ namespace Ttcn_web.Services.Implementations
             furnitureType.AAStatus = "Alive";
             furnitureType.AACreatedDate = DateTime.Now;
             furnitureType.ARFurnitureTypeName = formCollection["name"];
-            furnitureType.ARFurnitureTypeNo = formCollection["no"];
+            furnitureType.ARFurnitureTypeNo = "LNT" + "-" + furnitureType.ARFurnitureTypeID;
             furnitureType.ARFurnitureTypeDesc = formCollection["desc"];
             furnitureType.FK_ARFurnitureTypeGroupID = Int32.Parse(formCollection["group"]);
             furnitureType.ARFurnitureTypeImageUrl = formCollection["url"];
@@ -46,13 +47,11 @@ namespace Ttcn_web.Services.Implementations
             }
 
             furnitureType.AAUpdatedDate = DateTime.Now;
-            furnitureType.ARFurnitureTypeName = formCollection["name"];
-            furnitureType.ARFurnitureTypeNo = formCollection["no"];
-            furnitureType.ARFurnitureTypeDesc = formCollection["desc"];
-            furnitureType.FK_ARFurnitureTypeGroupID = Int32.Parse(formCollection["group"]);
-            furnitureType.ARFurnitureTypeImageUrl = formCollection["url"];
+            furnitureType.ARFurnitureTypeName = formCollection["name"] != string.Empty ? formCollection["name"] : furnitureType.ARFurnitureTypeName;
+            furnitureType.ARFurnitureTypeDesc = formCollection["desc"] != string.Empty ? formCollection["desc"] : furnitureType.ARFurnitureTypeDesc;
+            furnitureType.FK_ARFurnitureTypeGroupID = formCollection["group"] != string.Empty ? Int32.Parse(formCollection["group"]) : furnitureType.FK_ARFurnitureTypeGroupID;
+            furnitureType.ARFurnitureTypeImageUrl = formCollection["url"] != string.Empty ? formCollection["url"] : furnitureType.ARFurnitureTypeImageUrl;
 
-            db.ARFurnitureTypes.AddOrUpdate();
             db.SaveChanges();
         }
 
@@ -86,6 +85,12 @@ namespace Ttcn_web.Services.Implementations
         public IEnumerable<ARFurnitureType> Filter(int furnitureTypeGroupId)
         {
             return db.ARFurnitureTypes.Where(x => x.FK_ARFurnitureTypeGroupID == furnitureTypeGroupId && x.AAStatus == "Alive").ToList();
+        }
+
+        public IEnumerable<ARFurnitureType> GetAllObjectOfCurrentPage(int page, int pageSize)
+        {
+            var list = db.ARFurnitureTypes.Where(x => x.AAStatus == "Alive").OrderBy(p => p.ARFurnitureTypeID).ToPagedList(page, pageSize);
+            return list;
         }
     }
 }
