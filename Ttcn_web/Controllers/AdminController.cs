@@ -11,6 +11,15 @@ namespace Ttcn_web.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            var token = Session["token"];
+
+            var username = Session["userName"];
+
+            if (token == null || "admin".Equals(username)== false)
+            {
+                return RedirectToAction(nameof(AccountController.Login), "Account");
+            }
+
             return View();
         }
     }

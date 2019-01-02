@@ -19,7 +19,7 @@
         </div>
         <div class="w3-quarter w3-display-container">
             <h2>@Model.ICProductName</h2>
-            <h4>@String.Format("{0:n0}", Model.ICProductPrice)</h4>
+            <h4>@String.Format("{0:n0}", Model.ICProductPrice) vnđ</h4>
         </div>
     </div>
 </div>
@@ -31,7 +31,11 @@
     </button>
 
     <div id="Detail" class="w3-hide w3-container">
-        <p>Lorem ipsum...</p>
+        <p>Màu sắc: @Model.ICProductColor</p>
+        <p>Chiều dài(m): @Model.ICProductLength </p>
+        <p>Chiều rộng(m): @Model.ICProductWidth </p>
+        <p>Chiều cao(m): @Model.ICProductHeight </p>
+        <p>Cân nặng(kg): @Model.ICProductWeight </p>
     </div>
 
     <button onclick="myFunction('Description')" class="w3-button w3-block w3-left-align w3-light-blue">
@@ -39,7 +43,7 @@
     </button>
 
     <div id="Description" class="w3-hide w3-container">
-        <p>Lorem ipsum...</p>
+        <p>@Model.ICProductDesc</p>
     </div>
 
     <button onclick="myFunction('Review')" class="w3-button w3-block w3-left-align w3-light-blue">
@@ -47,7 +51,7 @@
     </button>
 
     <div id="Review" class="w3-hide w3-container">
-        <p>Lorem ipsum...</p>
+        <p>@Model.ICProductComment</p>
     </div>
 </div>
 
