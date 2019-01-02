@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Ttcn_web.Models.ARSaleOrder>
+@{
+    ViewBag.Title = "Thống kê";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="w3-animate-bottom">
+
+    <div id="chartContainer" style="height: 700px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            var chart = new CanvasJS.Chart("chartContainer",
+                {
+                    theme: "light1", // "light2", "dark1", "dark2"
+                    animationEnabled: true, // change to true
+                    title: {
+                        text: "Doanh thu 2019"
+                    },
+                    data: [
+                        {
+                            // Change type to "bar", "area", "spline", "pie",etc.
+                            type: "area",
+                            dataPoints: [
+                                { label: "Tháng 1", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 1).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 2", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 2).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 3", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 3).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 4", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 4).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 5", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 5).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 6", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 6).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 7", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 7).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 8", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 8).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 9", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 9).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 10", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 10).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 11", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 11).Sum(x=> x.ARSaleOrderTotalAmount) },
+                                { label: "Tháng 12", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 12).Sum(x=> x.ARSaleOrderTotalAmount) }
+
+                            ]
+                        }
+                    ]
+                });
+            chart.render();
+
+        }
+    </script>
+</div>
+
