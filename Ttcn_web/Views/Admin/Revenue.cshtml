@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <div class="w3-animate-bottom">
-
     <div id="chartContainer" style="height: 700px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script type="text/javascript">
@@ -20,7 +19,7 @@
                     data: [
                         {
                             // Change type to "bar", "area", "spline", "pie",etc.
-                            type: "area",
+                            type: "spline",
                             dataPoints: [
                                 { label: "Tháng 1", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 1).Sum(x=> x.ARSaleOrderTotalAmount) },
                                 { label: "Tháng 2", y: @Model.Where(x => x.ARSaleOrderDate.Value.Month == 2).Sum(x=> x.ARSaleOrderTotalAmount) },

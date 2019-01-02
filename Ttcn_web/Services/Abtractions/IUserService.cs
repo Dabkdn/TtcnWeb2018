@@ -18,5 +18,7 @@ namespace Ttcn_web.Services.Abtractions
         void Delete(int userId);
 
         ADUser GetUserByID(int userUD);
+
+        IEnumerable<ADUser> GetAllObjectOfCurrentPage(int page, int pageSize);
     }
 }

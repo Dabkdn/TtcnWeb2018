@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Ttcn_web.Models;
 using Ttcn_web.Services.Abtractions;
+using PagedList;
 
 namespace Ttcn_web.Services.Implementations
 {
@@ -79,6 +80,11 @@ namespace Ttcn_web.Services.Implementations
 
             db.ADUsers.AddOrUpdate();
             db.SaveChanges();
+        }
+
+        public IEnumerable<ADUser> GetAllObjectOfCurrentPage(int page, int pageSize)
+        {
+            return db.ADUsers.Where(x => x.AAStatus == "Alive").OrderBy(x => x.ADUserID).ToPagedList(page, pageSize);
         }
     }
 }
