@@ -22,5 +22,10 @@ namespace Ttcn_web.Controllers
 
             return View();
         }
+
+        public ActionResult News()
+        {
+            return View();
+        }
     }
 }
