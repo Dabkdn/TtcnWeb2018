@@ -1,78 +1,82 @@
-﻿@model IEnumerable<Ttcn_web.Models.ADUser>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Ttcn_web.Models.ADUser>
 
 @{
-    ViewBag.Title = "User";
+	ViewBag.Title = "User";
 }
 
 
 <div class="w3-container">
-    <h3>Danh sách tài khoản</h3>
-    <hr/>
-    <a href="@Url.Action("Create","User")" class="w3-button w3-yellow w3-round-large">
-        <i class="fa fa-plus"></i>
-        <span>Tạo mới tài khoản</span>
-    </a>
-    
-    <hr/>
-    <div>
-        <table class="table-admin w3-table-all">
-            <tr>
-                <th>
-                    STT
-                </th>
-                <th>
-                    Tên user
-                </th>
-                <th>
-                    Password
-                </th>
-                <th>
-                    Ngày tạo
-                </th>
-                <th>
-                    Ngày chỉnh sửa
-                </th>
-                <th></th>
-            </tr>
+	<h3>Danh sách tài khoản</h3>
+	<hr />
+	<a href="@Url.Action("Create","User")" class="w3-button w3-yellow w3-round-large">
+		<i class="fa fa-plus"></i>
+		<span>Tạo mới tài khoản</span>
+	</a>
 
-            @{
-                int count = 0;
+	<hr />
+	<div>
+		<table class="table-admin w3-table-all">
+			<tr>
+				<th>
+					STT
+				</th>
+				<th>
+					Tên user
+				</th>
+				<th>
+					Password
+				</th>
+				<th>
+					Ngày tạo
+				</th>
+				<th>
+					Ngày chỉnh sửa
+				</th>
+				<th></th>
+			</tr>
 
-                foreach (var item in Model)
-                {
+			@{
+				int count = 0;
 
-                    count++;
-                    <tr>
-                        <td>@count</td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ADUserName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ADPassword)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.AACreatedDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.AAUpdatedDate)
-                        </td>
-                        <td>
-                            <a href="@Url.Action("Edit","User",new {id = item.ADUserID})" class="w3-button w3-light-blue w3-round-large">
-                                <i class="fa fa-edit"></i>
-                                <span>Sửa</span>
-                            </a>
+				foreach (var item in Model)
+				{
 
-                            <a href="@Url.Action("Delete","User",new {id = item.ADUserID})" class="w3-button w3-red w3-round-large">
-                                <i class="fa fa-remove"></i>
-                                <span>Xóa</span>
-                            </a>
-                        </td>
-                    </tr>
-                }
-            }
+					count++;
+					<tr>
+						<td>@count</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.ADUserName)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.ADPassword)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.AACreatedDate)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.AAUpdatedDate)
+						</td>
+						<td>
+							<a href="@Url.Action("Edit","User",new {id = item.ADUserID})" class="w3-button w3-light-blue w3-round-large">
+								<i class="fa fa-edit"></i>
+								<span>Sửa</span>
+							</a>
 
-        </table>
-    </div>
+							<a href="@Url.Action("Delete","User",new {id = item.ADUserID})" class="w3-button w3-red w3-round-large">
+								<i class="fa fa-remove"></i>
+								<span>Xóa</span>
+							</a>
+						</td>
+					</tr>
+				}
+			}
+
+		</table>
+	</div>
+</div>
+<div class="pagerNew" style="text-align: center">
+	@Html.PagedListPager(Model, page => Url.Action("Index", "User", new { page }))
 </div>
 
 

@@ -21,9 +21,9 @@ namespace Ttcn_web.Controllers
         }
 
         // GET: User
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 20)
         {
-            var result = _userService.GetAll();
+            var result = _userService.GetAllObjectOfCurrentPage(page, pageSize);
 
             return View(result);
         }
