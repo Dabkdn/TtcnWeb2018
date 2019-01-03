@@ -22,5 +22,7 @@ namespace Ttcn_web.Services.Abtractions
         int CreateObject(FormCollection formCollection, int userID, int furnitureTypeID);
 
         IEnumerable<ICProduct> GetAll();
+
+        IEnumerable<ICProduct> GetAllObjectOfCurrentPageForSearch(string search ,int page, int pageSize);
     }
 }

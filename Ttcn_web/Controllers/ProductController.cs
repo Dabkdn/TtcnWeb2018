@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Ttcn_web.Services.Abtractions;
+using PagedList;
 
 namespace Ttcn_web.Controllers
 {
@@ -67,9 +68,10 @@ namespace Ttcn_web.Controllers
         }
 
         // GET: Product/Search
-        public ActionResult Search(FormCollection formCollection)
+        public ActionResult Search(FormCollection formCollection, int page = 1, int pageSize = 9)
         {
-            var products = _productService.GetAll().Where(x => x.ICProductName.Contains(formCollection["search"]));
+            var products = _productService.GetAllObjectOfCurrentPageForSearch(formCollection["search"], page, pageSize);
+            Session["search"] = formCollection["search"];
 
             return View(products);
         }
@@ -195,6 +197,13 @@ namespace Ttcn_web.Controllers
             int userID = Convert.ToInt32(Session["userID"]);
             int productID = _productService.CreateObject(form, userID, furnitureTypeID);
             return RedirectToAction("Index", "Product", new { id = productID });
+        }
+
+        public ActionResult GetAllObjectOfCurrentPageForSearch(int page = 1, int pageSize = 9)
+        {
+            var products = _productService.GetAllObjectOfCurrentPageForSearch(Session["search"].ToString(), page, pageSize);
+
+            return View("Search", products);
         }
     }
 }

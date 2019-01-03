@@ -86,7 +86,8 @@
 						<input class="w3-input w3-border" style="width: 85%; float: left;" name="productPictureLink" type="text" id="Picture" readonly>
 						<button class="w3-btn w3-border" style="width: 10%; float: right;" id="Browse">...</button>
 						<script>
-							$("#Browse").click(function () {
+							$("#Browse").click(function (e) {
+								e.preventDefault();
 								var finder = new CKFinder();
 								finder.selectActionFunction = function (fileUrl) {
 									$("#Picture").val(fileUrl);

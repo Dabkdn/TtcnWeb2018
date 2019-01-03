@@ -1,38 +1,44 @@
-﻿@model IEnumerable<Ttcn_web.Models.ICProduct>
+﻿@using System.Activities.Expressions
+@using PagedList.Mvc
+@model PagedList.IPagedList<Ttcn_web.Models.ICProduct>
 
 @{
-    ViewBag.Title = "Search";
+	ViewBag.Title = "Search";
 }
 
 <div class="w3-content w3-animate-bottom" style=" width: 100%">
-    <br />
-    <div class="w3-row-padding" style="margin:0 -16px">
-        @{
-            foreach (var item in Model)
-            {
-                <div class="w3-third w3-margin-bottom" style ="height: 350px">
-                    <div class="w3-display-container w3-opacity-min w3-hover-opacity-off" style="transition:1s;width:100%; height: 300px">
-                        <a href="@Url.Action("Details", "Product", new
+	<br />
+	<div class="w3-row-padding" style="margin:0 -16px">
+		@{
+			foreach (var item in Model)
+			{
+				<div class="w3-third w3-margin-bottom" style="height: 350px">
+					<div class="w3-display-container w3-opacity-min w3-hover-opacity-off" style="transition:1s;width:100%; height: 300px">
+						<a href="@Url.Action("Details", "Product", new
                                  {
                                      id = item.ICProductID
                                  })">
-                            <img class="w3-round" src="@item.ICProductPictureLink" alt="Pants" style="width:100%; height: 100%">
-                        </a>
+							<img class="w3-round" src="@item.ICProductPictureLink" alt="Pants" style="width:100%; height: 100%">
+						</a>
 
-                        <div class="w3-display-topright w3-display-hover w3-large">
-                            <a href="@Url.Action("AddProductToCartValidateQty", "FurnitureType", new { productID = item.ICProductID })" class="w3-yellow w3-animate-opacity w3-btn w3-margin w3-round w3-btn" title="Thêm vào giỏ hàng">
-                                <i class="fa fa-shopping-cart w3-text-grey"></i>
-                            </a>
-                        </div>
-                        <div class="w3-display-bottomleft w3-display-hover w3-large w3-text-black">
-                            <div class="w3-padding w3-animate-opacity">@item.ICProductName</div>
-                            <div class="w3-padding w3-animate-opacity">@String.Format("{0:n0}", item.ICProductPrice) vnđ</div>
-                        </div>
-                    </div>
-                </div>
-            }
-        }
+						<div class="w3-display-topright w3-display-hover w3-large">
+							<a href="@Url.Action("AddProductToCartValidateQty", "FurnitureType", new { productID = item.ICProductID })" class="w3-yellow w3-animate-opacity w3-btn w3-margin w3-round w3-btn" title="Thêm vào giỏ hàng">
+								<i class="fa fa-shopping-cart w3-text-grey"></i>
+							</a>
+						</div>
+						<div class="w3-display-bottomleft w3-display-hover w3-large w3-text-black">
+							<div class="w3-padding w3-animate-opacity">@item.ICProductName</div>
+							<div class="w3-padding w3-animate-opacity">@String.Format("{0:n0}", item.ICProductPrice) vnđ</div>
+						</div>
+					</div>
+				</div>
+			}
+		}
 
-    </div>
+	</div>
 
+</div>
+
+<div class="pagerNew" style="text-align: center">
+	@Html.PagedListPager(Model, page => Url.Action("GetAllObjectOfCurrentPageForSearch", "Product", new { page }))
 </div>
