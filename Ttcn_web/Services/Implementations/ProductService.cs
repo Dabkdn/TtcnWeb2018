@@ -113,5 +113,10 @@ namespace Ttcn_web.Services.Implementations
 
             return a;
         }
+
+        public IEnumerable<ICProduct> GetAllObjectOfCurrentPageForSearch(string search, int page, int pageSize)
+        {
+            return db.ICProducts.Where(x => x.ICProductName.IndexOf(search) >= 0).OrderByDescending(p => p.ICProductID).ToPagedList(page, pageSize);
+        }
     }
 }

@@ -175,7 +175,7 @@ else
 
             @{
         var userType = Session["userType"];
-        if ("Supplier".Equals(userType) || "Admin".Equals(userType))
+        if ("Admin".Equals(userType))
         {
             <a href="@Url.Action("Index", "Admin")" class="w3-bar-item w3-hover-opacity w3-btn w3-right">Quản lý Website</a>
 }
@@ -207,7 +207,7 @@ else
     </div>
 
 
-    <footer class="w3-container w3-padding-32 w3-black w3-margin-top">
+    <footer class="w3-container w3-padding-32 w3-black w3-margin-top clear">
         <div class="w3-row-padding">
             <div class="w3-half">
                 <p>Đồng sáng lập:</p>
